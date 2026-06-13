@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>도시락통FX</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f2f2f7; color: #1c1c1e; max-width: 480px; margin: 0 auto; min-height: 100vh; }
+
+.header { background: #fff; padding: 52px 16px 0; border-bottom: 0.5px solid #c6c6c8; position: sticky; top: 0; z-index: 10; }
+.header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.header h1 { font-size: 24px; font-weight: 700; }
+.header-btns { display: flex; gap: 8px; }
+.icon-btn { background: none; border: none; cursor: pointer; font-size: 20px; padding: 4px; color: #3a3a3c; }
+
+.tabs { display: flex; }
+.tab { flex: 1; padding: 10px 4px; font-size: 13px; font-weight: 400; color: #8e8e93; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; }
+.tab.active { color: #1c1c1e; font-weight: 600; border-bottom: 2px solid #e0412b; }
+
+.content { padding: 16px 16px 100px; }
+
+.card { background: #fff; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+.card-label { font-size: 12px; color: #8e8e93; margin-bottom: 8px; font-weight: 500; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+.field-label { font-size: 11px; color: #8e8e93; margin-bottom: 2px; }
+.field-val { font-size: 13px; }
+
+.pnl-pos { color: #0f6e56; background: #e1f5ee; font-size: 12px; padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+.pnl-neg { color: #993c1d; background: #faece7; font-size: 12px; padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+.ccy-usd { background: #e1f5ee; color: #0f6e56; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+.ccy-jpy { background: #e6f1fb; color: #185fa5; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+.ccy-eur { background: #faeeda; color: #854f0b; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+
+.btn-sell { flex: 1; padding: 8px; background: #e0412b; color: #fff; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; }
+.btn-ghost { padding: 8px 12px; background: none; border: 0.5px solid #c6c6c8; border-radius: 8px; font-size: 13px; cursor: pointer; color: #8e8e93; }
+.btn-primary { flex: 1; padding: 13px; background: #e0412b; color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn-cancel { flex: 1; padding: 13px; background: none; border: 0.5px solid #c6c6c8; border-radius: 10px; font-size: 15px; cursor: pointer; color: #3a3a3c; }
+
+.fab { position: fixed; bottom: 32px; right: 20px; width: 54px; height: 54px; border-radius: 27px; background: #e0412b; color: #fff; font-size: 28px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(224,65,43,0.4); z-index: 20; }
+
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 50; display: flex; align-items: flex-end; }
+.modal { background: #fff; border-radius: 20px 20px 0 0; padding: 20px 16px 40px; width: 100%; max-height: 85vh; overflow-y: auto; }
+.modal-title { font-size: 17px; font-weight: 600; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; }
+.modal-close { font-size: 22px; color: #8e8e93; background: none; border: none; cursor: pointer; line-height: 1; }
+
+.form-row { margin-bottom: 16px; }
+.form-label { font-size: 13px; color: #8e8e93; margin-bottom: 6px; display: block; }
+.form-input { width: 100%; padding: 11px 12px; border: 0.5px solid #c6c6c8; border-radius: 10px; font-size: 15px; background: #f2f2f7; outline: none; -webkit-appearance: none; }
+.form-input:focus { border-color: #e0412b; background: #fff; }
+select.form-input { appearance: none; -webkit-appearance: none; }
+.btn-row { display: flex; gap: 8px; margin-top: 20px; }
+
+.big-num { font-size: 22px; font-weight: 600; }
+.sub-num { font-size: 13px; color: #8e8e93; margin-top: 2px; }
+
+.date-group { font-size: 12px; color: #8e8e93; font-weight: 600; margin: 16px 0 8px; }
+.divider { border: none; border-top: 0.5px solid #e5e5ea; margin: 10px 0; }
+.empty { text-align: center; color: #8e8e93; font-size: 14px; margin-top: 60px; line-height: 1.8; }
+.error-msg { font-size: 13px; color: #993c1d; margin-bottom: 12px; }
+
+/* Segment controls */
+.seg { display: flex; background: #e5e5ea; border-radius: 8px; padding: 2px; gap: 2px; }
+.seg-btn { flex: 1; padding: 5px 2px; font-size: 12px; border: none; border-radius: 6px; background: none; color: #8e8e93; cursor: pointer; font-weight: 400; }
+.seg-btn.active { background: #fff; color: #1c1c1e; font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+
+/* CCY toggle */
+.ccy-toggle { display: flex; gap: 6px; margin-bottom: 12px; }
+.ccy-btn { padding: 5px 12px; font-size: 12px; border-radius: 6px; border: 0.5px solid #c6c6c8; background: #f2f2f7; color: #8e8e93; cursor: pointer; font-weight: 500; }
+.ccy-btn.on-USD { background: #e1f5ee; color: #0f6e56; border-color: #0f6e56; }
+.ccy-btn.on-JPY { background: #e6f1fb; color: #185fa5; border-color: #185fa5; }
+.ccy-btn.on-EUR { background: #faeeda; color: #854f0b; border-color: #854f0b; }
+
+/* Chart area */
+.chart-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.chart-inner { min-width: 320px; }
+svg text { font-family: -apple-system, sans-serif; }
+
+/* Rate popup */
+.rate-popup { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; display: flex; align-items: flex-start; justify-content: flex-end; padding: 110px 16px 0; pointer-events: none; }
+.rate-popup.open { pointer-events: all; }
+.rate-box { background: #fff; border-radius: 14px; padding: 16px; width: 240px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); transform: translateY(-10px) scale(0.95); opacity: 0; transition: all 0.18s ease; }
+.rate-popup.open .rate-box { transform: translateY(0) scale(1); opacity: 1; }
+.rate-row-item { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.rate-ccy-lbl { font-size: 13px; color: #8e8e93; min-width: 36px; font-weight: 500; }
+.rate-input { flex: 1; padding: 8px 10px; border: 0.5px solid #c6c6c8; border-radius: 8px; font-size: 14px; background: #f2f2f7; outline: none; }
+.rate-input:focus { border-color: #e0412b; background: #fff; }
+.rate-auto { font-size: 11px; color: #8e8e93; }
+.rate-auto.loading { color: #185fa5; }
+.rate-refresh { background: none; border: none; font-size: 13px; color: #185fa5; cursor: pointer; padding: 4px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-row">
+    <h1>도시락통FX</h1>
+    <div class="header-btns">
+      <button class="icon-btn" onclick="toggleRatePopup()" title="환율 설정">💱</button>
+      <button class="icon-btn" onclick="exportCSV()" title="내보내기">📤</button>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('overview')">투자현황</button>
+    <button class="tab" onclick="switchTab('open')">투자진행중</button>
+    <button class="tab" onclick="switchTab('closed')">투자완료</button>
+  </div>
+</div>
+
+<!-- Rate Popup -->
+<div class="rate-popup" id="rate-popup" onclick="closeRatePopupIfBg(event)">
+  <div class="rate-box">
+    <div style="font-size:14px;font-weight:600;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">
+      환율 설정
+      <button class="rate-refresh" onclick="fetchRates()">↻ 자동조회</button>
+    </div>
+    <div id="rate-status" class="rate-auto" style="margin-bottom:10px"></div>
+    <div id="rate-inputs"></div>
+    <p style="font-size:11px;color:#8e8e93;margin-top:8px">직접 입력 시 자동조회값보다 우선 적용됩니다</p>
+  </div>
+</div>
+
+<div id="tab-overview" class="content"></div>
+<div id="tab-open" class="content" style="display:none"></div>
+<div id="tab-closed" class="content" style="display:none"></div>
+
+<button class="fab" id="fab" onclick="openAddModal()" style="display:none">+</button>
+
+<!-- Add Modal -->
+<div class="overlay" id="add-modal" style="display:none" onclick="if(event.target===this)closeAddModal()">
+  <div class="modal">
+    <div class="modal-title">
+      <span>매수 추가</span>
+      <button class="modal-close" onclick="closeAddModal()">×</button>
+    </div>
+    <div id="add-error" class="error-msg" style="display:none"></div>
+    <div class="form-row"><label class="form-label">매수일</label><input type="date" id="f-date" class="form-input"></div>
+    <div class="form-row"><label class="form-label">통화</label>
+      <select id="f-ccy" class="form-input"><option value="USD">USD (달러)</option><option value="JPY">JPY (엔화)</option><option value="EUR">EUR (유로)</option></select>
+    </div>
+    <div class="form-row"><label class="form-label">기준환율</label><input type="number" id="f-rate" class="form-input" placeholder="예) 1520.02" inputmode="decimal"></div>
+    <div class="form-row"><label class="form-label">매수금액 (외화)</label><input type="number" id="f-fx" class="form-input" placeholder="예) 131577.21" inputmode="decimal"></div>
+    <div class="form-row"><label class="form-label">매수금액 KRW <span style="color:#8e8e93;font-size:11px">비우면 자동계산</span></label><input type="number" id="f-krw" class="form-input" placeholder="예) 199999990" inputmode="numeric"></div>
+    <div class="form-row"><label class="form-label">메모 (선택)</label><input type="text" id="f-note" class="form-input"></div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="saveTrade()">저장</button>
+      <button class="btn-cancel" onclick="closeAddModal()">취소</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sell Modal -->
+<div class="overlay" id="sell-modal" style="display:none" onclick="if(event.target===this)closeSellModal()">
+  <div class="modal">
+    <div class="modal-title">
+      <span id="sell-title">매도</span>
+      <button class="modal-close" onclick="closeSellModal()">×</button>
+    </div>
+    <div id="sell-error" class="error-msg" style="display:none"></div>
+    <div class="form-row"><label class="form-label">매도일</label><input type="date" id="s-date" class="form-input"></div>
+    <div class="form-row"><label class="form-label">매도 기준환율</label><input type="number" id="s-rate" class="form-input" placeholder="예) 1526.76" inputmode="decimal" oninput="updateSellPreview()"></div>
+    <div id="sell-preview" style="margin-bottom:12px;font-size:13px;color:#8e8e93;display:none"></div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="confirmSell()">확인</button>
+      <button class="btn-cancel" onclick="closeSellModal()">취소</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const STORAGE_KEY = 'fx_trades_v3';
+const RATES_KEY = 'fx_rates_v1';
+let trades = [];
+let autoRates = { USD: 0, JPY: 0, EUR: 0 };
+let manualRates = { USD: '', JPY: '', EUR: '' };
+let currentTab = 'overview';
+let sellTargetId = null;
+let ratePopupOpen = false;
+
+// Period & CCY filter state (shared between open/closed tabs)
+let periodMode = 'month'; // day | week | month | year
+let ccyFilter = { USD: true, JPY: true, EUR: true };
+
+// ── Storage ──────────────────────────────────────────────────────────────────
+function load() {
+  try { trades = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { trades = []; }
+  try {
+    const saved = JSON.parse(localStorage.getItem(RATES_KEY) || '{}');
+    if (saved.manual) manualRates = saved.manual;
+    if (saved.auto) autoRates = saved.auto;
+  } catch {}
+}
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(trades)); }
+function saveRates() { localStorage.setItem(RATES_KEY, JSON.stringify({ manual: manualRates, auto: autoRates })); }
+
+function effectiveRate(ccy) {
+  const m = parseFloat(manualRates[ccy]);
+  return (m && m > 0) ? m : (autoRates[ccy] || 0);
+}
+
+// ── Fetch rates ───────────────────────────────────────────────────────────────
+async function fetchRates() {
+  const statusEl = document.getElementById('rate-status');
+  if (statusEl) { statusEl.textContent = '조회중...'; statusEl.className = 'rate-auto loading'; }
+  try {
+    const res = await fetch('https://api.exchangerate-api.com/v4/latest/KRW');
+    const data = await res.json();
+    // rates are KRW per 1 foreign — we need foreign per KRW, then invert
+    // data.rates[USD] = how many USD per 1 KRW → KRW per USD = 1/data.rates[USD]
+    autoRates.USD = data.rates['USD'] ? Math.round((1 / data.rates['USD']) * 100) / 100 : 0;
+    autoRates.JPY = data.rates['JPY'] ? Math.round((1 / data.rates['JPY']) * 100) / 100 : 0;
+    autoRates.EUR = data.rates['EUR'] ? Math.round((1 / data.rates['EUR']) * 100) / 100 : 0;
+    saveRates();
+    if (statusEl) { statusEl.textContent = `자동조회 완료 (${new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})})`; statusEl.className = 'rate-auto'; }
+    renderRateInputs();
+    render();
+  } catch(e) {
+    if (statusEl) { statusEl.textContent = '자동조회 실패 (네트워크 확인)'; statusEl.className = 'rate-auto'; }
+  }
+}
+
+function renderRateInputs() {
+  const el = document.getElementById('rate-inputs');
+  if (!el) return;
+  el.innerHTML = ['USD','JPY','EUR'].map(c => {
+    const auto = autoRates[c] ? `자동: ${fmt(autoRates[c],2)}` : '자동: -';
+    return `<div class="rate-row-item">
+      <span class="rate-ccy-lbl">${c}</span>
+      <input class="rate-input" type="number" inputmode="decimal" value="${manualRates[c]||''}"
+        placeholder="${autoRates[c] ? fmt(autoRates[c],2) : '직접입력'}"
+        onchange="setManualRate('${c}',this.value)">
+      <span class="rate-auto">${auto}</span>
+    </div>`;
+  }).join('');
+}
+
+function setManualRate(ccy, val) {
+  manualRates[ccy] = val;
+  saveRates();
+  render();
+}
+
+function toggleRatePopup() {
+  ratePopupOpen = !ratePopupOpen;
+  const el = document.getElementById('rate-popup');
+  el.classList.toggle('open', ratePopupOpen);
+  if (ratePopupOpen) {
+    renderRateInputs();
+    const statusEl = document.getElementById('rate-status');
+    if (statusEl) statusEl.textContent = autoRates.USD ? `마지막 자동조회: ${fmt(autoRates.USD,2)}` : '자동조회 전';
+  }
+}
+function closeRatePopupIfBg(e) {
+  if (e.target === document.getElementById('rate-popup')) {
+    ratePopupOpen = false;
+    document.getElementById('rate-popup').classList.remove('open');
+  }
+}
+
+// ── Utils ────────────────────────────────────────────────────────────────────
+function fmt(n, d=0) {
+  if (n == null || isNaN(n)) return '-';
+  return Number(n).toLocaleString('ko-KR', {minimumFractionDigits:d, maximumFractionDigits:d});
+}
+function fmtFx(n, ccy) { return fmt(n, ccy==='JPY'?0:2)+' '+ccy; }
+function today() { return new Date().toISOString().slice(0,10); }
+function pnlBadge(val, pct) {
+  const pos = val >= 0; const cls = pos?'pnl-pos':'pnl-neg'; const s = pos?'+':'';
+  return `<span class="${cls}">${s}${fmt(val)}원 (${s}${Number(pct).toFixed(2)}%)</span>`;
+}
+function ccyTag(ccy) { return `<span class="ccy-${ccy.toLowerCase()}">${ccy}</span>`; }
+
+// ── Tab switching ─────────────────────────────────────────────────────────────
+function switchTab(name) {
+  currentTab = name;
+  ['overview','open','closed'].forEach(t => document.getElementById('tab-'+t).style.display = t===name?'':'none');
+  document.querySelectorAll('.tab').forEach((el,i) => el.classList.toggle('active', ['overview','open','closed'][i]===name));
+  document.getElementById('fab').style.display = name==='open'?'flex':'none';
+  render();
+}
+
+// ── Chart helpers ─────────────────────────────────────────────────────────────
+function periodLabel(dateStr, mode) {
+  const d = new Date(dateStr);
+  if (mode==='day') return dateStr.slice(5); // MM-DD
+  if (mode==='week') {
+    const start = new Date(d); start.setDate(d.getDate()-d.getDay());
+    return start.toISOString().slice(5,10);
+  }
+  if (mode==='month') return dateStr.slice(0,7);
+  if (mode==='year') return dateStr.slice(0,4);
+  return dateStr;
+}
+
+function buildChartData(tradeList, mode) {
+  // Accumulate pnl by period
+  const buckets = {};
+  for (const t of tradeList) {
+    const dateKey = t.sellDate || t.buyDate;
+    const label = periodLabel(dateKey, mode);
+    if (!buckets[label]) buckets[label] = { pnl: 0, count: 0 };
+    const rate = effectiveRate(t.ccy);
+    let pnl;
+    if (t.sellRate) {
+      pnl = t.buyFx * t.sellRate - t.buyKrw;
+    } else {
+      pnl = t.buyFx * (rate || t.buyRate) - t.buyKrw;
+    }
+    buckets[label].pnl += pnl;
+    buckets[label].count++;
+  }
+  const labels = Object.keys(buckets).sort();
+  // cumulative
+  let cum = 0;
+  const values = labels.map(l => { cum += buckets[l].pnl; return Math.round(cum); });
+  return { labels, values };
+}
+
+function renderChart(containerId, data) {
+  const { labels, values } = data;
+  if (labels.length === 0) {
+    document.getElementById(containerId).innerHTML = '<p style="text-align:center;color:#8e8e93;font-size:13px;padding:20px 0">데이터 없음</p>';
+    return;
+  }
+  const W = Math.max(320, labels.length * 48);
+  const H = 140;
+  const padL = 64, padR = 12, padT = 16, padB = 28;
+  const chartW = W - padL - padR;
+  const chartH = H - padT - padB;
+
+  const minV = Math.min(0, ...values);
+  const maxV = Math.max(0, ...values);
+  const range = maxV - minV || 1;
+
+  function xPos(i) { return padL + (i / Math.max(labels.length-1,1)) * chartW; }
+  function yPos(v) { return padT + (1 - (v - minV) / range) * chartH; }
+
+  // Gridlines & y-labels
+  const ticks = 4;
+  let gridHtml = '';
+  for (let i = 0; i <= ticks; i++) {
+    const v = minV + (range / ticks) * i;
+    const y = yPos(v);
+    const lbl = Math.abs(v) >= 1000000 ? (v/1000000).toFixed(1)+'M' : Math.abs(v) >= 1000 ? (v/1000).toFixed(0)+'K' : fmt(v);
+    gridHtml += `<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="#e5e5ea" stroke-width="0.5"/>`;
+    gridHtml += `<text x="${padL-4}" y="${y+4}" text-anchor="end" font-size="9" fill="#8e8e93">${lbl}</text>`;
+  }
+
+  // Zero line
+  const zeroY = yPos(0);
+  gridHtml += `<line x1="${padL}" y1="${zeroY}" x2="${W-padR}" y2="${zeroY}" stroke="#c6c6c8" stroke-width="1"/>`;
+
+  // Area path
+  let path = `M ${xPos(0)} ${zeroY}`;
+  for (let i = 0; i < values.length; i++) path += ` L ${xPos(i)} ${yPos(values[i])}`;
+  path += ` L ${xPos(values.length-1)} ${zeroY} Z`;
+
+  // Line path
+  let linePath = values.map((v,i) => `${i===0?'M':'L'} ${xPos(i)} ${yPos(v)}`).join(' ');
+
+  // X labels — show subset if many
+  let xLabels = '';
+  const step = Math.ceil(labels.length / 6);
+  labels.forEach((l, i) => {
+    if (i % step === 0 || i === labels.length-1) {
+      xLabels += `<text x="${xPos(i)}" y="${H-4}" text-anchor="middle" font-size="9" fill="#8e8e93">${l}</text>`;
+    }
+  });
+
+  // Dots for last point
+  const lastX = xPos(values.length-1), lastY = yPos(values[values.length-1]);
+  const lastV = values[values.length-1];
+  const dotColor = lastV >= 0 ? '#0f6e56' : '#e0412b';
+  const lastLbl = Math.abs(lastV) >= 1000000 ? (lastV/1000000).toFixed(2)+'M' : fmt(lastV);
+
+  const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+    ${gridHtml}
+    <path d="${path}" fill="${lastV>=0?'rgba(15,110,86,0.08)':'rgba(224,65,43,0.08)'}" />
+    <path d="${linePath}" fill="none" stroke="${dotColor}" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="${lastX}" cy="${lastY}" r="3.5" fill="${dotColor}"/>
+    <text x="${lastX}" y="${lastY-7}" text-anchor="middle" font-size="9" fill="${dotColor}" font-weight="600">${lastLbl}</text>
+    ${xLabels}
+  </svg>`;
+
+  document.getElementById(containerId).innerHTML = `<div class="chart-wrap"><div class="chart-inner">${svg}</div></div>`;
+}
+
+function renderTrendSection(containerId, tradeList) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+
+  const activeCcys = Object.keys(ccyFilter).filter(c => ccyFilter[c]);
+  const filtered = tradeList.filter(t => activeCcys.includes(t.ccy));
+
+  const ccyBtns = ['USD','JPY','EUR'].map(c =>
+    `<button class="ccy-btn ${ccyFilter[c]?'on-'+c:''}" onclick="toggleCcy('${c}')">${c}</button>`
+  ).join('');
+
+  const periodBtns = ['day','week','month','year'].map(p =>
+    `<button class="seg-btn ${periodMode===p?'active':''}" onclick="setPeriod('${p}')">${{day:'일',week:'주',month:'월',year:'연'}[p]}</button>`
+  ).join('');
+
+  el.innerHTML = `
+    <div class="card">
+      <div class="card-label">누적 손익 추이</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div class="ccy-toggle">${ccyBtns}</div>
+        <div class="seg" style="width:140px">${periodBtns}</div>
+      </div>
+      <div id="${containerId}-chart"></div>
+    </div>`;
+
+  const data = buildChartData(filtered, periodMode);
+  renderChart(containerId+'-chart', data);
+}
+
+function toggleCcy(ccy) {
+  const active = Object.values(ccyFilter).filter(Boolean).length;
+  if (ccyFilter[ccy] && active === 1) return; // 최소 1개
+  ccyFilter[ccy] = !ccyFilter[ccy];
+  render();
+}
+function setPeriod(p) { periodMode = p; render(); }
+
+// ── Render Overview ───────────────────────────────────────────────────────────
+function renderOverview() {
+  const el = document.getElementById('tab-overview');
+  const open = trades.filter(t => !t.sellRate);
+  const closed = trades.filter(t => t.sellRate);
+  const byCcy = {};
+  for (const t of open) {
+    if (!byCcy[t.ccy]) byCcy[t.ccy] = {buyKrw:0, buyFx:0};
+    byCcy[t.ccy].buyKrw += t.buyKrw;
+    byCcy[t.ccy].buyFx += t.buyFx;
+  }
+  let openRows = ''; let totalBuy=0, totalCur=0;
+  for (const [ccy, s] of Object.entries(byCcy)) {
+    const avg = s.buyFx>0 ? s.buyKrw/s.buyFx : 0;
+    const rate = effectiveRate(ccy) || avg;
+    const cur = s.buyFx * rate;
+    const pnl = cur - s.buyKrw; const pct = s.buyKrw>0?(pnl/s.buyKrw)*100:0;
+    totalBuy += s.buyKrw; totalCur += cur;
+    openRows += `<div style="margin-bottom:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">${ccyTag(ccy)}${pnlBadge(pnl,pct)}</div>
+      <div class="grid2">
+        <div><div class="field-label">매수금액</div><div class="field-val">${fmt(s.buyKrw)}원</div></div>
+        <div><div class="field-label">보유 ${ccy}</div><div class="field-val">${fmtFx(s.buyFx,ccy)}</div></div>
+        <div><div class="field-label">평균환율</div><div class="field-val">${fmt(avg,2)}</div></div>
+        <div><div class="field-label">현재환율</div><div class="field-val">${rate?fmt(rate,2):'입력필요'}</div></div>
+        <div><div class="field-label">평가금액</div><div class="field-val">${fmt(cur)}원</div></div>
+      </div>
+    </div>`;
+  }
+  const totalPnl = totalCur-totalBuy; const totalPct = totalBuy>0?(totalPnl/totalBuy)*100:0;
+  const closedPnl = closed.reduce((a,t)=>a+(t.buyFx*t.sellRate-t.buyKrw),0);
+
+  // Rate display in header
+  const rateDisplay = ['USD','JPY','EUR'].map(c => {
+    const r = effectiveRate(c);
+    const isManual = parseFloat(manualRates[c]) > 0;
+    return r ? `<span style="font-size:11px;color:${isManual?'#185fa5':'#8e8e93'}">${c} ${fmt(r,2)}${isManual?' ✎':''}</span>` : '';
+  }).filter(Boolean).join(' · ');
+
+  el.innerHTML = `
+    ${rateDisplay ? `<div style="margin-bottom:8px;padding:8px 12px;background:#fff;border-radius:8px;display:flex;gap:8px;flex-wrap:wrap">${rateDisplay}</div>` : ''}
+    <div class="card">
+      <div class="card-label">진행 현황</div>
+      ${open.length===0 ? '<p style="font-size:13px;color:#8e8e93">진행중인 투자 없음</p>' : openRows +
+        (Object.keys(byCcy).length>1 ? `<hr class="divider"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:13px;font-weight:500">합계</span>${pnlBadge(totalPnl,totalPct)}</div><div class="sub-num">${fmt(totalBuy)}원 → ${fmt(totalCur)}원</div>` : '')}
+    </div>
+    <div class="card">
+      <div class="card-label">완료 현황</div>
+      <span class="big-num" style="color:${closedPnl>=0?'#0f6e56':'#993c1d'}">${closedPnl>=0?'+':''}${fmt(closedPnl)}원</span>
+      ${closed.length>0?`<div class="sub-num">${closed.length}건 완료</div>`:''}
+    </div>`;
+}
+
+// ── Render Open ───────────────────────────────────────────────────────────────
+function renderOpen() {
+  const el = document.getElementById('tab-open');
+  const open = trades.filter(t => !t.sellRate).sort((a,b)=>b.buyDate.localeCompare(a.buyDate));
+  const activeCcys = Object.keys(ccyFilter).filter(c=>ccyFilter[c]);
+
+  // Trade cards
+  const grouped = {};
+  for (const t of open) { if(!grouped[t.buyDate])grouped[t.buyDate]=[]; grouped[t.buyDate].push(t); }
+
+  let cardsHtml = '';
+  for (const date of Object.keys(grouped).sort((a,b)=>b.localeCompare(a))) {
+    cardsHtml += `<div class="date-group">${date}</div>`;
+    for (const t of grouped[date]) {
+      const rate = effectiveRate(t.ccy)||t.buyRate;
+      const cur = t.buyFx*rate; const pnl=cur-t.buyKrw; const pct=t.buyKrw>0?(pnl/t.buyKrw)*100:0;
+      cardsHtml += `<div class="card" style="margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">${ccyTag(t.ccy)}${pnlBadge(pnl,pct)}</div>
+        <div class="grid2" style="margin-bottom:10px">
+          <div><div class="field-label">매수환율</div><div class="field-val">${fmt(t.buyRate,2)}</div></div>
+          <div><div class="field-label">${t.ccy}</div><div class="field-val">${fmtFx(t.buyFx,t.ccy)}</div></div>
+          <div><div class="field-label">매수금액</div><div class="field-val">${fmt(t.buyKrw)}원</div></div>
+          <div><div class="field-label">현재평가</div><div class="field-val">${fmt(cur)}원</div></div>
+        </div>
+        ${t.note?`<p style="font-size:12px;color:#8e8e93;margin-bottom:8px">${t.note}</p>`:''}
+        <div style="display:flex;gap:6px">
+          <button class="btn-sell" onclick="openSellModal('${t.id}')">매도</button>
+          <button class="btn-ghost" onclick="deleteTrade('${t.id}')">삭제</button>
+        </div>
+      </div>`;
+    }
+  }
+  if (open.length===0) cardsHtml = '<p class="empty">진행중인 투자 없음<br><br>+ 버튼으로 추가하세요</p>';
+
+  el.innerHTML = `<div id="trend-open"></div>${cardsHtml}`;
+  renderTrendSection('trend-open', open);
+}
+
+// ── Render Closed ─────────────────────────────────────────────────────────────
+function renderClosed() {
+  const el = document.getElementById('tab-closed');
+  const closed = trades.filter(t=>t.sellRate).sort((a,b)=>b.sellDate.localeCompare(a.sellDate));
+
+  if (closed.length===0) { el.innerHTML='<p class="empty">완료된 투자 없음</p>'; return; }
+
+  const totalBuy=closed.reduce((a,t)=>a+t.buyKrw,0);
+  const totalSell=closed.reduce((a,t)=>a+(t.buyFx*t.sellRate),0);
+  const totalPnl=totalSell-totalBuy; const totalPct=totalBuy>0?(totalPnl/totalBuy)*100:0;
+
+  const grouped={};
+  for (const t of closed){if(!grouped[t.sellDate])grouped[t.sellDate]=[];grouped[t.sellDate].push(t);}
+
+  let cardsHtml=`<div class="card" style="margin-bottom:16px">
+    <div class="card-label">누적 확정손익</div>
+    <span class="big-num" style="color:${totalPnl>=0?'#0f6e56':'#993c1d'}">${totalPnl>=0?'+':''}${fmt(totalPnl)}원</span>
+    <div class="sub-num">${fmt(totalBuy)}원 → ${fmt(totalSell)}원 (${totalPct>=0?'+':''}${totalPct.toFixed(2)}%)</div>
+  </div>`;
+
+  for (const date of Object.keys(grouped).sort((a,b)=>b.localeCompare(a))) {
+    cardsHtml += `<div class="date-group">${date} 매도</div>`;
+    for (const t of grouped[date]) {
+      const sellKrw=t.buyFx*t.sellRate; const pnl=sellKrw-t.buyKrw; const pct=t.buyKrw>0?(pnl/t.buyKrw)*100:0;
+      cardsHtml+=`<div class="card" style="margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-size:12px;color:#8e8e93">매수 ${t.buyDate}</span>${ccyTag(t.ccy)}
+        </div>
+        <div class="grid2" style="margin-bottom:8px">
+          <div><div class="field-label">매수환율</div><div class="field-val">${fmt(t.buyRate,2)}</div></div>
+          <div><div class="field-label">매도환율</div><div class="field-val">${fmt(t.sellRate,2)}</div></div>
+          <div><div class="field-label">매수금</div><div class="field-val">${fmt(t.buyKrw)}원</div></div>
+          <div><div class="field-label">매도금</div><div class="field-val">${fmt(sellKrw)}원</div></div>
+        </div>
+        ${pnlBadge(pnl,pct)}
+      </div>`;
+    }
+  }
+  el.innerHTML = `<div id="trend-closed"></div>${cardsHtml}`;
+  renderTrendSection('trend-closed', closed);
+}
+
+function render() {
+  if (currentTab==='overview') renderOverview();
+  else if (currentTab==='open') renderOpen();
+  else renderClosed();
+}
+
+// ── Add Trade ─────────────────────────────────────────────────────────────────
+function openAddModal() {
+  document.getElementById('f-date').value = today();
+  document.getElementById('f-ccy').value = 'USD';
+  ['f-rate','f-fx','f-krw','f-note'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('add-error').style.display = 'none';
+  document.getElementById('add-modal').style.display = 'flex';
+}
+function closeAddModal() { document.getElementById('add-modal').style.display='none'; }
+function saveTrade() {
+  const date=document.getElementById('f-date').value;
+  const ccy=document.getElementById('f-ccy').value;
+  const rate=parseFloat(document.getElementById('f-rate').value);
+  const fx=parseFloat(document.getElementById('f-fx').value);
+  const krwRaw=document.getElementById('f-krw').value;
+  const krw=krwRaw?parseFloat(krwRaw):(rate&&fx?Math.round(rate*fx):0);
+  const note=document.getElementById('f-note').value.trim();
+  const errEl=document.getElementById('add-error');
+  if (!date||!rate||!fx||!krw){errEl.textContent='매수일, 환율, 외화금액은 필수입니다';errEl.style.display='block';return;}
+  trades.unshift({id:Date.now().toString(),ccy,buyDate:date,buyRate:rate,buyFx:fx,buyKrw:krw,note});
+  save(); closeAddModal(); render();
+}
+
+// ── Delete ────────────────────────────────────────────────────────────────────
+function deleteTrade(id) {
+  if (!confirm('이 항목을 삭제할까요?')) return;
+  trades=trades.filter(t=>t.id!==id); save(); render();
+}
+
+// ── Sell ──────────────────────────────────────────────────────────────────────
+function openSellModal(id) {
+  sellTargetId=id;
+  const t=trades.find(x=>x.id===id);
+  document.getElementById('sell-title').textContent=`매도 — ${t.ccy} ${fmtFx(t.buyFx,t.ccy)}`;
+  document.getElementById('s-date').value=today();
+  document.getElementById('s-rate').value='';
+  document.getElementById('sell-preview').style.display='none';
+  document.getElementById('sell-error').style.display='none';
+  document.getElementById('sell-modal').style.display='flex';
+}
+function closeSellModal() { document.getElementById('sell-modal').style.display='none'; sellTargetId=null; }
+function updateSellPreview() {
+  const t=trades.find(x=>x.id===sellTargetId); if(!t)return;
+  const rate=parseFloat(document.getElementById('s-rate').value);
+  const prev=document.getElementById('sell-preview');
+  if(!rate){prev.style.display='none';return;}
+  const sellKrw=Math.round(t.buyFx*rate); const pnl=sellKrw-t.buyKrw;
+  const col=pnl>=0?'#0f6e56':'#e0412b';
+  prev.innerHTML=`예상 매도금액 ${fmt(sellKrw)}원 <span style="color:${col}">(${pnl>=0?'+':''}${fmt(pnl)}원)</span>`;
+  prev.style.display='block';
+}
+function confirmSell() {
+  const date=document.getElementById('s-date').value;
+  const rate=parseFloat(document.getElementById('s-rate').value);
+  const errEl=document.getElementById('sell-error');
+  if(!date||!rate){errEl.textContent='매도일과 환율을 입력해주세요';errEl.style.display='block';return;}
+  trades=trades.map(t=>t.id===sellTargetId?{...t,sellDate:date,sellRate:rate}:t);
+  save(); closeSellModal(); render();
+}
+
+// ── Export CSV ────────────────────────────────────────────────────────────────
+function exportCSV() {
+  const headers = ['ID','통화','매수일','매수환율','외화금액','매수금액KRW','메모','매도일','매도환율','매도금액KRW','손익KRW'];
+  const rows = trades.map(t => {
+    const sellKrw = t.sellRate ? Math.round(t.buyFx*t.sellRate) : '';
+    const pnl = t.sellRate ? Math.round(t.buyFx*t.sellRate - t.buyKrw) : '';
+    return [t.id, t.ccy, t.buyDate, t.buyRate, t.buyFx, t.buyKrw, t.note||'', t.sellDate||'', t.sellRate||'', sellKrw, pnl];
+  });
+  const csv = [headers, ...rows].map(r => r.map(v => `"${v}"`).join(',')).join('\n');
+  const blob = new Blob(['\uFEFF'+csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `도시락통FX_${today()}.csv`;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+load();
+switchTab('overview');
+fetchRates();
+</script>
+</body>
+</html>
