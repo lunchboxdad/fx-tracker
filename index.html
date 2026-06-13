@@ -9,45 +9,50 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; }
-body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f2f2f7; color: #1c1c1e; max-width: 480px; margin: 0 auto; display:flex; flex-direction:column; overflow:hidden; }
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #f2f2f7; color: #1c1c1e; max-width: 480px; margin: 0 auto; display:flex; flex-direction:column; overflow:hidden; -webkit-font-smoothing:antialiased; }
 
-.header { background: #fff; padding: 52px 16px 0; border-bottom: 0.5px solid #c6c6c8; flex:none; }
+.header { background: rgba(255,255,255,0.92); -webkit-backdrop-filter: saturate(180%) blur(12px); backdrop-filter: saturate(180%) blur(12px); padding: 52px 16px 0; border-bottom: 0.5px solid #d1d1d6; flex:none; }
 .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
-.header h1 { font-size: 24px; font-weight: 700; }
+.header h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.4px; }
 .header-btns { display: flex; gap: 8px; }
-.icon-btn { background: none; border: none; cursor: pointer; font-size: 20px; padding: 4px; color: #3a3a3c; }
+.icon-btn { background: none; border: none; cursor: pointer; font-size: 19px; padding: 4px; color: #007AFF; }
 
 .tabs { display: flex; }
-.tab { flex: 1; padding: 10px 4px; font-size: 13px; font-weight: 400; color: #8e8e93; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; }
-.tab.active { color: #1c1c1e; font-weight: 600; border-bottom: 2px solid #e0412b; }
+.tab { flex: 1; padding: 10px 4px; font-size: 13px; font-weight: 400; color: #8e8e93; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; letter-spacing: -0.1px; }
+.tab.active { color: #1c1c1e; font-weight: 600; border-bottom: 2px solid #007AFF; }
 
 /* Fixed rate bar — visible on all tabs */
-.rate-bar { flex:none; background:#fff; border-bottom:0.5px solid #c6c6c8; padding:8px 16px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; font-size:12px; }
-.rate-bar .refresh { margin-left:auto; background:none; border:none; color:#185fa5; font-size:12px; cursor:pointer; padding:2px 0; }
+.rate-bar { flex:none; background: rgba(255,255,255,0.92); -webkit-backdrop-filter: saturate(180%) blur(12px); backdrop-filter: saturate(180%) blur(12px); border-bottom:0.5px solid #d1d1d6; padding:9px 16px; display:flex; gap:0; align-items:center; font-size:12.5px; }
+.rate-bar .rate-items { display:flex; flex:1; justify-content: space-around; align-items:center; }
+.rate-bar .rate-item { display:flex; flex-direction:column; align-items:center; gap:1px; flex:1; }
+.rate-bar .rate-item .ccy-name { font-size:10.5px; color:#8e8e93; font-weight:600; letter-spacing:0.3px; }
+.rate-bar .rate-item .ccy-val { font-size:13.5px; font-weight:600; letter-spacing:-0.2px; }
+.rate-bar .refresh { background:#f2f2f7; border:none; color:#007AFF; font-size:12px; font-weight:600; cursor:pointer; padding:6px 10px; border-radius:8px; margin-left:8px; flex:none; }
 
 /* Tab pages — fixed top + scrollable list */
 .tab-page { flex:1; display:flex; flex-direction:column; overflow:hidden; min-height:0; width:100%; }
 .top-fixed { flex:none; padding: 12px 16px 4px; }
 .scroll-list { flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; padding: 0 16px 24px; }
 
-.card { background: #fff; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
-.card-label { font-size: 12px; color: #8e8e93; margin-bottom: 8px; font-weight: 500; }
+.card { background: #fff; border-radius: 14px; padding: 14px 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.card-label { font-size: 12px; color: #8e8e93; margin-bottom: 8px; font-weight: 600; letter-spacing: -0.1px; }
 
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }
 .field-label { font-size: 11px; color: #8e8e93; margin-bottom: 2px; }
 .field-val { font-size: 13px; }
 
 .pnl-pos { color: #0f6e56; background: #e1f5ee; font-size: 12px; padding: 2px 8px; border-radius: 6px; font-weight: 500; }
-.pnl-neg { color: #993c1d; background: #faece7; font-size: 12px; padding: 2px 8px; border-radius: 6px; font-weight: 500; }
+.pnl-neg { color: #FF3B30; background: #ffebea; font-size: 12px; padding: 2px 8px; border-radius: 6px; font-weight: 500; }
 .ccy-usd { background: #e1f5ee; color: #0f6e56; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
 .ccy-jpy { background: #e6f1fb; color: #185fa5; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
 .ccy-eur { background: #faeeda; color: #854f0b; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
 
-.btn-sell { flex: 1; padding: 8px; background: #e0412b; color: #fff; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; }
+.btn-sell { flex: 1; padding: 8px; background: #007AFF; color: #fff; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight:600; }
+.btn-delete { padding: 8px 14px; background: #ffebea; color: #FF3B30; border: none; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight:600; }
 .btn-ghost { padding: 8px 12px; background: none; border: 0.5px solid #c6c6c8; border-radius: 8px; font-size: 13px; cursor: pointer; color: #8e8e93; }
-.btn-primary { flex: 1; padding: 13px; background: #e0412b; color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.btn-primary { flex: 1; padding: 13px; background: #007AFF; color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
 .btn-cancel { flex: 1; padding: 13px; background: none; border: 0.5px solid #c6c6c8; border-radius: 10px; font-size: 15px; cursor: pointer; color: #3a3a3c; }
-.btn-add-inline { padding: 0 14px; background: #e0412b; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.btn-add-inline { padding: 0 14px; background: #007AFF; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; }
 
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 50; display: flex; align-items: flex-end; }
 .modal { background: #fff; border-radius: 20px 20px 0 0; padding: 20px 16px 40px; width: 100%; max-height: 85vh; overflow-y: auto; }
@@ -57,7 +62,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
 .form-row { margin-bottom: 16px; }
 .form-label { font-size: 13px; color: #8e8e93; margin-bottom: 6px; display: block; }
 .form-input { width: 100%; padding: 11px 12px; border: 0.5px solid #c6c6c8; border-radius: 10px; font-size: 15px; background: #f2f2f7; outline: none; -webkit-appearance: none; }
-.form-input:focus { border-color: #e0412b; background: #fff; }
+.form-input:focus { border-color: #007AFF; background: #fff; }
 select.form-input { appearance: none; -webkit-appearance: none; }
 .btn-row { display: flex; gap: 8px; margin-top: 20px; }
 
@@ -66,7 +71,7 @@ select.form-input { appearance: none; -webkit-appearance: none; }
 
 .divider { border: none; border-top: 0.5px solid #e5e5ea; margin: 10px 0; }
 .empty { text-align: center; color: #8e8e93; font-size: 14px; margin-top: 60px; line-height: 1.8; }
-.error-msg { font-size: 13px; color: #993c1d; margin-bottom: 12px; }
+.error-msg { font-size: 13px; color: #FF3B30; margin-bottom: 12px; }
 
 /* Segment controls */
 .seg { display: flex; background: #e5e5ea; border-radius: 8px; padding: 2px; gap: 2px; margin-bottom:10px; }
@@ -95,7 +100,7 @@ svg text { font-family: -apple-system, sans-serif; }
 .rate-row-item { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
 .rate-ccy-lbl { font-size: 13px; color: #8e8e93; min-width: 44px; font-weight: 500; }
 .rate-input { flex: 1; padding: 8px 10px; border: 0.5px solid #c6c6c8; border-radius: 8px; font-size: 14px; background: #f2f2f7; outline: none; }
-.rate-input:focus { border-color: #e0412b; background: #fff; }
+.rate-input:focus { border-color: #007AFF; background: #fff; }
 .rate-auto { font-size: 11px; color: #8e8e93; }
 .rate-auto.loading { color: #185fa5; }
 .rate-refresh { background: none; border: none; font-size: 13px; color: #185fa5; cursor: pointer; padding: 4px 0; }
@@ -103,7 +108,7 @@ svg text { font-family: -apple-system, sans-serif; }
 /* Edit menu dropdown */
 .menu-wrap { position: relative; display:flex; align-items:center; gap:6px; }
 .menu-dropdown { position: absolute; top: 34px; right: 28px; background: #fff; border: 0.5px solid #c6c6c8; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); z-index: 100; min-width: 100px; overflow:hidden; }
-.menu-item { display:block; width:100%; padding: 10px 14px; background: none; border: none; text-align:left; font-size: 13px; color: #e0412b; cursor:pointer; }
+.menu-item { display:block; width:100%; padding: 10px 14px; background: none; border: none; text-align:left; font-size: 13px; color: #FF3B30; cursor:pointer; }
 
 /* Checkbox rows */
 .checkbox-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:14px; }
@@ -264,9 +269,12 @@ svg text { font-family: -apple-system, sans-serif; }
     <div class="form-row"><label class="form-label">Repo 이름</label><input type="text" id="gh-repo" class="form-input" placeholder="예) fx-backup"></div>
     <div class="form-row"><label class="form-label">백업 파일 경로</label><input type="text" id="gh-path" class="form-input" placeholder="예) fx_trades_backup.json"></div>
     <p id="gh-last" style="font-size:12px;color:#8e8e93;margin-bottom:4px"></p>
-    <p style="font-size:11px;color:#8e8e93;margin-bottom:12px">앱을 열 때마다 마지막 백업 후 24시간이 지났는지 확인하여 자동으로 백업합니다. 토큰은 이 브라우저에만 저장됩니다.</p>
+    <p style="font-size:11px;color:#8e8e93;margin-bottom:12px">변경사항은 자동으로 GitHub에 백업되고(약 2초 후), 앱을 열 때 GitHub의 최신 데이터를 자동으로 불러옵니다. 다른 기기에서 최신 데이터를 강제로 받아오려면 "지금 불러오기"를 사용하세요. 토큰은 이 브라우저에만 저장됩니다.</p>
     <div class="btn-row">
       <button class="btn-primary" onclick="saveAndBackup()">저장 및 즉시 백업</button>
+      <button class="btn-ghost" style="flex:1" onclick="manualRestore()">지금 불러오기</button>
+    </div>
+    <div class="btn-row">
       <button class="btn-cancel" onclick="closeSettingsModal()">닫기</button>
     </div>
   </div>
@@ -277,6 +285,8 @@ const STORAGE_KEY = 'fx_trades_v3';
 const RATES_KEY = 'fx_rates_v1';
 const SETTINGS_KEY = 'fx_settings_v1';
 const LAST_BACKUP_KEY = 'fx_last_backup';
+const CLOSED_RANGE_KEY = 'fx_closed_range_v1';
+const TREND_COLLAPSE_KEY = 'fx_trend_collapse_v1';
 
 let trades = [];
 let autoRates = { USD: 0, JPY: 0, EUR: 0 };
@@ -290,11 +300,14 @@ let periodMode = 'month'; // day | week | month | year
 let sortOpen = 'date_desc';
 let sortClosed = 'date_desc';
 let closedRange = { start: '', end: '' };
+let closedRangeEditOpen = false;
+let trendCollapsed = { 'trend-open': false, 'trend-closed': false };
 
 let exportFilters = { start:'', end:'', buy:true, sell:true, USD:true, JPY:true, EUR:true };
 let exportStage = 'select';
 
 let ghSettings = { token:'', owner:'', repo:'', path:'fx_trades_backup.json' };
+let backupTimer = null;
 
 // ── Storage ──────────────────────────────────────────────────────────────────
 function load() {
@@ -308,10 +321,20 @@ function load() {
     const s = JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
     ghSettings = { ...ghSettings, ...s };
   } catch {}
+  try {
+    const cr = JSON.parse(localStorage.getItem(CLOSED_RANGE_KEY) || '{}');
+    if (cr.start !== undefined) closedRange = { start: cr.start||'', end: cr.end||'' };
+  } catch {}
+  try {
+    const tc = JSON.parse(localStorage.getItem(TREND_COLLAPSE_KEY) || '{}');
+    trendCollapsed = { ...trendCollapsed, ...tc };
+  } catch {}
   migrateJPY();
 }
-function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(trades)); }
-function saveRates() { localStorage.setItem(RATES_KEY, JSON.stringify({ manual: manualRates, auto: autoRates })); }
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(trades)); scheduleBackup(); }
+function saveRates() { localStorage.setItem(RATES_KEY, JSON.stringify({ manual: manualRates, auto: autoRates })); scheduleBackup(); }
+function saveClosedRange() { localStorage.setItem(CLOSED_RANGE_KEY, JSON.stringify(closedRange)); }
+function saveTrendCollapse() { localStorage.setItem(TREND_COLLAPSE_KEY, JSON.stringify(trendCollapsed)); }
 function saveSettings() {
   ghSettings = {
     token: document.getElementById('gh-token').value.trim(),
@@ -414,11 +437,13 @@ function renderRateBar() {
   const items = ['USD','JPY','EUR'].map(c => {
     const r = effectiveRate(c);
     const isManual = parseFloat(manualRates[c]) > 0;
-    const lbl = c;
-    if (!r) return `<span style="color:#8e8e93">${lbl} -</span>`;
-    return `<span style="color:${isManual?'#185fa5':'#1c1c1e'};font-weight:500">${lbl} ${fmt(r,2)}${isManual?' ✎':''}</span>`;
-  }).join('<span style="color:#c6c6c8">·</span>');
-  el.innerHTML = `${items}<button class="refresh" onclick="toggleRatePopup()">환율설정</button>`;
+    const valHtml = r ? `${fmt(r,2)}${isManual?' ✎':''}` : '-';
+    return `<div class="rate-item">
+      <span class="ccy-name">${c}</span>
+      <span class="ccy-val" style="color:${!r?'#c6c6c8':isManual?'#007AFF':'#1c1c1e'}">${valHtml}</span>
+    </div>`;
+  }).join('');
+  el.innerHTML = `<div class="rate-items">${items}</div><button class="refresh" onclick="toggleRatePopup()">환율설정</button>`;
 }
 
 // ── Utils ────────────────────────────────────────────────────────────────────
@@ -541,7 +566,7 @@ function renderChart(containerId, data) {
 
   const lastX = xPos(values.length-1), lastY = yPos(values[values.length-1]);
   const lastV = values[values.length-1];
-  const dotColor = lastV >= 0 ? '#0f6e56' : '#e0412b';
+  const dotColor = lastV >= 0 ? '#0f6e56' : '#FF3B30';
   const lastLbl = Math.abs(lastV) >= 1000000 ? (lastV/1000000).toFixed(2)+'M' : fmt(lastV);
 
   const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
@@ -663,6 +688,18 @@ function renderTrendSection(containerId, tradeList) {
   const el = document.getElementById(containerId);
   if (!el) return;
 
+  const collapsed = !!trendCollapsed[containerId];
+  const arrow = collapsed ? '▸' : '▾';
+
+  if (collapsed) {
+    el.innerHTML = `<div class="card">
+      <div class="card-label" style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:0" onclick="toggleTrend('${containerId}')">
+        <span>누적 손익 추이</span><span style="color:#c6c6c8">${arrow}</span>
+      </div>
+    </div>`;
+    return;
+  }
+
   const periodBtns = ['day','week','month','year'].map(p =>
     `<button class="seg-btn ${periodMode===p?'active':''}" onclick="setPeriod('${p}')">${{day:'일',week:'주',month:'월',year:'연'}[p]}</button>`
   ).join('');
@@ -675,13 +712,20 @@ function renderTrendSection(containerId, tradeList) {
   }).join('');
 
   el.innerHTML = `<div class="card">
-    <div class="card-label">누적 손익 추이</div>
+    <div class="card-label" style="cursor:pointer;display:flex;justify-content:space-between;align-items:center" onclick="toggleTrend('${containerId}')">
+      <span>누적 손익 추이</span><span style="color:#c6c6c8">${arrow}</span>
+    </div>
     <div class="seg">${periodBtns}</div>
     <div class="ccy-toggle">${toggleBtns}</div>
     <div id="${containerId}-chart"></div>
   </div>`;
 
   renderMultiChart(`${containerId}-chart`, tradeList, periodMode, chartToggle);
+}
+function toggleTrend(containerId) {
+  trendCollapsed[containerId] = !trendCollapsed[containerId];
+  saveTrendCollapse();
+  render();
 }
 function setPeriod(p) { periodMode = p; render(); }
 
@@ -729,7 +773,7 @@ function renderOverview() {
     </div>
     <div class="card">
       <div class="card-label">완료 현황</div>
-      <span class="big-num" style="color:${closedPnl>=0?'#0f6e56':'#993c1d'}">${closedPnl>=0?'+':''}${fmt(closedPnl)}원</span>
+      <span class="big-num" style="color:${closedPnl>=0?'#0f6e56':'#FF3B30'}">${closedPnl>=0?'+':''}${fmt(closedPnl)}원</span>
       ${closed.length>0?`<div class="sub-num">${closedPct>=0?'+':''}${closedPct.toFixed(2)}% · ${closed.length}건 완료</div>`:''}
     </div>`;
 }
@@ -770,8 +814,14 @@ function renderOpenCard(t) {
     ${t.note?`<p style="font-size:12px;color:#8e8e93;margin-bottom:8px">${escapeHtml(t.note)}</p>`:''}
     <div style="display:flex;gap:6px">
       <button class="btn-sell" onclick="event.stopPropagation();openSellModal('${t.id}')">매도</button>
+      <button class="btn-delete" onclick="event.stopPropagation();quickDelete('${t.id}')">삭제</button>
     </div>
   </div>`;
+}
+
+function toggleClosedRangeEdit() {
+  closedRangeEditOpen = !closedRangeEditOpen;
+  render();
 }
 
 // ── Render Closed ─────────────────────────────────────────────────────────────
@@ -787,16 +837,25 @@ function renderClosed() {
   const totalSell = closed.reduce((a,t)=>a+t.buyFx*krwRate(t.ccy,t.sellRate),0);
   const totalPnl = totalSell-totalBuy; const totalPct = totalBuy>0?(totalPnl/totalBuy)*100:0;
 
+  const rangeLabel = (closedRange.start || closedRange.end)
+    ? `${closedRange.start || '전체'} ~ ${closedRange.end || '전체'}`
+    : '전체 기간';
+
+  const rangeEditor = closedRangeEditOpen ? `
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <input type="date" id="cr-start" class="form-input" style="font-size:13px;flex:1;min-width:120px" value="${closedRange.start}" onchange="closedRange.start=this.value;saveClosedRange();render()">
+        <input type="date" id="cr-end" class="form-input" style="font-size:13px;flex:1;min-width:120px" value="${closedRange.end}" onchange="closedRange.end=this.value;saveClosedRange();render()">
+        <button class="btn-ghost" onclick="closedRange={start:'',end:''};saveClosedRange();render()">초기화</button>
+      </div>` : '';
+
   top.innerHTML = `
     <div id="trend-closed"></div>
     <div class="card" style="margin-bottom:10px">
-      <div class="card-label">기간별 확정손익</div>
-      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-        <input type="date" id="cr-start" class="form-input" style="font-size:13px;flex:1;min-width:120px" value="${closedRange.start}" onchange="closedRange.start=this.value;render()">
-        <input type="date" id="cr-end" class="form-input" style="font-size:13px;flex:1;min-width:120px" value="${closedRange.end}" onchange="closedRange.end=this.value;render()">
-        <button class="btn-ghost" onclick="closedRange={start:'',end:''};render()">초기화</button>
+      <div class="card-label" style="cursor:pointer;display:flex;justify-content:space-between;align-items:center" onclick="toggleClosedRangeEdit()">
+        <span>기간별 확정손익 · ${rangeLabel}</span><span style="color:#c6c6c8">${closedRangeEditOpen?'▾':'▸'}</span>
       </div>
-      <span class="big-num" style="color:${totalPnl>=0?'#0f6e56':'#993c1d'}">${totalPnl>=0?'+':''}${fmt(totalPnl)}원</span>
+      ${rangeEditor}
+      <span class="big-num" style="color:${totalPnl>=0?'#0f6e56':'#FF3B30'}">${totalPnl>=0?'+':''}${fmt(totalPnl)}원</span>
       <div class="sub-num">${fmt(totalBuy)}원 → ${fmt(totalSell)}원 (${totalPct>=0?'+':''}${totalPct.toFixed(2)}%) · ${closed.length}건</div>
     </div>
     <div class="sort-row">
@@ -822,7 +881,10 @@ function renderClosedCard(t) {
       <div><div class="field-label">매도금</div><div class="field-val">${fmt(sellKrw)}원</div></div>
     </div>
     ${t.note?`<p style="font-size:12px;color:#8e8e93;margin-bottom:8px">${escapeHtml(t.note)}</p>`:''}
-    ${pnlBadge(pnl,pct)}
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:6px">
+      ${pnlBadge(pnl,pct)}
+      <button class="btn-delete" onclick="event.stopPropagation();quickDelete('${t.id}')">삭제</button>
+    </div>
   </div>`;
 }
 
@@ -884,7 +946,7 @@ function updateSellPreview() {
   const prev=document.getElementById('sell-preview');
   if(!rate){prev.style.display='none';return;}
   const sellKrw=Math.round(t.buyFx*krwRate(t.ccy,rate)); const pnl=sellKrw-t.buyKrw;
-  const col=pnl>=0?'#0f6e56':'#e0412b';
+  const col=pnl>=0?'#0f6e56':'#FF3B30';
   prev.innerHTML=`예상 매도금액 ${fmt(sellKrw)}원 <span style="color:${col}">(${pnl>=0?'+':''}${fmt(pnl)}원)</span>`;
   prev.style.display='block';
 }
@@ -895,6 +957,13 @@ function confirmSell() {
   if(!date||!rate){errEl.textContent='매도일과 환율을 입력해주세요';errEl.style.display='block';return;}
   trades=trades.map(t=>t.id===sellTargetId?{...t,sellDate:date,sellRate:rate}:t);
   save(); closeSellModal(); render(); checkAutoBackup();
+}
+
+function quickDelete(id) {
+  const t = trades.find(x=>x.id===id); if (!t) return;
+  if (!confirm('이 항목을 삭제할까요?')) return;
+  trades = trades.filter(x=>x.id!==id);
+  save(); render(); checkAutoBackup();
 }
 
 // ── Edit / Delete / Restore ──────────────────────────────────────────────────
@@ -1063,18 +1132,7 @@ function openSettingsModal() {
 function closeSettingsModal() { document.getElementById('settings-modal').style.display='none'; }
 async function saveAndBackup() {
   saveSettings();
-  const errEl = document.getElementById('settings-error');
-  const infoEl = document.getElementById('settings-info');
-  errEl.style.display='none'; infoEl.style.display='none';
-  try {
-    await doBackup();
-    infoEl.textContent = '백업 완료!';
-    infoEl.style.display='block';
-    document.getElementById('gh-last').textContent = `마지막 백업: ${new Date().toLocaleString('ko-KR')}`;
-  } catch(e) {
-    errEl.textContent = '백업 실패: ' + e.message;
-    errEl.style.display='block';
-  }
+  await manualBackup();
 }
 async function doBackup() {
   if (!ghSettings.token || !ghSettings.owner || !ghSettings.repo) throw new Error('GitHub 설정을 모두 입력해주세요');
@@ -1099,6 +1157,32 @@ async function doBackup() {
   }
   localStorage.setItem(LAST_BACKUP_KEY, new Date().toISOString());
 }
+async function doRestore() {
+  if (!ghSettings.token || !ghSettings.owner || !ghSettings.repo) throw new Error('GitHub 설정을 모두 입력해주세요');
+  const apiUrl = `https://api.github.com/repos/${ghSettings.owner}/${ghSettings.repo}/contents/${ghSettings.path}`;
+  const res = await fetch(apiUrl, { headers: { Authorization: `Bearer ${ghSettings.token}`, Accept:'application/vnd.github+json' } });
+  if (!res.ok) {
+    if (res.status === 404) throw new Error('백업 파일이 아직 없습니다 (먼저 백업을 실행해주세요)');
+    const j = await res.json().catch(()=>({}));
+    throw new Error(j.message || `HTTP ${res.status}`);
+  }
+  const j = await res.json();
+  const payload = JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))));
+  if (Array.isArray(payload.trades)) trades = payload.trades;
+  if (payload.autoRates) autoRates = payload.autoRates;
+  if (payload.manualRates) manualRates = payload.manualRates;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(trades));
+  localStorage.setItem(RATES_KEY, JSON.stringify({ manual: manualRates, auto: autoRates }));
+  migrateJPY();
+}
+// Debounced push: any local change syncs to GitHub a couple seconds after the user stops editing
+function scheduleBackup() {
+  if (!ghSettings.token || !ghSettings.owner || !ghSettings.repo) return;
+  if (backupTimer) clearTimeout(backupTimer);
+  backupTimer = setTimeout(() => {
+    doBackup().catch(()=>{ /* silent — user can retry from settings */ });
+  }, 2000);
+}
 function checkAutoBackup() {
   if (!ghSettings.token || !ghSettings.owner || !ghSettings.repo) return;
   const last = localStorage.getItem(LAST_BACKUP_KEY);
@@ -1107,12 +1191,50 @@ function checkAutoBackup() {
     doBackup().catch(()=>{ /* silent — user can retry from settings */ });
   }
 }
+// On startup, pull the latest data from GitHub (if configured) before first render
+async function initialSync() {
+  if (!ghSettings.token || !ghSettings.owner || !ghSettings.repo) return;
+  try {
+    await doRestore();
+    render();
+  } catch {}
+}
+async function manualBackup() {
+  const errEl = document.getElementById('settings-error');
+  const infoEl = document.getElementById('settings-info');
+  errEl.style.display='none'; infoEl.style.display='none';
+  try {
+    await doBackup();
+    infoEl.textContent = '백업 완료!';
+    infoEl.style.display='block';
+    document.getElementById('gh-last').textContent = `마지막 백업: ${new Date().toLocaleString('ko-KR')}`;
+  } catch(e) {
+    errEl.textContent = '백업 실패: ' + e.message;
+    errEl.style.display='block';
+  }
+}
+async function manualRestore() {
+  const errEl = document.getElementById('settings-error');
+  const infoEl = document.getElementById('settings-info');
+  errEl.style.display='none'; infoEl.style.display='none';
+  if (!confirm('GitHub의 백업 데이터를 불러와 현재 기기의 데이터를 덮어씁니다. 계속할까요?')) return;
+  try {
+    await doRestore();
+    infoEl.textContent = '불러오기 완료! 화면을 갱신합니다.';
+    infoEl.style.display='block';
+    render();
+  } catch(e) {
+    errEl.textContent = '불러오기 실패: ' + e.message;
+    errEl.style.display='block';
+  }
+}
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 load();
 switchTab('overview');
 fetchRates();
 checkAutoBackup();
+initialSync();
 </script>
 </body>
 </html>
