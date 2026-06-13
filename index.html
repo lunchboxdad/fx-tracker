@@ -73,6 +73,11 @@ select.form-input { appearance: none; -webkit-appearance: none; }
 .seg-btn { flex: 1; padding: 5px 2px; font-size: 12px; border: none; border-radius: 6px; background: none; color: #8e8e93; cursor: pointer; font-weight: 400; }
 .seg-btn.active { background: #fff; color: #1c1c1e; font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
 
+/* Chart currency toggle buttons */
+.ccy-toggle { display: flex; gap: 6px; margin-bottom: 10px; }
+.ccy-toggle-btn { flex: 1; padding: 6px 2px; font-size: 12px; font-weight: 600; border: 1px solid #e5e5ea; border-radius: 6px; background: #fff; color: #c6c6c8; cursor: pointer; transition: all 0.12s ease; }
+.ccy-toggle-btn.active { color: #fff; border-color: transparent; }
+
 /* Sort row */
 .sort-row { display:flex; gap:8px; margin-bottom:10px; align-items:center; }
 .sort-select { flex:1; padding:9px 10px; font-size:13px; }
@@ -83,9 +88,9 @@ select.form-input { appearance: none; -webkit-appearance: none; }
 svg text { font-family: -apple-system, sans-serif; }
 
 /* Rate popup */
-.rate-popup { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; display: flex; align-items: flex-start; justify-content: flex-end; padding: 110px 16px 0; pointer-events: none; }
-.rate-popup.open { pointer-events: all; }
-.rate-box { background: #fff; border-radius: 14px; padding: 16px; width: 240px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); transform: translateY(-10px) scale(0.95); opacity: 0; transition: all 0.18s ease; }
+.rate-popup { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; display: flex; align-items: flex-start; justify-content: flex-end; padding: 110px 16px 0; background: rgba(0,0,0,0.4); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.18s ease; }
+.rate-popup.open { opacity: 1; visibility: visible; pointer-events: all; }
+.rate-box { background: #fff; border-radius: 14px; padding: 16px; width: 240px; max-width: calc(100vw - 32px); box-shadow: 0 8px 32px rgba(0,0,0,0.18); transform: translateY(-10px) scale(0.95); opacity: 0; transition: all 0.18s ease; }
 .rate-popup.open .rate-box { transform: translateY(0) scale(1); opacity: 1; }
 .rate-row-item { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
 .rate-ccy-lbl { font-size: 13px; color: #8e8e93; min-width: 44px; font-weight: 500; }
@@ -169,7 +174,7 @@ svg text { font-family: -apple-system, sans-serif; }
     <div id="add-error" class="error-msg" style="display:none"></div>
     <div class="form-row"><label class="form-label">매수일</label><input type="date" id="f-date" class="form-input"></div>
     <div class="form-row"><label class="form-label">통화</label>
-      <select id="f-ccy" class="form-input"><option value="USD">USD (달러)</option><option value="JPY">JPY (엔화)</option><option value="EUR">EUR (유로)</option></select>
+      <select id="f-ccy" class="form-input" onchange="updateAddRateDefault()"><option value="USD">USD (달러)</option><option value="JPY">JPY (엔화)</option><option value="EUR">EUR (유로)</option></select>
     </div>
     <div class="form-row"><label class="form-label">기준환율 <span style="color:#8e8e93;font-size:11px">JPY는 100엔당 (예: 952.30)</span></label><input type="number" id="f-rate" class="form-input" placeholder="예) 1520.02" inputmode="decimal"></div>
     <div class="form-row"><label class="form-label">매수금액 (외화)</label><input type="number" id="f-fx" class="form-input" placeholder="예) 131577.21" inputmode="decimal"></div>
@@ -367,7 +372,7 @@ function renderRateInputs() {
   const el = document.getElementById('rate-inputs');
   if (!el) return;
   el.innerHTML = ['USD','JPY','EUR'].map(c => {
-    const lbl = c === 'JPY' ? 'JPY(100)' : c;
+    const lbl = c;
     const auto = autoRates[c] ? `자동: ${fmt(autoRates[c],2)}` : '자동: -';
     return `<div class="rate-row-item">
       <span class="rate-ccy-lbl">${lbl}</span>
@@ -409,7 +414,7 @@ function renderRateBar() {
   const items = ['USD','JPY','EUR'].map(c => {
     const r = effectiveRate(c);
     const isManual = parseFloat(manualRates[c]) > 0;
-    const lbl = c === 'JPY' ? 'JPY(100)' : c;
+    const lbl = c;
     if (!r) return `<span style="color:#8e8e93">${lbl} -</span>`;
     return `<span style="color:${isManual?'#185fa5':'#1c1c1e'};font-weight:500">${lbl} ${fmt(r,2)}${isManual?' ✎':''}</span>`;
   }).join('<span style="color:#c6c6c8">·</span>');
@@ -551,7 +556,109 @@ function renderChart(containerId, data) {
   target.innerHTML = `<div class="chart-wrap"><div class="chart-inner">${svg}</div></div>`;
 }
 
-// Renders 4 stacked charts: ALL, USD, JPY, EUR, sharing one period selector
+const CHART_COLORS = { ALL:'#1c1c1e', USD:'#0f6e56', JPY:'#185fa5', EUR:'#854f0b' };
+
+// Renders one chart overlaying multiple series (ALL/USD/JPY/EUR), based on chartToggle state
+function renderMultiChart(containerId, tradeList, mode, toggles) {
+  const target = document.getElementById(containerId);
+  if (!target) return;
+  const ccys = ['ALL','USD','JPY','EUR'];
+  const active = ccys.filter(c => toggles[c]);
+
+  if (active.length === 0) {
+    target.innerHTML = '<p style="text-align:center;color:#8e8e93;font-size:13px;padding:16px 0">표시할 통화를 선택하세요</p>';
+    return;
+  }
+
+  // Build per-series data first
+  const seriesData = {};
+  const labelSet = new Set();
+  for (const c of active) {
+    const list = c==='ALL' ? tradeList : tradeList.filter(t=>t.ccy===c);
+    const d = buildChartData(list, mode);
+    seriesData[c] = d;
+    d.labels.forEach(l=>labelSet.add(l));
+  }
+  const labels = [...labelSet].sort();
+
+  if (labels.length === 0) {
+    target.innerHTML = '<p style="text-align:center;color:#8e8e93;font-size:13px;padding:16px 0">데이터 없음</p>';
+    return;
+  }
+
+  // Align each series onto the unified label set, carrying forward last cumulative value
+  for (const c of active) {
+    const d = seriesData[c];
+    const map = {};
+    d.labels.forEach((l,i)=>{ map[l]=d.values[i]; });
+    let last = 0;
+    seriesData[c].aligned = labels.map(l => { if (l in map) last = map[l]; return last; });
+  }
+
+  const W = Math.max(280, labels.length * 44);
+  const H = 120;
+  const padL = 56, padR = 10, padT = 14, padB = 24;
+  const chartW = W - padL - padR;
+  const chartH = H - padT - padB;
+
+  let allVals = [];
+  active.forEach(c => allVals.push(...seriesData[c].aligned));
+  const minV = Math.min(0, ...allVals);
+  const maxV = Math.max(0, ...allVals);
+  const range = maxV - minV || 1;
+
+  function xPos(i) { return padL + (i / Math.max(labels.length-1,1)) * chartW; }
+  function yPos(v) { return padT + (1 - (v - minV) / range) * chartH; }
+
+  const ticks = 4;
+  let gridHtml = '';
+  for (let i = 0; i <= ticks; i++) {
+    const v = minV + (range / ticks) * i;
+    const y = yPos(v);
+    const lbl = Math.abs(v) >= 1000000 ? (v/1000000).toFixed(1)+'M' : Math.abs(v) >= 1000 ? (v/1000).toFixed(0)+'K' : fmt(v);
+    gridHtml += `<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="#e5e5ea" stroke-width="0.5"/>`;
+    gridHtml += `<text x="${padL-4}" y="${y+4}" text-anchor="end" font-size="9" fill="#8e8e93">${lbl}</text>`;
+  }
+  const zeroY = yPos(0);
+  gridHtml += `<line x1="${padL}" y1="${zeroY}" x2="${W-padR}" y2="${zeroY}" stroke="#c6c6c8" stroke-width="1"/>`;
+
+  let xLabels = '';
+  const step = Math.ceil(labels.length / 6);
+  labels.forEach((l, i) => {
+    if (i % step === 0 || i === labels.length-1) {
+      xLabels += `<text x="${xPos(i)}" y="${H-4}" text-anchor="middle" font-size="9" fill="#8e8e93">${l}</text>`;
+    }
+  });
+
+  let seriesSvg = '';
+  for (const c of active) {
+    const values = seriesData[c].aligned;
+    const color = CHART_COLORS[c];
+    const linePath = values.map((v,i) => `${i===0?'M':'L'} ${xPos(i)} ${yPos(v)}`).join(' ');
+    const lastX = xPos(values.length-1), lastY = yPos(values[values.length-1]);
+    const lastV = values[values.length-1];
+    const lastLbl = (active.length===1 ? (c+': ') : (c+' ')) + (Math.abs(lastV) >= 1000000 ? (lastV/1000000).toFixed(2)+'M' : fmt(lastV));
+    seriesSvg += `<path d="${linePath}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linejoin="round"/>`;
+    seriesSvg += `<circle cx="${lastX}" cy="${lastY}" r="3" fill="${color}"/>`;
+    seriesSvg += `<text x="${lastX}" y="${lastY-7}" text-anchor="middle" font-size="9" fill="${color}" font-weight="600">${lastLbl}</text>`;
+  }
+
+  const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+    ${gridHtml}
+    ${seriesSvg}
+    ${xLabels}
+  </svg>`;
+
+  target.innerHTML = `<div class="chart-wrap"><div class="chart-inner">${svg}</div></div>`;
+}
+
+let chartToggle = { ALL: true, USD: false, JPY: false, EUR: false };
+function toggleChartCcy(c) {
+  chartToggle[c] = !chartToggle[c];
+  render();
+}
+
+// Renders one overlay chart (ALL/USD/JPY/EUR togglable) with a shared period selector
 function renderTrendSection(containerId, tradeList) {
   const el = document.getElementById(containerId);
   if (!el) return;
@@ -561,20 +668,20 @@ function renderTrendSection(containerId, tradeList) {
   ).join('');
 
   const ccys = ['ALL','USD','JPY','EUR'];
-  let html = `<div class="card">
-    <div class="card-label">누적 손익 추이</div>
-    <div class="seg">${periodBtns}</div>`;
-  for (const c of ccys) {
-    html += `<div style="font-size:12px;font-weight:600;color:#8e8e93;margin:${c==='ALL'?'0 0 4px':'14px 0 4px'}">${c}</div>
-      <div id="${containerId}-chart-${c}"></div>`;
-  }
-  html += `</div>`;
-  el.innerHTML = html;
+  const toggleBtns = ccys.map(c => {
+    const active = chartToggle[c];
+    const style = active ? `background:${CHART_COLORS[c]};border-color:${CHART_COLORS[c]}` : '';
+    return `<button class="ccy-toggle-btn ${active?'active':''}" style="${style}" onclick="toggleChartCcy('${c}')">${c}</button>`;
+  }).join('');
 
-  for (const c of ccys) {
-    const list = c==='ALL' ? tradeList : tradeList.filter(t=>t.ccy===c);
-    renderChart(`${containerId}-chart-${c}`, buildChartData(list, periodMode));
-  }
+  el.innerHTML = `<div class="card">
+    <div class="card-label">누적 손익 추이</div>
+    <div class="seg">${periodBtns}</div>
+    <div class="ccy-toggle">${toggleBtns}</div>
+    <div id="${containerId}-chart"></div>
+  </div>`;
+
+  renderMultiChart(`${containerId}-chart`, tradeList, periodMode, chartToggle);
 }
 function setPeriod(p) { periodMode = p; render(); }
 
@@ -603,8 +710,8 @@ function renderOverview() {
       <div class="grid2">
         <div><div class="field-label">매수금액</div><div class="field-val">${fmt(s.buyKrw)}원</div></div>
         <div><div class="field-label">보유 ${ccy}</div><div class="field-val">${fmtFx(s.buyFx,ccy)}</div></div>
-        <div><div class="field-label">평균환율${ccy==='JPY'?'(100)':''}</div><div class="field-val">${fmt(avgDisplay,2)}</div></div>
-        <div><div class="field-label">현재환율${ccy==='JPY'?'(100)':''}</div><div class="field-val">${rate?fmt(rate,2):'입력필요'}</div></div>
+        <div><div class="field-label">평균환율</div><div class="field-val">${fmt(avgDisplay,2)}</div></div>
+        <div><div class="field-label">현재환율</div><div class="field-val">${rate?fmt(rate,2):'입력필요'}</div></div>
         <div><div class="field-label">평가금액</div><div class="field-val">${fmt(cur)}원</div></div>
       </div>
     </div>`;
@@ -655,7 +762,7 @@ function renderOpenCard(t) {
       ${pnlBadge(pnl,pct)}
     </div>
     <div class="grid2" style="margin-bottom:10px">
-      <div><div class="field-label">매수환율${t.ccy==='JPY'?'(100)':''}</div><div class="field-val">${fmt(t.buyRate,2)}</div></div>
+      <div><div class="field-label">매수환율</div><div class="field-val">${fmt(t.buyRate,2)}</div></div>
       <div><div class="field-label">${t.ccy}</div><div class="field-val">${fmtFx(t.buyFx,t.ccy)}</div></div>
       <div><div class="field-label">매수금액</div><div class="field-val">${fmt(t.buyKrw)}원</div></div>
       <div><div class="field-label">현재평가</div><div class="field-val">${fmt(cur)}원</div></div>
@@ -709,8 +816,8 @@ function renderClosedCard(t) {
       <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">${ccyTag(t.ccy)}<span style="font-size:12px;color:#8e8e93">매수 ${t.buyDate} → 매도 ${t.sellDate}</span></div>
     </div>
     <div class="grid2" style="margin-bottom:8px">
-      <div><div class="field-label">매수환율${t.ccy==='JPY'?'(100)':''}</div><div class="field-val">${fmt(t.buyRate,2)}</div></div>
-      <div><div class="field-label">매도환율${t.ccy==='JPY'?'(100)':''}</div><div class="field-val">${fmt(t.sellRate,2)}</div></div>
+      <div><div class="field-label">매수환율</div><div class="field-val">${fmt(t.buyRate,2)}</div></div>
+      <div><div class="field-label">매도환율</div><div class="field-val">${fmt(t.sellRate,2)}</div></div>
       <div><div class="field-label">매수금</div><div class="field-val">${fmt(t.buyKrw)}원</div></div>
       <div><div class="field-label">매도금</div><div class="field-val">${fmt(sellKrw)}원</div></div>
     </div>
@@ -737,6 +844,12 @@ function openAddModal() {
   ['f-rate','f-fx','f-krw','f-note'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('add-error').style.display = 'none';
   document.getElementById('add-modal').style.display = 'flex';
+  updateAddRateDefault();
+}
+function updateAddRateDefault() {
+  const ccy = document.getElementById('f-ccy').value;
+  const r = effectiveRate(ccy);
+  document.getElementById('f-rate').value = r ? r : '';
 }
 function closeAddModal() { document.getElementById('add-modal').style.display='none'; }
 function saveTrade() {
