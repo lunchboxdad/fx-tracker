@@ -17,6 +17,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
 .header-btns { display: flex; gap: 4px; align-items: center; }
 .icon-btn { background: none; border: none; cursor: pointer; font-size: 18px; padding: 4px 5px; color: #007AFF; }
 .backup-date { font-size: 10px; color: #8e8e93; white-space: nowrap; }
+.rate-bar .rate-item .ccy-time { font-size:9px; color:#c6c6c8; margin-top:1px; }
 
 .tabs { display: flex; }
 .tab { flex: 1; padding: 10px 4px; font-size: 13px; font-weight: 400; color: #8e8e93; background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; letter-spacing: -0.1px; }
@@ -121,13 +122,17 @@ svg text { font-family: -apple-system, sans-serif; }
 .trash-item { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:0.5px solid #f2f2f7; }
 .trash-meta { font-size:12px; color:#8e8e93; }
 .btn-restore { padding:6px 12px; background:#e1f5ee; color:#0f6e56; border:none; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; }
+/* Input with prefix symbol */
+.input-prefix-wrap { position:relative; display:flex; align-items:center; }
+.input-prefix-sym { position:absolute; left:12px; font-size:15px; color:#8e8e93; pointer-events:none; z-index:1; }
+.input-with-prefix { padding-left:26px !important; }
 </style>
 </head>
 <body>
 
 <div class="header">
   <div class="header-row">
-    <h1>도시락통FX</h1>
+    <h1 id="app-title" onclick="refreshApp()" oncontextmenu="renameTitlePrompt(event)" style="cursor:pointer;user-select:none;-webkit-user-select:none;">도시락통FX</h1>
     <div class="header-btns">
       <span class="backup-date" id="backup-date-display"></span>
       <button class="icon-btn" onclick="openTrashModal()" title="휴지통">🗑️</button>
@@ -172,6 +177,24 @@ svg text { font-family: -apple-system, sans-serif; }
   </div>
 </div>
 
+<!-- Rename title modal -->
+<div class="overlay" id="rename-modal" style="display:none" onclick="if(event.target===this)closeRenameModal()">
+  <div class="modal">
+    <div class="modal-title">
+      <span>앱 이름 변경</span>
+      <button class="modal-close" onclick="closeRenameModal()">×</button>
+    </div>
+    <div class="form-row">
+      <label class="form-label">새 이름</label>
+      <input type="text" id="rename-input" class="form-input" placeholder="도시락통FX" maxlength="20">
+    </div>
+    <div class="btn-row">
+      <button class="btn-primary" onclick="saveRenameTitle()">저장</button>
+      <button class="btn-cancel" onclick="closeRenameModal()">취소</button>
+    </div>
+  </div>
+</div>
+
 <!-- Add Modal -->
 <div class="overlay" id="add-modal" style="display:none" onclick="if(event.target===this)closeAddModal()">
   <div class="modal">
@@ -184,8 +207,14 @@ svg text { font-family: -apple-system, sans-serif; }
     <div class="form-row"><label class="form-label">통화</label>
       <select id="f-ccy" class="form-input" onchange="updateAddRateDefault()"><option value="USD">USD (달러)</option><option value="JPY">JPY (엔화)</option><option value="EUR">EUR (유로)</option></select>
     </div>
-    <div class="form-row"><label class="form-label">기준환율 <span style="color:#8e8e93;font-size:11px">JPY는 100엔당 (예: 952.30)</span></label><input type="number" id="f-rate" class="form-input" placeholder="예) 1520.02" inputmode="decimal"></div>
-    <div class="form-row"><label class="form-label">매수금액 (외화)</label><input type="number" id="f-fx" class="form-input" placeholder="예) 131577.21" inputmode="decimal"></div>
+    <div class="form-row"><label class="form-label">기준환율 <span style="color:#8e8e93;font-size:11px">JPY는 100엔당 (예: 952.30)</span></label><input type="number" id="f-rate" class="form-input" placeholder="예) 1520.02" inputmode="decimal" oninput="autoCalcKrw()"></div>
+    <div class="form-row">
+      <label class="form-label"><span id="f-fx-label">매수금액 (외화)</span></label>
+      <div class="input-prefix-wrap">
+        <span class="input-prefix-sym" id="f-fx-sym">$</span>
+        <input type="number" id="f-fx" class="form-input input-with-prefix" placeholder="예) 131577.21" inputmode="decimal" oninput="autoCalcKrw()">
+      </div>
+    </div>
     <div class="form-row"><label class="form-label">매수금액 KRW <span style="color:#8e8e93;font-size:11px">비우면 자동계산</span></label><input type="number" id="f-krw" class="form-input" placeholder="예) 199999990" inputmode="numeric"></div>
     <div class="form-row"><label class="form-label">메모 (선택)</label><input type="text" id="f-note" class="form-input"></div>
     <div class="btn-row">
@@ -304,6 +333,7 @@ const CLOSED_RANGE_KEY='fx_closed_range_v1';
 const TREND_COLLAPSE_KEY='fx_trend_collapse_v1';
 const TRASH_KEY      = 'fx_trash_v1';
 const WEEKLY_BACKUP_KEY = 'fx_weekly_backup_date';
+const TITLE_KEY      = 'fx_app_title';
 
 let trades = [];
 let autoRates  = { USD:0, JPY:0, EUR:0 };
@@ -340,6 +370,13 @@ function load() {
   try { const s=JSON.parse(localStorage.getItem(SETTINGS_KEY)||'{}'); ghSettings={...ghSettings,...s}; } catch {}
   try { const cr=JSON.parse(localStorage.getItem(CLOSED_RANGE_KEY)||'{}'); if(cr.start!==undefined) closedRange={start:cr.start||'',end:cr.end||''}; } catch {}
   try { const tc=JSON.parse(localStorage.getItem(TREND_COLLAPSE_KEY)||'{}'); trendCollapsed={...trendCollapsed,...tc}; } catch {}
+  // Restore custom title
+  const savedTitle = localStorage.getItem(TITLE_KEY);
+  if (savedTitle) {
+    const el = document.getElementById('app-title');
+    if (el) el.textContent = savedTitle;
+    document.title = savedTitle;
+  }
   migrateJPY();
 }
 function save() { localStorage.setItem(STORAGE_KEY,JSON.stringify(trades)); scheduleBackup(); updateBackupDateDisplay(); }
@@ -413,9 +450,18 @@ function renderRateBar() {
     const r = effectiveRate(c);
     const isManual = parseFloat(manualRates[c])>0;
     const valHtml = r ? `${fmt(r,2)}${isManual?' ✎':''}` : '-';
+    // fetch time
+    let timeHtml = '';
+    const ft = autoRateFetchedAt[c];
+    if (ft) {
+      const d = new Date(ft);
+      const ts = `${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}`;
+      timeHtml = `<span class="ccy-time">${ts}</span>`;
+    }
     return `<div class="rate-item" onclick="openRateSheet('${c}')">
       <span class="ccy-name">${c}</span>
       <span class="ccy-val" style="color:${!r?'#c6c6c8':isManual?'#007AFF':'#1c1c1e'}">${valHtml}</span>
+      ${timeHtml}
     </div>`;
   }).join('');
   el.innerHTML = `<div class="rate-items">${items}</div><button class="refresh" onclick="fetchRates()">↻</button>`;
@@ -705,6 +751,58 @@ function updateAddRateDefault() {
   const ccy=document.getElementById('f-ccy').value;
   const r=effectiveRate(ccy);
   document.getElementById('f-rate').value=r?r:'';
+  updateFxSymbol(ccy);
+}
+function updateFxSymbol(ccy) {
+  const syms={USD:'$',JPY:'¥',EUR:'€'};
+  const symEl=document.getElementById('f-fx-sym');
+  const lblEl=document.getElementById('f-fx-label');
+  if(symEl) symEl.textContent=syms[ccy]||'';
+  if(lblEl) lblEl.textContent=`매수금액 (${ccy})`;
+}
+function autoCalcKrw() {
+  const ccy=document.getElementById('f-ccy').value;
+  const rate=parseFloat(document.getElementById('f-rate').value);
+  const fx=parseFloat(document.getElementById('f-fx').value);
+  const krwEl=document.getElementById('f-krw');
+  if(rate&&fx) {
+    krwEl.value=Math.round(krwRate(ccy,rate)*fx);
+  } else {
+    krwEl.value='';
+  }
+}
+// ── Refresh (title tap) ───────────────────────────────────────────────────────
+function refreshApp() {
+  // Pull from GitHub first if configured, then reload local
+  if(ghSettings.token&&ghSettings.owner&&ghSettings.repo){
+    doRestore().then(()=>{render();}).catch(()=>render());
+  } else {
+    load();render();
+  }
+}
+// ── Rename title (long-press / right-click) ────────────────────────────────────
+let longPressTimer=null;
+document.addEventListener('DOMContentLoaded',()=>{
+  const titleEl=document.getElementById('app-title');
+  if(!titleEl)return;
+  titleEl.addEventListener('touchstart',()=>{longPressTimer=setTimeout(renameTitlePrompt,700);},{passive:true});
+  titleEl.addEventListener('touchend',()=>{if(longPressTimer)clearTimeout(longPressTimer);},{passive:true});
+  titleEl.addEventListener('touchmove',()=>{if(longPressTimer)clearTimeout(longPressTimer);},{passive:true});
+});
+function renameTitlePrompt(e) {
+  if(e&&e.preventDefault)e.preventDefault();
+  const current=document.getElementById('app-title').textContent;
+  document.getElementById('rename-input').value=current;
+  document.getElementById('rename-modal').style.display='flex';
+  setTimeout(()=>document.getElementById('rename-input').focus(),100);
+}
+function closeRenameModal(){document.getElementById('rename-modal').style.display='none';}
+function saveRenameTitle(){
+  const val=document.getElementById('rename-input').value.trim()||'도시락통FX';
+  document.getElementById('app-title').textContent=val;
+  document.title=val;
+  localStorage.setItem(TITLE_KEY,val);
+  closeRenameModal();
 }
 function closeAddModal(){document.getElementById('add-modal').style.display='none';}
 function saveTrade() {
@@ -979,16 +1077,26 @@ async function doRestore() {
   if(!res.ok){if(res.status===404)throw new Error('백업 파일이 아직 없습니다');const j=await res.json().catch(()=>({}));throw new Error(j.message||`HTTP ${res.status}`);}
   const j=await res.json();
   const p=JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))));
-  if(Array.isArray(p.trades))trades=p.trades;
-  if(p.autoRates)autoRates=p.autoRates;
-  if(p.manualRates)manualRates=p.manualRates;
+  if(Array.isArray(p.trades)) {
+    // Merge: GitHub is source of truth. Local-only trades (not in GitHub) get added.
+    const remoteIds = new Set(p.trades.map(t=>t.id));
+    const localOnly = trades.filter(t=>!remoteIds.has(t.id));
+    trades = [...p.trades, ...localOnly];
+  }
+  if(p.autoRates) autoRates=p.autoRates;
+  if(p.manualRates) manualRates=p.manualRates;
+  // Persist merged result to localStorage immediately
   localStorage.setItem(STORAGE_KEY,JSON.stringify(trades));
-  saveRates();migrateJPY();
+  saveRates(); migrateJPY();
 }
 function scheduleBackup() {
   if(!ghSettings.token||!ghSettings.owner||!ghSettings.repo)return;
   if(backupTimer)clearTimeout(backupTimer);
-  backupTimer=setTimeout(()=>{doBackup().catch(()=>{});},2000);
+  // Pull first, merge, then push — prevents overwriting other device's data
+  backupTimer=setTimeout(async()=>{
+    try { await doRestore(); } catch {}
+    try { await doBackup(); } catch {}
+  },2500);
 }
 function checkAutoBackup() {
   if(!ghSettings.token||!ghSettings.owner||!ghSettings.repo)return;
@@ -997,7 +1105,7 @@ function checkAutoBackup() {
 }
 async function initialSync() {
   if(!ghSettings.token||!ghSettings.owner||!ghSettings.repo)return;
-  try{await doRestore();render();}catch{}
+  try{await doRestore();render();}catch{render();}
 }
 async function manualBackup() {
   const errEl=document.getElementById('settings-error');
@@ -1013,9 +1121,13 @@ async function manualRestore() {
   const errEl=document.getElementById('settings-error');
   const infoEl=document.getElementById('settings-info');
   errEl.style.display='none';infoEl.style.display='none';
-  if(!confirm('GitHub의 백업 데이터를 불러와 현재 기기의 데이터를 덮어씁니다. 계속할까요?'))return;
-  try{await doRestore();infoEl.textContent='불러오기 완료!';infoEl.style.display='block';render();}
-  catch(e){errEl.textContent='불러오기 실패: '+e.message;errEl.style.display='block';}
+  if(!confirm('GitHub의 백업 데이터를 불러옵니다.\n로컬 전용 데이터는 merge되고, GitHub 데이터가 우선 적용됩니다.\n계속할까요?'))return;
+  try{
+    await doRestore();
+    infoEl.textContent=`불러오기 완료! (${trades.length}건)`;infoEl.style.display='block';
+    document.getElementById('gh-last').textContent=`마지막 백업: ${new Date().toLocaleString('ko-KR')}`;
+    render();
+  }catch(e){errEl.textContent='불러오기 실패: '+e.message;errEl.style.display='block';}
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
