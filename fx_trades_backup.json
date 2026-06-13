@@ -1,0 +1,46 @@
+{
+  "trades": [
+    {
+      "id": "1781331693216",
+      "ccy": "JPY",
+      "buyDate": "2026-06-13",
+      "buyRate": 954,
+      "buyFx": 19234,
+      "buyKrw": 18349236,
+      "note": ""
+    },
+    {
+      "id": "1781330416570",
+      "ccy": "JPY",
+      "buyDate": "2026-06-13",
+      "buyRate": 942,
+      "buyFx": 114243,
+      "buyKrw": 107616906,
+      "note": "",
+      "sellDate": "2026-06-13",
+      "sellRate": 955
+    },
+    {
+      "id": "1781330330454",
+      "ccy": "USD",
+      "buyDate": "2026-06-13",
+      "buyRate": 1520,
+      "buyFx": 1452,
+      "buyKrw": 2207040,
+      "note": "",
+      "sellDate": "2026-06-13",
+      "sellRate": 1526
+    }
+  ],
+  "autoRates": {
+    "USD": 1517.45,
+    "JPY": 952.38,
+    "EUR": 1757.47
+  },
+  "manualRates": {
+    "USD": "",
+    "JPY": "",
+    "EUR": ""
+  },
+  "exportedAt": "2026-06-13T07:38:05.430Z"
+}
