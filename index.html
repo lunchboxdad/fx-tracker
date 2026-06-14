@@ -315,9 +315,19 @@ svg text { font-family: -apple-system, sans-serif; }
     <p id="gh-last" style="font-size:12px;color:#8e8e93;margin-bottom:4px"></p>
     <p style="font-size:11px;color:#8e8e93;margin-bottom:12px">변경사항은 자동으로 GitHub에 백업됩니다(약 2초 후). 앱을 열 때 GitHub의 최신 데이터를 자동으로 불러옵니다. 매주 월요일 백업본은 별도 파일(weekly_YYYY-MM-DD.json)로 함께 저장됩니다.</p>
     <div class="btn-row">
-      <button class="btn-primary" onclick="saveAndBackup()">저장 및 즉시 백업</button>
-      <button class="btn-ghost" style="flex:1" onclick="manualRestore()">지금 불러오기</button>
+      <button class="btn-primary" onclick="saveAndBackup()">저장 및 백업</button>
+      <button class="btn-ghost" style="flex:1" onclick="manualRestore()">불러오기</button>
     </div>
+    <hr class="divider">
+    <div class="btn-row" style="margin-top:0">
+      <button class="btn-ghost" style="flex:1" onclick="document.getElementById('import-file-input').click()">파일에서 불러오기</button>
+    </div>
+    <input type="file" id="import-file-input" accept=".json,.csv" style="display:none" onchange="handleImportFile(event)">
+    <p style="font-size:11px;color:#8e8e93;margin:6px 0 12px">JSON 백업 파일 또는 이 앱에서 내보낸 CSV 파일을 선택하면, 그 파일 내용으로 전체 데이터가 교체됩니다 (기존 데이터는 휴지통에 보관).</p>
+    <div class="btn-row">
+      <button class="btn-delete" style="flex:1" onclick="resetAllData()">전체 초기화 (신규생성)</button>
+    </div>
+    <p style="font-size:11px;color:#8e8e93;margin:6px 0 12px">전체 초기화: 로컬 데이터를 모두 비우고, GitHub 백업 파일도 빈 데이터로 새로 생성합니다. 기존 데이터는 휴지통에 3일간 보관됩니다.</p>
     <div class="btn-row">
       <button class="btn-cancel" onclick="closeSettingsModal()">닫기</button>
     </div>
@@ -891,7 +901,7 @@ function renderTrashModal() {
   const arr=loadTrash();
   const body=document.getElementById('trash-body');
   if(arr.length===0){body.innerHTML='<p class="empty" style="margin-top:20px">휴지통이 비어 있습니다<br>삭제 후 3일간 보관됩니다</p>';return;}
-  body.innerHTML=arr.slice().sort((a,b)=>b.deletedAt.localeCompare(a.deletedAt)).map(x=>{
+  const items=arr.slice().sort((a,b)=>b.deletedAt.localeCompare(a.deletedAt)).map(x=>{
     const del=new Date(x.deletedAt);
     const delStr=`${del.getMonth()+1}/${del.getDate()} ${del.getHours().toString().padStart(2,'0')}:${del.getMinutes().toString().padStart(2,'0')}`;
     const expiry=new Date(del.getTime()+TRASH_TTL_DAYS*24*60*60*1000);
@@ -904,6 +914,26 @@ function renderTrashModal() {
       <button class="btn-restore" onclick="restoreFromTrash('${x.id}')">복구</button>
     </div>`;
   }).join('');
+  body.innerHTML = items + `<div class="btn-row"><button class="btn-ghost" style="flex:1" onclick="restoreAllFromTrash()">전체 복원 (${arr.length}건)</button><button class="btn-delete" style="flex:1" onclick="emptyTrash()">전체 비우기</button></div>`;
+}
+function emptyTrash() {
+  if(!confirm('휴지통을 모두 비울까요? 이 작업은 되돌릴 수 없습니다.')) return;
+  saveTrash([]);
+  renderTrashModal();
+}
+function restoreAllFromTrash() {
+  const arr=loadTrash();
+  if(arr.length===0) return;
+  if(!confirm(`휴지통의 ${arr.length}건을 모두 복원할까요?`)) return;
+  const existingIds=new Set(trades.map(t=>t.id));
+  for(const item of arr){
+    const {deletedAt,...trade}=item;
+    if(existingIds.has(trade.id)) trade.id=Date.now().toString()+Math.random().toString(36).slice(2,6);
+    existingIds.add(trade.id);
+    trades.unshift(trade);
+  }
+  saveTrash([]);
+  save();render();renderTrashModal();checkAutoBackup();
 }
 function restoreFromTrash(id) {
   const arr=loadTrash();
@@ -1044,31 +1074,164 @@ function openSettingsModal() {
 }
 function closeSettingsModal(){document.getElementById('settings-modal').style.display='none';}
 async function saveAndBackup(){saveSettings();await manualBackup();}
+async function ghPutFile(path, msg, payloadObj) {
+  if(!ghSettings.token||!ghSettings.owner||!ghSettings.repo) throw new Error('GitHub 설정을 모두 입력해주세요');
+  const payload=JSON.stringify(payloadObj,null,2);
+  const content=btoa(unescape(encodeURIComponent(payload)));
+  const apiUrl=`https://api.github.com/repos/${ghSettings.owner}/${ghSettings.repo}/contents/${path}`;
+  let sha=null;
+  try{const r=await fetch(apiUrl,{headers:{Authorization:`Bearer ${ghSettings.token}`,Accept:'application/vnd.github+json'}});if(r.ok){const j=await r.json();sha=j.sha;}}catch{}
+  const body={message:msg,content};if(sha)body.sha=sha;
+  const putRes=await fetch(apiUrl,{method:'PUT',headers:{Authorization:`Bearer ${ghSettings.token}`,Accept:'application/vnd.github+json','Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!putRes.ok){const j=await putRes.json().catch(()=>({}));throw new Error(j.message||`HTTP ${putRes.status}`);}
+}
 async function doBackup(weeklyOnly=false) {
   if(!ghSettings.token||!ghSettings.owner||!ghSettings.repo) throw new Error('GitHub 설정을 모두 입력해주세요');
-  const payload=JSON.stringify({trades,autoRates,manualRates,exportedAt:new Date().toISOString()},null,2);
-  const content=btoa(unescape(encodeURIComponent(payload)));
-  async function putFile(path, msg) {
-    const apiUrl=`https://api.github.com/repos/${ghSettings.owner}/${ghSettings.repo}/contents/${path}`;
-    let sha=null;
-    try{const r=await fetch(apiUrl,{headers:{Authorization:`Bearer ${ghSettings.token}`,Accept:'application/vnd.github+json'}});if(r.ok){const j=await r.json();sha=j.sha;}}catch{}
-    const body={message:msg,content};if(sha)body.sha=sha;
-    const putRes=await fetch(apiUrl,{method:'PUT',headers:{Authorization:`Bearer ${ghSettings.token}`,Accept:'application/vnd.github+json','Content-Type':'application/json'},body:JSON.stringify(body)});
-    if(!putRes.ok){const j=await putRes.json().catch(()=>({}));throw new Error(j.message||`HTTP ${putRes.status}`);}
-  }
-  if(!weeklyOnly) await putFile(ghSettings.path, `도시락통FX 자동 백업 ${today()}`);
+  const payloadObj={trades,autoRates,manualRates,exportedAt:new Date().toISOString()};
+  if(!weeklyOnly) await ghPutFile(ghSettings.path, `도시락통FX 자동 백업 ${today()}`, payloadObj);
   // Weekly Monday backup — separate file
   const now=new Date();
   if(now.getDay()===1){ // Monday
     const lastWeekly=localStorage.getItem(WEEKLY_BACKUP_KEY);
     if(lastWeekly!==today()){
       const weeklyPath=(ghSettings.path.replace('.json','')+`_weekly_${today()}.json`);
-      try{await putFile(weeklyPath,`도시락통FX 주간 백업 ${today()}`);}catch{}
+      try{await ghPutFile(weeklyPath,`도시락통FX 주간 백업 ${today()}`,payloadObj);}catch{}
       localStorage.setItem(WEEKLY_BACKUP_KEY,today());
     }
   }
   localStorage.setItem(LAST_BACKUP_KEY,new Date().toISOString());
   updateBackupDateDisplay();
+}
+// 전체 초기화 (신규생성): wipe local data to trash, reset rates, push empty backup to GitHub.
+async function resetAllData() {
+  const errEl=document.getElementById('settings-error');
+  const infoEl=document.getElementById('settings-info');
+  errEl.style.display='none';infoEl.style.display='none';
+  if(!confirm(`정말로 모든 데이터를 초기화할까요?\n\n현재 ${trades.length}건의 거래 데이터가 휴지통으로 이동되고(3일간 복구 가능), 앱은 빈 상태로 새로 시작합니다.${(ghSettings.token&&ghSettings.owner&&ghSettings.repo)?'\nGitHub 백업 파일도 빈 데이터로 새로 생성됩니다.':''}\n\n이 작업은 신중하게 진행해주세요.`)) return;
+  if(!confirm('마지막 확인: 정말 전체 초기화를 진행할까요?')) return;
+
+  // Move all current trades to trash
+  const arr=loadTrash();
+  const now=new Date().toISOString();
+  for(const t of trades) arr.push({...t,deletedAt:now});
+  saveTrash(arr);
+
+  // Wipe local state
+  trades=[];
+  manualRates={USD:'',JPY:'',EUR:''};
+  save();
+
+  // Push empty backup to GitHub if configured
+  if(ghSettings.token&&ghSettings.owner&&ghSettings.repo){
+    try{
+      saveSettings();
+      const payloadObj={trades:[],autoRates,manualRates,exportedAt:new Date().toISOString()};
+      await ghPutFile(ghSettings.path, `도시락통FX 전체 초기화 ${today()}`, payloadObj);
+      localStorage.setItem(LAST_BACKUP_KEY,new Date().toISOString());
+      updateBackupDateDisplay();
+      document.getElementById('gh-last').textContent=`마지막 백업: ${new Date().toLocaleString('ko-KR')}`;
+    }catch(e){errEl.textContent='GitHub 초기화 실패: '+e.message;errEl.style.display='block';}
+  }
+
+  render();
+  infoEl.textContent='초기화 완료. 기존 데이터는 휴지통에서 복구할 수 있습니다.';infoEl.style.display='block';
+}
+
+// ── File Import (JSON backup or CSV export) ─────────────────────────────────
+function handleImportFile(e) {
+  const file=e.target.files[0];
+  if(!file) return;
+  const errEl=document.getElementById('settings-error');
+  const infoEl=document.getElementById('settings-info');
+  errEl.style.display='none';infoEl.style.display='none';
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const text=reader.result;
+      let importedTrades, importedAuto=null, importedManual=null;
+      if(file.name.toLowerCase().endsWith('.json')){
+        const p=JSON.parse(text);
+        if(!Array.isArray(p.trades)) throw new Error('JSON 파일 형식이 올바르지 않습니다 (trades 배열 없음)');
+        importedTrades=p.trades;
+        if(p.autoRates) importedAuto=p.autoRates;
+        if(p.manualRates) importedManual=p.manualRates;
+      } else {
+        importedTrades=parseCsvExport(text);
+      }
+      if(!confirm(`이 파일에서 ${importedTrades.length}건의 거래를 발견했습니다.\n현재 데이터(${trades.length}건)를 모두 이 파일 내용으로 교체합니다.\n(기존 데이터는 휴지통에 보관됩니다)\n계속할까요?`)){
+        e.target.value='';
+        return;
+      }
+      // Move current trades to trash
+      const arr=loadTrash();
+      const now=new Date().toISOString();
+      for(const t of trades) arr.push({...t,deletedAt:now});
+      saveTrash(arr);
+      // Replace
+      trades=importedTrades;
+      if(importedAuto) autoRates=importedAuto;
+      if(importedManual) manualRates=importedManual;
+      save(); saveRates(); migrateJPY(); render();
+      infoEl.textContent=`불러오기 완료! ${trades.length}건으로 교체되었습니다.`;infoEl.style.display='block';
+      checkAutoBackup();
+    }catch(err){
+      errEl.textContent='파일을 읽는 중 오류: '+err.message;errEl.style.display='block';
+    }
+    e.target.value='';
+  };
+  reader.readAsText(file, 'utf-8');
+}
+
+// Parse CSV exported by this app: header row = exportHeaders, rebuild trades from raw fields only
+function parseCsvExport(text) {
+  // Strip BOM
+  if(text.charCodeAt(0)===0xFEFF) text=text.slice(1);
+  const lines=text.split(/\r?\n/).filter(l=>l.trim().length>0);
+  if(lines.length<2) throw new Error('CSV에 데이터가 없습니다');
+  function parseCsvLine(line){
+    const out=[];let cur='';let inQuotes=false;
+    for(let i=0;i<line.length;i++){
+      const c=line[i];
+      if(inQuotes){
+        if(c==='"'){ if(line[i+1]==='"'){cur+='"';i++;} else inQuotes=false; }
+        else cur+=c;
+      } else {
+        if(c==='"') inQuotes=true;
+        else if(c===','){out.push(cur);cur='';}
+        else cur+=c;
+      }
+    }
+    out.push(cur);
+    return out;
+  }
+  const header=parseCsvLine(lines[0]);
+  const idx={};
+  header.forEach((h,i)=>idx[h.trim()]=i);
+  const required=['ID','통화','매수일','매수환율','외화금액','매수금액KRW'];
+  for(const r of required) if(!(r in idx)) throw new Error(`CSV 헤더에 "${r}" 컬럼이 없습니다`);
+  const result=[];
+  for(let i=1;i<lines.length;i++){
+    const cols=parseCsvLine(lines[i]);
+    if(cols.length<header.length) continue;
+    const ccy=cols[idx['통화']];
+    const buyRate=parseFloat(cols[idx['매수환율']]);
+    const buyFx=parseFloat(cols[idx['외화금액']]);
+    const buyKrw=parseFloat(cols[idx['매수금액KRW']]);
+    if(!ccy||isNaN(buyRate)||isNaN(buyFx)||isNaN(buyKrw)) continue;
+    const t={
+      id: cols[idx['ID']] || (Date.now().toString()+Math.random().toString(36).slice(2,6)),
+      ccy, buyDate: cols[idx['매수일']], buyRate, buyFx, buyKrw,
+      note: idx['메모']!==undefined ? cols[idx['메모']] : ''
+    };
+    const sellDate = idx['매도일']!==undefined ? cols[idx['매도일']] : '';
+    const sellRateRaw = idx['매도환율']!==undefined ? cols[idx['매도환율']] : '';
+    if(sellDate && sellRateRaw && !isNaN(parseFloat(sellRateRaw))){
+      t.sellDate=sellDate; t.sellRate=parseFloat(sellRateRaw);
+    }
+    result.push(t);
+  }
+  if(result.length===0) throw new Error('CSV에서 유효한 거래 데이터를 찾지 못했습니다');
+  return result;
 }
 async function doRestore() {
   if(!ghSettings.token||!ghSettings.owner||!ghSettings.repo) throw new Error('GitHub 설정을 모두 입력해주세요');
