@@ -595,6 +595,30 @@ function pnlBadge(val,pct) {
   return `<span class="${cls}">${s}${fmt(val)}원 (${s}${Number(pct).toFixed(2)}%)</span>`;
 }
 function ccyTag(ccy) { return `<span class="ccy-${ccy.toLowerCase()}">${ccy}</span>`; }
+// 차트 라벨용: 만원 단위로 반올림한 간략 한글 표기 (예: 7,716만원, 1억 2,000만원)
+function krwKoreanShort(n) {
+  const neg=n<0; let v=Math.round(Math.abs(n)/10000)*10000;
+  if(v===0) return '0원';
+  const eok=Math.floor(v/100000000); v%=100000000;
+  const man=Math.floor(v/10000);
+  let parts=[];
+  if(eok>0) parts.push(`${eok.toLocaleString('ko-KR')}억`);
+  if(man>0) parts.push(`${man.toLocaleString('ko-KR')}만`);
+  return (neg?'-':'')+(parts.join(' ')||'0')+'원';
+}
+// 금액을 한글 단위로 간략 표기 (예: 52,340,000 → "5,234만원", 120,000,000 → "1억 2,000만원")
+function krwKorean(n) {
+  const neg = n<0; let v=Math.round(Math.abs(n));
+  if(v===0) return '0원';
+  const eok=Math.floor(v/100000000); v%=100000000;
+  const man=Math.floor(v/10000); v%=10000;
+  let parts=[];
+  if(eok>0) parts.push(`${eok.toLocaleString('ko-KR')}억`);
+  if(man>0) parts.push(`${man.toLocaleString('ko-KR')}만`);
+  if(eok===0 && man===0) parts.push(`${v.toLocaleString('ko-KR')}`);
+  else if(v>0 && eok===0) parts.push(`${v.toLocaleString('ko-KR')}`);
+  return (neg?'-':'')+parts.join(' ')+'원';
+}
 function escapeHtml(s) { return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 // ── Tab switching ─────────────────────────────────────────────────────────────
@@ -717,22 +741,29 @@ function renderMultiChart(containerId, tradeList, mode, toggles) {
   const W=Math.max(280,labels.length*44),H=140,padL=56,padR=10,padT=20,padB=24;
   const chartW=W-padL-padR,chartH=H-padT-padB;
   let allVals=[]; active.forEach(c=>allVals.push(...seriesData[c].aligned));
-  // ── Auto-scale: largest absolute value occupies 80% of chart height ──
-  let rawMin=Math.min(0,...allVals), rawMax=Math.max(0,...allVals);
-  const absMax=Math.max(Math.abs(rawMin),Math.abs(rawMax))||1;
-  // scale so absMax = 80% of half-range (i.e. give 20% headroom)
-  const scaled = absMax/0.8;
-  let minV, maxV;
-  if (rawMin<0 && rawMax>0) { minV=-scaled; maxV=scaled; }
-  else if (rawMax>0) { minV=0; maxV=scaled; }
-  else { minV=-scaled; maxV=0; }
+  // ── Auto-scale: 실제 데이터의 최소~최대 범위가 차트 높이의 80%를 차지하도록 ──
+  let dataMin=Math.min(...allVals), dataMax=Math.max(...allVals);
+  // 0이 항상 보이도록 포함하되, 데이터가 0에서 멀면 데이터 범위 위주로 스케일
+  if (dataMin>0) dataMin=0;        // 전부 양수면 바닥을 0으로
+  if (dataMax<0) dataMax=0;        // 전부 음수면 천장을 0으로
+  let span=dataMax-dataMin;
+  if(span<=0) span=Math.abs(dataMax)||1;
+  const pad=span*0.125;            // 위아래 12.5%씩 여백 → 데이터 범위가 75~80% 차지
+  let minV=dataMin-pad, maxV=dataMax+pad;
   const range=maxV-minV||1;
   function xPos(i){return padL+(i/Math.max(labels.length-1,1))*chartW;}
   function yPos(v){return padT+(1-(v-minV)/range)*chartH;}
   const ticks=4;let gridHtml='';
+  function axisLbl(v){
+    const a=Math.abs(v); const neg=v<0?'-':'';
+    if(a>=100000000) return neg+(v/100000000).toFixed(a%100000000===0?0:1).replace('-','')+'억';
+    if(a>=10000) return neg+Math.round(a/10000).toLocaleString('ko-KR')+'만';
+    if(a===0) return '0';
+    return fmt(v);
+  }
   for(let i=0;i<=ticks;i++){
     const v=minV+(range/ticks)*i,y=yPos(v);
-    const lbl=Math.abs(v)>=1000000?(v/1000000).toFixed(1)+'M':Math.abs(v)>=1000?(v/1000).toFixed(0)+'K':fmt(v);
+    const lbl=axisLbl(v);
     gridHtml+=`<line x1="${padL}" y1="${y}" x2="${W-padR}" y2="${y}" stroke="#e5e5ea" stroke-width="0.5"/>`;
     gridHtml+=`<text x="${padL-4}" y="${y+4}" text-anchor="end" font-size="9" fill="#8e8e93">${lbl}</text>`;
   }
@@ -745,10 +776,10 @@ function renderMultiChart(containerId, tradeList, mode, toggles) {
     const values=seriesData[c].aligned,color=CHART_COLORS[c];
     const linePath=values.map((v,i)=>`${i===0?'M':'L'} ${xPos(i)} ${yPos(v)}`).join(' ');
     const lastX=xPos(values.length-1),lastY=yPos(values[values.length-1]),lastV=values[values.length-1];
-    const lastLbl=(active.length===1?(c+': '):(c+' '))+(Math.abs(lastV)>=1000000?(lastV/1000000).toFixed(2)+'M':fmt(lastV));
+    const lastLbl=(active.length===1?(c+' '):(c+' '))+krwKoreanShort(lastV);
     seriesSvg+=`<path d="${linePath}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linejoin="round"/>`;
     seriesSvg+=`<circle cx="${lastX}" cy="${lastY}" r="3" fill="${color}"/>`;
-    seriesSvg+=`<text x="${lastX}" y="${lastY-7}" text-anchor="middle" font-size="9" fill="${color}" font-weight="600">${lastLbl}</text>`;
+    seriesSvg+=`<text x="${lastX}" y="${lastY-7}" text-anchor="end" font-size="9" fill="${color}" font-weight="600">${lastLbl}</text>`;
   }
   const svg=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${gridHtml}${seriesSvg}${xLabels}</svg>`;
   target.innerHTML=`<div class="chart-wrap"><div class="chart-inner">${svg}</div></div>`;
@@ -878,7 +909,6 @@ function renderOverview() {
   }
 
   list.innerHTML=`
-    <div id="trend-overview"></div>
     <div class="card">
       <div class="card-label">진행 현황</div>
       ${open.length===0?'<p style="font-size:13px;color:#8e8e93">진행중인 투자 없음</p>':openRows+openSummary}
@@ -891,7 +921,6 @@ function renderOverview() {
       </div>
       ${closed.length>0?`<div class="sub-num" style="margin-bottom:12px">매수 ${fmt(closedBuyTotal)}원 · 수익률 ${closedPctTotal>=0?'+':''}${closedPctTotal.toFixed(2)}% · ${closed.length}건</div><hr class="divider">${closedRows}`:'<p style="font-size:13px;color:#8e8e93;margin-top:6px">완료된 투자 없음</p>'}
     </div>`;
-  renderTrendSection('trend-overview', closed.length?closed:trades);
 }
 
 // ── Render Open ───────────────────────────────────────────────────────────────
@@ -899,8 +928,35 @@ function renderOpen() {
   const top=document.getElementById('open-top');
   const list=document.getElementById('open-list');
   const open=trades.filter(t=>!t.sellRate);
-  top.innerHTML=`<div id="trend-open"></div><div class="sort-row"><select class="form-input sort-select" onchange="sortOpen=this.value;render()">${sortOptions(sortOpen)}</select><button class="btn-add-inline" onclick="openAddModal()">+ 매수 추가</button></div>`;
-  renderTrendSection('trend-open',open);
+
+  // 진행중 손익 요약: 통화별 + 합계 (그래프 대신)
+  const order=['USD','JPY','EUR'];
+  const oBy={};
+  for(const t of open){
+    if(!oBy[t.ccy])oBy[t.ccy]={buyKrw:0,buyFx:0};
+    oBy[t.ccy].buyKrw+=t.buyKrw; oBy[t.ccy].buyFx+=t.buyFx;
+  }
+  let sumRows=''; let tBuy=0,tCur=0;
+  for(const ccy of order){
+    const s=oBy[ccy]; if(!s) continue;
+    const rate=effectiveRate(ccy)|| (s.buyFx>0?(ccy==='JPY'?(s.buyKrw/s.buyFx)*100:s.buyKrw/s.buyFx):0);
+    const cur=s.buyFx*krwRate(ccy,rate);
+    const pnl=cur-s.buyKrw;
+    tBuy+=s.buyKrw; tCur+=cur;
+    const col=pnl>=0?'#0f6e56':'#FF3B30';
+    sumRows+=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px"><span>${ccyTag(ccy)}</span><span style="font-size:14px;font-weight:600;color:${col}">${pnl>=0?'+':''}${fmt(pnl)}원</span></div>`;
+  }
+  const tPnl=tCur-tBuy; const tPct=tBuy>0?(tPnl/tBuy)*100:0;
+  const summaryCard = open.length>0 ? `<div class="card" style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:8px;border-bottom:0.5px solid #e5e5ea">
+      <span style="font-size:13px;font-weight:600">진행중 평가손익 합계</span>
+      <span style="font-size:17px;font-weight:700;color:${tPnl>=0?'#0f6e56':'#FF3B30'}">${tPnl>=0?'+':''}${fmt(tPnl)}원</span>
+    </div>
+    ${sumRows}
+    <div class="sub-num" style="margin-top:6px">매수 ${fmt(tBuy)}원 → 평가 ${fmt(tCur)}원 (${tPct>=0?'+':''}${tPct.toFixed(2)}%)</div>
+  </div>` : '';
+
+  top.innerHTML=`${summaryCard}<div class="sort-row"><select class="form-input sort-select" onchange="sortOpen=this.value;render()">${sortOptions(sortOpen)}</select><button class="btn-add-inline" onclick="openAddModal()">+ 매수 추가</button></div>`;
   const sorted=sortTrades(open,sortOpen,'buyDate');
   if(sorted.length===0){list.innerHTML='<p class="empty">진행중인 투자 없음<br><br>위 "+ 매수 추가" 버튼으로 추가하세요</p>';return;}
   list.innerHTML=sorted.map(t=>renderOpenCard(t)).join('');
@@ -1033,12 +1089,15 @@ function autoCalcKrw() {
 }
 // ── Refresh (title tap) ───────────────────────────────────────────────────────
 function refreshApp() {
-  // Pull from GitHub first if configured, then reload local
+  // 초기화면(투자현황)으로 이동 + 데이터 새로고침
+  periodMode='month';
+  switchTab('overview');
   if(ghSettings.token&&ghSettings.owner&&ghSettings.repo){
     doRestoreFrom(ghSettings.path).then(()=>{render();}).catch(()=>render());
   } else {
     load();render();
   }
+  window.scrollTo(0,0);
 }
 // ── Rename title (long-press / right-click) ────────────────────────────────────
 let longPressTimer=null;
@@ -1075,7 +1134,7 @@ function saveTrade() {
   const note=document.getElementById('f-note').value.trim();
   const errEl=document.getElementById('add-error');
   if(!date||!rate||!fx||!krw){errEl.textContent='매수일, 환율, 외화금액은 필수입니다';errEl.style.display='block';return;}
-  trades.unshift({id:Date.now().toString(),ccy,buyDate:date,buyRate:rate,buyFx:fx,buyKrw:krw,note});
+  trades.unshift({id:Date.now().toString(),ccy,buyDate:date,buyRate:rate,buyFx:fx,buyKrw:krw,note,updatedAt:new Date().toISOString()});
   save();closeAddModal();render();checkAutoBackup();
 }
 
@@ -1106,7 +1165,7 @@ function confirmSell() {
   const rate=parseFloat(document.getElementById('s-rate').value);
   const errEl=document.getElementById('sell-error');
   if(!date||!rate){errEl.textContent='매도일과 환율을 입력해주세요';errEl.style.display='block';return;}
-  trades=trades.map(t=>t.id===sellTargetId?{...t,sellDate:date,sellRate:rate}:t);
+  trades=trades.map(t=>t.id===sellTargetId?{...t,sellDate:date,sellRate:rate,updatedAt:new Date().toISOString()}:t);
   save();closeSellModal();render();checkAutoBackup();
 }
 
@@ -1116,7 +1175,7 @@ function restoreFromClosed(id) {
   trades=trades.map(x=>{
     if(x.id!==id) return x;
     const {sellDate,sellRate,...rest}=x;
-    return rest;
+    return {...rest,updatedAt:new Date().toISOString()};
   });
   save();render();checkAutoBackup();
 }
@@ -1222,7 +1281,7 @@ function toggleEditMenu(){const m=document.getElementById('edit-menu');m.style.d
 function editMenuRestore() {
   const t=trades.find(x=>x.id===editTargetId);if(!t||!t.sellRate)return;
   if(!confirm('매도 정보를 제거하고 "투자진행중"으로 복원할까요?'))return;
-  trades=trades.map(x=>{if(x.id!==editTargetId)return x;const{sellDate,sellRate,...rest}=x;return rest;});
+  trades=trades.map(x=>{if(x.id!==editTargetId)return x;const{sellDate,sellRate,...rest}=x;return {...rest,updatedAt:new Date().toISOString()};});
   save();closeEditModal();render();checkAutoBackup();
 }
 function editMenuDelete() {
@@ -1246,7 +1305,7 @@ function saveEditTrade() {
   const note=document.getElementById('e-note').value.trim();
   const errEl=document.getElementById('edit-error');
   if(!date||!rate||!fx||!krw){errEl.textContent='매수일, 환율, 외화금액은 필수입니다';errEl.style.display='block';return;}
-  const updated={...t,buyDate:date,ccy,buyRate:rate,buyFx:fx,buyKrw:krw,note};
+  const updated={...t,buyDate:date,ccy,buyRate:rate,buyFx:fx,buyKrw:krw,note,updatedAt:new Date().toISOString()};
   if(t.sellRate){
     const sdate=document.getElementById('e-sdate').value;
     const srate=parseFloat(document.getElementById('e-srate').value);
@@ -1584,9 +1643,17 @@ async function doRestoreFrom(path) {
   const j=await res.json();
   const p=JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))));
   if(Array.isArray(p.trades)){
-    const remoteIds=new Set(p.trades.map(t=>t.id));
-    const localOnly=trades.filter(t=>!remoteIds.has(t.id));
-    trades=[...p.trades,...localOnly];
+    // Merge by id, preferring the most recently updated version (local edits win over stale remote).
+    const byId={};
+    for(const t of p.trades){ byId[t.id]=t; }
+    for(const t of trades){
+      const remote=byId[t.id];
+      if(!remote){ byId[t.id]=t; continue; }
+      const lu=t.updatedAt||'', ru=remote.updatedAt||'';
+      // local wins if it has a newer (or any, when remote has none) timestamp
+      if(lu>=ru) byId[t.id]=t;
+    }
+    trades=Object.values(byId);
   }
   if(p.autoRates) autoRates=p.autoRates;
   if(p.manualRates) manualRates=p.manualRates;
