@@ -698,17 +698,41 @@ function tradePnl(t) {
   return t.buyFx*krwRate(t.ccy,rate) - t.buyKrw;
 }
 
+// Pick a bucket granularity for the chart. For week/month/year this is fixed,
+// but "custom" ranges can span anywhere from a few days to many years, so the
+// granularity is chosen based on the actual span of the window so the chart
+// doesn't end up with way too many buckets (which made the chart spill far
+// beyond the visible width, leaving the on-screen portion of the line and the
+// y-axis scale "out of sync" with each other).
+function pickGranularity(mode, win, tradeList) {
+  if (mode==='month' || mode==='week') return 'day';
+  if (mode==='year') return 'month';
+  if (mode==='custom') {
+    let start = win.start, end = win.end;
+    if (!start) {
+      for (const t of tradeList) {
+        const d = t.sellDate||t.buyDate;
+        if (!start || d < start) start = d;
+      }
+    }
+    if (!start || !end) return 'month';
+    const days = (new Date(end) - new Date(start)) / 86400000;
+    if (days > 730) return 'year';   // > ~2 years -> yearly buckets
+    if (days > 60)  return 'month';  // > ~2 months -> monthly buckets
+    return 'day';
+  }
+  return 'day';
+}
+
 // For graph modes (week/month/year/custom): build cumulative series over sub-buckets within the window.
-function buildChartData(tradeList, mode, win) {
-  // choose bucket granularity
-  let gran = 'day';
-  if (mode==='year' || mode==='custom') gran = 'month';
-  if (mode==='month') gran = 'day';
-  if (mode==='week') gran = 'day';
+function buildChartData(tradeList, gran) {
   const buckets={};
   for (const t of tradeList) {
     const dateKey=t.sellDate||t.buyDate;
-    const label = gran==='month' ? dateKey.slice(0,7) : dateKey.slice(5);
+    let label;
+    if (gran==='year') label = dateKey.slice(0,4);
+    else if (gran==='month') label = dateKey.slice(0,7);
+    else label = dateKey.slice(5);
     if (!buckets[label]) buckets[label]={pnl:0};
     buckets[label].pnl += tradePnl(t);
   }
@@ -724,13 +748,14 @@ function renderMultiChart(containerId, tradeList, mode, toggles) {
   const target=document.getElementById(containerId); if(!target) return;
   const win = periodWindow(mode);
   const windowed = tradesInWindow(tradeList, win);
+  const gran = pickGranularity(mode, win, windowed);
   const ccys=['ALL','USD','JPY','EUR'];
   const active=ccys.filter(c=>toggles[c]);
   if(active.length===0){target.innerHTML='<p style="text-align:center;color:#8e8e93;font-size:13px;padding:16px 0">표시할 통화를 선택하세요</p>';return;}
   const seriesData={};const labelSet=new Set();
   for(const c of active){
     const list=c==='ALL'?windowed:windowed.filter(t=>t.ccy===c);
-    const d=buildChartData(list,mode,win); seriesData[c]=d; d.labels.forEach(l=>labelSet.add(l));
+    const d=buildChartData(list,gran); seriesData[c]=d; d.labels.forEach(l=>labelSet.add(l));
   }
   const labels=[...labelSet].sort();
   if(labels.length===0){target.innerHTML='<p style="text-align:center;color:#8e8e93;font-size:13px;padding:16px 0">이 기간에 데이터 없음</p>';return;}
