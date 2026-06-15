@@ -1491,11 +1491,18 @@ function handleImportFile(e) {
       const now=new Date().toISOString();
       for(const t of trades) arr.push({...t,deletedAt:now});
       saveTrash(arr);
-      // Replace
-      trades=importedTrades;
+      // Replace — stamp updatedAt so GitHub merge won't revert, and ensure required fields
+      trades=importedTrades.map(t=>({...t, updatedAt: t.updatedAt||now }));
       if(importedAuto) autoRates=importedAuto;
       if(importedManual) manualRates=importedManual;
-      save(); saveRates(); migrateJPY(); render();
+      // 기간 필터 초기화 (좁은 필터가 남아 투자완료가 빈 채로 보이는 문제 방지)
+      closedRange={start:'',end:''}; saveClosedRange();
+      customRange={start:'',end:''}; saveCustomRange();
+      periodMode='month';
+      save(); saveRates(); migrateJPY();
+      closeSettingsModal();
+      switchTab('closed');   // 결과를 바로 확인할 수 있도록 투자완료 탭으로
+      render();
       infoEl.textContent=`불러오기 완료! ${trades.length}건으로 교체되었습니다.`;infoEl.style.display='block';
       checkAutoBackup();
     }catch(err){
