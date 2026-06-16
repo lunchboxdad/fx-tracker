@@ -1513,7 +1513,8 @@ function handleImportFile(e) {
       saveTrash(arr);
       // Replace — stamp updatedAt so GitHub merge won't revert, and ensure required fields
       trades=importedTrades.map(t=>({...t, updatedAt: t.updatedAt||now }));
-      if(importedAuto) autoRates=importedAuto;
+      // 실시간 환율: import 파일의 값이 0이면 무시 (현재 fetch된 값 유지)
+      if(importedAuto && (importedAuto.USD>0||importedAuto.JPY>0||importedAuto.EUR>0)) autoRates=importedAuto;
       if(importedManual) manualRates=importedManual;
       // 기간 필터 초기화 (좁은 필터가 남아 투자완료가 빈 채로 보이는 문제 방지)
       closedRange={start:'',end:''}; saveClosedRange();
@@ -1682,7 +1683,8 @@ async function doRestoreFrom(path) {
     }
     trades=Object.values(byId);
   }
-  if(p.autoRates) autoRates=p.autoRates;
+  // 실시간 환율(autoRates)은 백업으로 덮어쓰지 않음 — 항상 최신 fetch 값 유지.
+  // manualRates(사용자 직접입력)만 백업본에 있으면 복원.
   if(p.manualRates) manualRates=p.manualRates;
   localStorage.setItem(STORAGE_KEY,JSON.stringify(trades));
   saveRates(); migrateJPY();
@@ -1693,9 +1695,9 @@ load();
 pruneTrash();
 updateBackupDateDisplay();
 switchTab('overview');
-ensureRates();
 checkScheduledBackup();
-initialSync();
+// 백업 복원을 먼저 끝낸 뒤 환율을 가져온다 (복원이 환율을 건드리지 않도록 순서 보장)
+initialSync().finally(()=>{ ensureRates(); });
 
 // 환율을 확실히 표시: 즉시 1회 시도 후, 비어있으면 자동 재시도 (최대 4회)
 async function ensureRates() {
