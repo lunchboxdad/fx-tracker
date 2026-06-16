@@ -369,6 +369,7 @@ let trades = [];
 let autoRates  = { USD:0, JPY:0, EUR:0 };
 let manualRates= { USD:'', JPY:'', EUR:'' };
 let autoRateFetchedAt = { USD:null, JPY:null, EUR:null };
+let rateSource = '';
 let currentTab = 'overview';
 let sellTargetId = null;
 let editTargetId = null;
@@ -468,26 +469,26 @@ function effectiveRate(ccy) {
 // ── Fetch rates ───────────────────────────────────────────────────────────────
 async function fetchRates() {
   const now = new Date().toISOString();
-  // ── Tier 1: Naver Finance (real-time, matches what Koreans see) ──
-  // Unofficial endpoint; may be blocked by CORS in some environments → auto-fallback.
-  async function naverPair(from, to) {
-    const url = `https://m.search.naver.com/p/csearch/content/qapirender.nhn?key=calculator&pkid=141&q=%ED%99%98%EC%9C%A8&where=m&u1=keb&u6=standardUnit&u7=0&u3=${from}&u4=${to}&u8=down&u2=1`;
+  // ── Tier 1: Naver Finance (real-time) — 병렬 호출 ──
+  async function naverPair(from) {
+    const url = `https://m.search.naver.com/p/csearch/content/qapirender.nhn?key=calculator&pkid=141&q=%ED%99%98%EC%9C%A8&where=m&u1=keb&u6=standardUnit&u7=0&u3=${from}&u4=KRW&u8=down&u2=1`;
     const res = await fetch(url);
     const data = await res.json();
-    // data.country[1].value = KRW per 1 unit of `from`
     const v = parseFloat(String(data.country[1].value).replace(/,/g,''));
-    return v;
+    return isNaN(v)?null:v;
   }
   try {
-    const usd = await naverPair('USD','KRW');   // KRW per USD
-    const eur = await naverPair('EUR','KRW');   // KRW per EUR
-    const jpy = await naverPair('JPY','KRW');   // KRW per 1 JPY
-    if (usd && !isNaN(usd)) {
+    const [usd,eur,jpy] = await Promise.all([
+      naverPair('USD').catch(()=>null),
+      naverPair('EUR').catch(()=>null),
+      naverPair('JPY').catch(()=>null),
+    ]);
+    if (usd) {
       autoRates.USD = Math.round(usd*100)/100;
-      if (eur && !isNaN(eur)) autoRates.EUR = Math.round(eur*100)/100;
-      if (jpy && !isNaN(jpy)) autoRates.JPY = Math.round(jpy*100*100)/100; // KRW per 100 JPY
+      if (eur) autoRates.EUR = Math.round(eur*100)/100;
+      if (jpy) autoRates.JPY = Math.round(jpy*100*100)/100; // KRW per 100 JPY
       autoRateFetchedAt = { USD:now, JPY:now, EUR:now };
-      saveRates(); render();
+      rateSource='네이버'; saveRates(); render();
       return;
     }
   } catch {}
@@ -502,7 +503,7 @@ async function fetchRates() {
         if (jpyPerUsd) autoRates.JPY = Math.round((krwPerUsd/jpyPerUsd)*100*100)/100;
         if (eurPerUsd) autoRates.EUR = Math.round((krwPerUsd/eurPerUsd)*100)/100;
         autoRateFetchedAt = { USD:now, JPY:now, EUR:now };
-        saveRates(); render();
+        rateSource='ECB'; saveRates(); render();
         return;
       }
     }
@@ -512,12 +513,17 @@ async function fetchRates() {
     const res = await fetch('https://open.er-api.com/v6/latest/KRW');
     const data = await res.json();
     const r = data.rates || {};
-    if (r['USD']) autoRates.USD = Math.round((1/r['USD'])*100)/100;
-    if (r['EUR']) autoRates.EUR = Math.round((1/r['EUR'])*100)/100;
-    if (r['JPY']) autoRates.JPY = Math.round((100/r['JPY'])*100)/100;
-    autoRateFetchedAt = { USD:now, JPY:now, EUR:now };
-    saveRates(); render();
+    if (r['USD']) {
+      autoRates.USD = Math.round((1/r['USD'])*100)/100;
+      if (r['EUR']) autoRates.EUR = Math.round((1/r['EUR'])*100)/100;
+      if (r['JPY']) autoRates.JPY = Math.round((100/r['JPY'])*100)/100;
+      autoRateFetchedAt = { USD:now, JPY:now, EUR:now };
+      rateSource='er-api'; saveRates(); render();
+      return;
+    }
   } catch {}
+  // 전부 실패 — 저장된 직전 값이라도 표시 유지 (render만)
+  render();
 }
 
 // ── Rate bar ──────────────────────────────────────────────────────────────────
@@ -698,41 +704,17 @@ function tradePnl(t) {
   return t.buyFx*krwRate(t.ccy,rate) - t.buyKrw;
 }
 
-// Pick a bucket granularity for the chart. For week/month/year this is fixed,
-// but "custom" ranges can span anywhere from a few days to many years, so the
-// granularity is chosen based on the actual span of the window so the chart
-// doesn't end up with way too many buckets (which made the chart spill far
-// beyond the visible width, leaving the on-screen portion of the line and the
-// y-axis scale "out of sync" with each other).
-function pickGranularity(mode, win, tradeList) {
-  if (mode==='month' || mode==='week') return 'day';
-  if (mode==='year') return 'month';
-  if (mode==='custom') {
-    let start = win.start, end = win.end;
-    if (!start) {
-      for (const t of tradeList) {
-        const d = t.sellDate||t.buyDate;
-        if (!start || d < start) start = d;
-      }
-    }
-    if (!start || !end) return 'month';
-    const days = (new Date(end) - new Date(start)) / 86400000;
-    if (days > 730) return 'year';   // > ~2 years -> yearly buckets
-    if (days > 60)  return 'month';  // > ~2 months -> monthly buckets
-    return 'day';
-  }
-  return 'day';
-}
-
 // For graph modes (week/month/year/custom): build cumulative series over sub-buckets within the window.
-function buildChartData(tradeList, gran) {
+function buildChartData(tradeList, mode, win) {
+  // choose bucket granularity
+  let gran = 'day';
+  if (mode==='year' || mode==='custom') gran = 'month';
+  if (mode==='month') gran = 'day';
+  if (mode==='week') gran = 'day';
   const buckets={};
   for (const t of tradeList) {
     const dateKey=t.sellDate||t.buyDate;
-    let label;
-    if (gran==='year') label = dateKey.slice(0,4);
-    else if (gran==='month') label = dateKey.slice(0,7);
-    else label = dateKey.slice(5);
+    const label = gran==='month' ? dateKey.slice(0,7) : dateKey.slice(5);
     if (!buckets[label]) buckets[label]={pnl:0};
     buckets[label].pnl += tradePnl(t);
   }
@@ -748,14 +730,13 @@ function renderMultiChart(containerId, tradeList, mode, toggles) {
   const target=document.getElementById(containerId); if(!target) return;
   const win = periodWindow(mode);
   const windowed = tradesInWindow(tradeList, win);
-  const gran = pickGranularity(mode, win, windowed);
   const ccys=['ALL','USD','JPY','EUR'];
   const active=ccys.filter(c=>toggles[c]);
   if(active.length===0){target.innerHTML='<p style="text-align:center;color:#8e8e93;font-size:13px;padding:16px 0">표시할 통화를 선택하세요</p>';return;}
   const seriesData={};const labelSet=new Set();
   for(const c of active){
     const list=c==='ALL'?windowed:windowed.filter(t=>t.ccy===c);
-    const d=buildChartData(list,gran); seriesData[c]=d; d.labels.forEach(l=>labelSet.add(l));
+    const d=buildChartData(list,mode,win); seriesData[c]=d; d.labels.forEach(l=>labelSet.add(l));
   }
   const labels=[...labelSet].sort();
   if(labels.length===0){target.innerHTML='<p style="text-align:center;color:#8e8e93;font-size:13px;padding:16px 0">이 기간에 데이터 없음</p>';return;}
@@ -763,7 +744,10 @@ function renderMultiChart(containerId, tradeList, mode, toggles) {
     const d=seriesData[c]; const map={}; d.labels.forEach((l,i)=>{map[l]=d.values[i];});
     let last=0; seriesData[c].aligned=labels.map(l=>{if(l in map)last=map[l];return last;});
   }
-  const W=Math.max(280,labels.length*44),H=140,padL=56,padR=10,padT=20,padB=24;
+  // 라벨이 많은 모드(커스텀/연/월)는 화면 폭에 맞춰 압축; 일/주처럼 적으면 여유롭게
+  const fitToScreen = (mode==='custom'||mode==='year'||labels.length>12);
+  const W = fitToScreen ? 360 : Math.max(280,labels.length*44);
+  const H=140,padL=56,padR=14,padT=20,padB=24;
   const chartW=W-padL-padR,chartH=H-padT-padB;
   let allVals=[]; active.forEach(c=>allVals.push(...seriesData[c].aligned));
   // ── Auto-scale: 실제 데이터의 최소~최대 범위가 차트 높이의 80%를 차지하도록 ──
@@ -794,7 +778,9 @@ function renderMultiChart(containerId, tradeList, mode, toggles) {
   }
   const zeroY=yPos(0);
   gridHtml+=`<line x1="${padL}" y1="${zeroY}" x2="${W-padR}" y2="${zeroY}" stroke="#c6c6c8" stroke-width="1"/>`;
-  let xLabels='';const step=Math.ceil(labels.length/6);
+  let xLabels='';
+  const maxLabels = fitToScreen ? 5 : 6;
+  const step=Math.max(1,Math.ceil(labels.length/maxLabels));
   labels.forEach((l,i)=>{if(i%step===0||i===labels.length-1)xLabels+=`<text x="${xPos(i)}" y="${H-4}" text-anchor="middle" font-size="9" fill="#8e8e93">${l}</text>`;});
   let seriesSvg='';
   for(const c of active){
@@ -806,8 +792,10 @@ function renderMultiChart(containerId, tradeList, mode, toggles) {
     seriesSvg+=`<circle cx="${lastX}" cy="${lastY}" r="3" fill="${color}"/>`;
     seriesSvg+=`<text x="${lastX}" y="${lastY-7}" text-anchor="end" font-size="9" fill="${color}" font-weight="600">${lastLbl}</text>`;
   }
-  const svg=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${gridHtml}${seriesSvg}${xLabels}</svg>`;
-  target.innerHTML=`<div class="chart-wrap"><div class="chart-inner">${svg}</div></div>`;
+  const svg=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="${fitToScreen?'width:100%;height:auto':''}">${gridHtml}${seriesSvg}${xLabels}</svg>`;
+  target.innerHTML = fitToScreen
+    ? `<div>${svg}</div>`
+    : `<div class="chart-wrap"><div class="chart-inner">${svg}</div></div>`;
 }
 
 // "일" mode: show today's realized pnl totals instead of a graph
@@ -886,6 +874,8 @@ function renderOverview() {
   const byCcy={};
   for(const t of open){if(!byCcy[t.ccy])byCcy[t.ccy]={buyKrw:0,buyFx:0};byCcy[t.ccy].buyKrw+=t.buyKrw;byCcy[t.ccy].buyFx+=t.buyFx;}
   let openRows='';let totalBuy=0,totalCur=0;
+  // 1차: 통화별 평가액 계산 (비중 % 산출 위해 먼저 합계 구함)
+  const rows=[];
   for(const ccy of order){
     const s=byCcy[ccy]; if(!s) continue;
     const avgKrwPerUnit=s.buyFx>0?s.buyKrw/s.buyFx:0;
@@ -894,7 +884,12 @@ function renderOverview() {
     const cur=s.buyFx*krwRate(ccy,rate);
     const pnl=cur-s.buyKrw;const pct=s.buyKrw>0?(pnl/s.buyKrw)*100:0;
     totalBuy+=s.buyKrw;totalCur+=cur;
-    openRows+=`<div style="margin-bottom:14px;padding-bottom:12px;border-bottom:0.5px solid #f2f2f7"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">${ccyTag(ccy)}${pnlBadge(pnl,pct)}</div><div class="grid2"><div><div class="field-label">매수금액</div><div class="field-val">${fmt(s.buyKrw)}원</div></div><div><div class="field-label">보유 ${ccy}</div><div class="field-val">${fmtFx(s.buyFx,ccy)}</div></div><div><div class="field-label">평균환율</div><div class="field-val">${fmt(avgDisplay,2)}</div></div><div><div class="field-label">현재환율</div><div class="field-val">${rate?fmt(rate,2):'입력필요'}</div></div><div><div class="field-label">평가금액</div><div class="field-val">${fmt(cur)}원</div></div></div></div>`;
+    rows.push({ccy,s,avgDisplay,rate,cur,pnl,pct});
+  }
+  // 2차: 행 렌더 (평가비율 = 이 통화 평가액 / 전체 진행 평가액)
+  for(const r of rows){
+    const valPct = totalCur>0 ? (r.cur/totalCur)*100 : 0;
+    openRows+=`<div style="margin-bottom:14px;padding-bottom:12px;border-bottom:0.5px solid #f2f2f7"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">${ccyTag(r.ccy)}${pnlBadge(r.pnl,r.pct)}</div><div class="grid2"><div><div class="field-label">매수금액</div><div class="field-val">${fmt(r.s.buyKrw)}원</div></div><div><div class="field-label">보유 ${r.ccy}</div><div class="field-val">${fmtFx(r.s.buyFx,r.ccy)}</div></div><div><div class="field-label">평균환율</div><div class="field-val">${fmt(r.avgDisplay,2)}</div></div><div><div class="field-label">현재환율</div><div class="field-val">${r.rate?fmt(r.rate,2):'입력필요'}</div></div><div><div class="field-label">평가금액</div><div class="field-val">${fmt(r.cur)}원</div></div><div><div class="field-label">평가비율</div><div class="field-val">${valPct.toFixed(1)}%</div></div></div></div>`;
   }
   const totalPnl=totalCur-totalBuy;const totalPct=totalBuy>0?(totalPnl/totalBuy)*100:0;
   const openSummary = Object.keys(byCcy).length>0
@@ -1698,9 +1693,21 @@ load();
 pruneTrash();
 updateBackupDateDisplay();
 switchTab('overview');
-fetchRates();
+ensureRates();
 checkScheduledBackup();
 initialSync();
+
+// 환율을 확실히 표시: 즉시 1회 시도 후, 비어있으면 자동 재시도 (최대 4회)
+async function ensureRates() {
+  await fetchRates();
+  let tries=0;
+  const timer=setInterval(async()=>{
+    tries++;
+    const haveAll = autoRates.USD>0 && autoRates.JPY>0 && autoRates.EUR>0;
+    if(haveAll || tries>=4){ clearInterval(timer); return; }
+    await fetchRates();  // 강제 재조회 (refresh 버튼을 누른 것과 동일)
+  }, 2500);
+}
 // close card menus when tapping elsewhere
 document.addEventListener('click',(e)=>{
   if(openCardMenu && !e.target.closest('.card-menu') && !e.target.classList.contains('card-menu-btn')){
