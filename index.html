@@ -751,14 +751,17 @@ function renderMultiChart(containerId, tradeList, mode, toggles) {
   const chartW=W-padL-padR,chartH=H-padT-padB;
   let allVals=[]; active.forEach(c=>allVals.push(...seriesData[c].aligned));
   // ── Auto-scale: 실제 데이터의 최소~최대 범위가 차트 높이의 80%를 차지하도록 ──
-  let dataMin=Math.min(...allVals), dataMax=Math.max(...allVals);
-  // 0이 항상 보이도록 포함하되, 데이터가 0에서 멀면 데이터 범위 위주로 스케일
+  const realMin=Math.min(...allVals), realMax=Math.max(...allVals);
+  const hasNegative = realMin < 0;   // 실제로 마이너스로 간 적이 있는지
+  let dataMin=realMin, dataMax=realMax;
   if (dataMin>0) dataMin=0;        // 전부 양수면 바닥을 0으로
   if (dataMax<0) dataMax=0;        // 전부 음수면 천장을 0으로
   let span=dataMax-dataMin;
   if(span<=0) span=Math.abs(dataMax)||1;
-  const pad=span*0.125;            // 위아래 12.5%씩 여백 → 데이터 범위가 75~80% 차지
-  let minV=dataMin-pad, maxV=dataMax+pad;
+  const pad=span*0.125;            // 데이터 범위가 75~80% 차지하도록 여백
+  // 음수 이력이 없으면 바닥을 0에 고정(아래 패딩 없음), 있으면 아래도 여백
+  let minV = hasNegative ? dataMin-pad : 0;
+  let maxV = dataMax+pad;
   const range=maxV-minV||1;
   function xPos(i){return padL+(i/Math.max(labels.length-1,1))*chartW;}
   function yPos(v){return padT+(1-(v-minV)/range)*chartH;}
