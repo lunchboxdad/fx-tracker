@@ -1218,7 +1218,10 @@ function pruneTrash() {
 }
 function trashDelete(id) {
   const t=trades.find(x=>x.id===id);if(!t)return;
-  if(!confirm('삭제할까요? 3일 이내 복구 가능합니다.')) return;
+  const dupCount=trades.filter(x=>x.id===id).length;
+  const sameData=trades.filter(x=>x.buyDate===t.buyDate&&Math.abs(x.buyFx-t.buyFx)<0.01&&x.ccy===t.ccy);
+  const backupOn=!!(ghSettings.token&&ghSettings.owner&&ghSettings.repo);
+  if(!confirm(`삭제할까요? 3일 이내 복구 가능합니다.\n\n[진단] id=${id}\n같은id 개수=${dupCount}\n동일내용 항목수=${sameData.length}\nGitHub백업=${backupOn?'켜짐':'꺼짐'}`)) return;
   const arr=loadTrash();
   arr.push({...t,deletedAt:new Date().toISOString()});
   saveTrash(arr);
@@ -1593,9 +1596,9 @@ function parseCsvExport(text) {
 function scheduleBackup() {
   if(!ghSettings.token||!ghSettings.owner||!ghSettings.repo)return;
   if(backupTimer)clearTimeout(backupTimer);
-  // Pull latest first (merge), then push — prevents overwriting other device's data
+  // 로컬 변경(추가/삭제/매도 등) 직후에는 pull-merge를 하지 않고 push만 한다.
+  // (pull을 하면 방금 삭제한 항목이 원격 옛 데이터에서 되살아나는 문제 발생)
   backupTimer=setTimeout(async()=>{
-    try { await doRestoreFrom(ghSettings.path); } catch {}
     try { await doBackup(); } catch {}
   },2500);
 }
