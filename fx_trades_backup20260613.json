@@ -1,14 +1,14 @@
 {
   "trades": [],
   "autoRates": {
-    "USD": 1511.9,
+    "USD": 1512,
     "JPY": 943,
-    "EUR": 1756
+    "EUR": 1756.04
   },
   "manualRates": {
     "USD": "",
     "JPY": "",
     "EUR": ""
   },
-  "exportedAt": "2026-06-17T05:48:33.402Z"
+  "exportedAt": "2026-06-17T05:49:36.097Z"
 }
