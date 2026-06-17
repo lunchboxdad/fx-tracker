@@ -1,6 +1,7 @@
 {
   "trades": [
     {
+      "id": "imp_0001",
       "ccy": "USD",
       "buyDate": "2021-11-01",
       "buyRate": 1169.26,
@@ -9,9 +10,10 @@
       "note": "",
       "sellDate": "2021-11-01",
       "sellRate": 1173.94,
-      "id": "imp_0001"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0002",
       "ccy": "USD",
       "buyDate": "2021-11-01",
       "buyRate": 1168.86,
@@ -20,9 +22,10 @@
       "note": "",
       "sellDate": "2021-11-01",
       "sellRate": 1173.94,
-      "id": "imp_0002"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0003",
       "ccy": "JPY",
       "buyDate": "2022-01-02",
       "buyRate": 920.94,
@@ -31,9 +34,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-01-02",
       "sellRate": 927.18,
-      "id": "imp_0003"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0004",
       "ccy": "JPY",
       "buyDate": "2022-01-03",
       "buyRate": 932.88,
@@ -42,9 +46,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-01-03",
       "sellRate": 937.31,
-      "id": "imp_0004"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0005",
       "ccy": "JPY",
       "buyDate": "2022-01-15",
       "buyRate": 921.78,
@@ -53,9 +58,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-01-15",
       "sellRate": 926.36,
-      "id": "imp_0005"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0006",
       "ccy": "JPY",
       "buyDate": "2022-01-21",
       "buyRate": 928.12,
@@ -64,9 +70,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-01-21",
       "sellRate": 930.89,
-      "id": "imp_0006"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0007",
       "ccy": "JPY",
       "buyDate": "2022-01-22",
       "buyRate": 926.51,
@@ -75,9 +82,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-01-22",
       "sellRate": 929.22,
-      "id": "imp_0007"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0008",
       "ccy": "JPY",
       "buyDate": "2022-01-26",
       "buyRate": 931.15,
@@ -86,9 +94,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-01-26",
       "sellRate": 937.43,
-      "id": "imp_0008"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0009",
       "ccy": "JPY",
       "buyDate": "2022-02-02",
       "buyRate": 937.46,
@@ -97,9 +106,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-02-02",
       "sellRate": 943.33,
-      "id": "imp_0009"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0010",
       "ccy": "JPY",
       "buyDate": "2022-02-03",
       "buyRate": 938.33,
@@ -108,9 +118,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-02-03",
       "sellRate": 940.9,
-      "id": "imp_0010"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0011",
       "ccy": "JPY",
       "buyDate": "2022-02-05",
       "buyRate": 939.09,
@@ -119,9 +130,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-02-05",
       "sellRate": 946.16,
-      "id": "imp_0011"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0012",
       "ccy": "JPY",
       "buyDate": "2022-02-21",
       "buyRate": 937.94,
@@ -130,9 +142,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-02-21",
       "sellRate": 940.53,
-      "id": "imp_0012"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0013",
       "ccy": "JPY",
       "buyDate": "2022-02-21",
       "buyRate": 934.99,
@@ -141,9 +154,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-02-21",
       "sellRate": 942.17,
-      "id": "imp_0013"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0014",
       "ccy": "JPY",
       "buyDate": "2022-02-21",
       "buyRate": 940.7,
@@ -152,9 +166,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-02-21",
       "sellRate": 943.45,
-      "id": "imp_0014"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0015",
       "ccy": "JPY",
       "buyDate": "2022-03-03",
       "buyRate": 940.85,
@@ -163,9 +178,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-03-03",
       "sellRate": 946.28,
-      "id": "imp_0015"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0016",
       "ccy": "JPY",
       "buyDate": "2022-03-04",
       "buyRate": 942.39,
@@ -174,9 +190,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-03-04",
       "sellRate": 945.1,
-      "id": "imp_0016"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0017",
       "ccy": "JPY",
       "buyDate": "2022-03-06",
       "buyRate": 945.58,
@@ -185,9 +202,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-03-06",
       "sellRate": 948.62,
-      "id": "imp_0017"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0018",
       "ccy": "JPY",
       "buyDate": "2022-03-14",
       "buyRate": 946.51,
@@ -196,9 +214,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-03-14",
       "sellRate": 952.27,
-      "id": "imp_0018"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0019",
       "ccy": "JPY",
       "buyDate": "2022-03-15",
       "buyRate": 941,
@@ -207,9 +226,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-03-15",
       "sellRate": 948.44,
-      "id": "imp_0019"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0020",
       "ccy": "JPY",
       "buyDate": "2022-03-17",
       "buyRate": 940.51,
@@ -218,9 +238,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-03-17",
       "sellRate": 948.36,
-      "id": "imp_0020"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0021",
       "ccy": "JPY",
       "buyDate": "2022-03-19",
       "buyRate": 948.95,
@@ -229,9 +250,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-03-19",
       "sellRate": 953.63,
-      "id": "imp_0021"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0022",
       "ccy": "JPY",
       "buyDate": "2022-04-03",
       "buyRate": 969.22,
@@ -240,9 +262,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-04-03",
       "sellRate": 972.93,
-      "id": "imp_0022"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0023",
       "ccy": "JPY",
       "buyDate": "2022-04-04",
       "buyRate": 971.58,
@@ -251,9 +274,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-04-04",
       "sellRate": 976.7,
-      "id": "imp_0023"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0024",
       "ccy": "JPY",
       "buyDate": "2022-04-05",
       "buyRate": 972.22,
@@ -262,9 +286,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-04-05",
       "sellRate": 978.07,
-      "id": "imp_0024"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0025",
       "ccy": "JPY",
       "buyDate": "2022-04-17",
       "buyRate": 962.91,
@@ -273,9 +298,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-04-17",
       "sellRate": 968.55,
-      "id": "imp_0025"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0026",
       "ccy": "JPY",
       "buyDate": "2022-04-22",
       "buyRate": 964.97,
@@ -284,9 +310,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-04-22",
       "sellRate": 970.72,
-      "id": "imp_0026"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0027",
       "ccy": "JPY",
       "buyDate": "2022-04-26",
       "buyRate": 974.95,
@@ -295,9 +322,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-04-26",
       "sellRate": 977.28,
-      "id": "imp_0027"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0028",
       "ccy": "JPY",
       "buyDate": "2022-04-27",
       "buyRate": 968.08,
@@ -306,9 +334,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-04-27",
       "sellRate": 972.97,
-      "id": "imp_0028"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0029",
       "ccy": "JPY",
       "buyDate": "2022-05-07",
       "buyRate": 979.66,
@@ -317,9 +346,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-05-07",
       "sellRate": 984.8,
-      "id": "imp_0029"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0030",
       "ccy": "JPY",
       "buyDate": "2022-05-08",
       "buyRate": 981.63,
@@ -328,9 +358,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-05-08",
       "sellRate": 984.43,
-      "id": "imp_0030"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0031",
       "ccy": "JPY",
       "buyDate": "2022-05-09",
       "buyRate": 986.53,
@@ -339,9 +370,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-05-09",
       "sellRate": 991.63,
-      "id": "imp_0031"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0032",
       "ccy": "JPY",
       "buyDate": "2022-05-15",
       "buyRate": 992.92,
@@ -350,9 +382,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-05-15",
       "sellRate": 999.15,
-      "id": "imp_0032"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0033",
       "ccy": "JPY",
       "buyDate": "2022-05-17",
       "buyRate": 979.58,
@@ -361,9 +394,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-05-17",
       "sellRate": 987.5,
-      "id": "imp_0033"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0034",
       "ccy": "JPY",
       "buyDate": "2022-05-17",
       "buyRate": 985.5,
@@ -372,9 +406,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-05-17",
       "sellRate": 988.13,
-      "id": "imp_0034"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0035",
       "ccy": "USD",
       "buyDate": "2022-06-14",
       "buyRate": 1169.06,
@@ -383,9 +418,10 @@
       "note": "",
       "sellDate": "2022-06-14",
       "sellRate": 1174.64,
-      "id": "imp_0035"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0036",
       "ccy": "JPY",
       "buyDate": "2022-06-29",
       "buyRate": 953.4,
@@ -394,9 +430,10 @@
       "note": "",
       "sellDate": "2022-06-29",
       "sellRate": 955.4,
-      "id": "imp_0036"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0037",
       "ccy": "JPY",
       "buyDate": "2022-06-29",
       "buyRate": 952.1,
@@ -405,9 +442,10 @@
       "note": "",
       "sellDate": "2022-06-29",
       "sellRate": 955.5,
-      "id": "imp_0037"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0038",
       "ccy": "JPY",
       "buyDate": "2022-06-29",
       "buyRate": 952.1,
@@ -416,9 +454,10 @@
       "note": "",
       "sellDate": "2022-06-29",
       "sellRate": 954.6,
-      "id": "imp_0038"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0039",
       "ccy": "JPY",
       "buyDate": "2022-06-29",
       "buyRate": 947.25,
@@ -427,9 +466,10 @@
       "note": "",
       "sellDate": "2022-06-29",
       "sellRate": 955,
-      "id": "imp_0039"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0040",
       "ccy": "JPY",
       "buyDate": "2022-07-01",
       "buyRate": 955.7,
@@ -438,9 +478,10 @@
       "note": "",
       "sellDate": "2022-07-01",
       "sellRate": 948,
-      "id": "imp_0040"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0041",
       "ccy": "JPY",
       "buyDate": "2022-07-01",
       "buyRate": 953.4,
@@ -449,9 +490,10 @@
       "note": "",
       "sellDate": "2022-07-01",
       "sellRate": 948,
-      "id": "imp_0041"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0042",
       "ccy": "JPY",
       "buyDate": "2022-07-05",
       "buyRate": 950.9,
@@ -460,9 +502,10 @@
       "note": "",
       "sellDate": "2022-07-05",
       "sellRate": 956.04,
-      "id": "imp_0042"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0043",
       "ccy": "USD",
       "buyDate": "2022-07-06",
       "buyRate": 1290.7,
@@ -471,9 +514,10 @@
       "note": "",
       "sellDate": "2022-07-06",
       "sellRate": 1309.2,
-      "id": "imp_0043"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0044",
       "ccy": "JPY",
       "buyDate": "2022-07-08",
       "buyRate": 954.1,
@@ -482,9 +526,10 @@
       "note": "",
       "sellDate": "2022-07-08",
       "sellRate": 960.8,
-      "id": "imp_0044"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0045",
       "ccy": "JPY",
       "buyDate": "2022-07-11",
       "buyRate": 955.2,
@@ -493,9 +538,10 @@
       "note": "",
       "sellDate": "2022-07-11",
       "sellRate": 958.2,
-      "id": "imp_0045"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0046",
       "ccy": "JPY",
       "buyDate": "2022-07-12",
       "buyRate": 952.2,
@@ -504,9 +550,10 @@
       "note": "",
       "sellDate": "2022-07-12",
       "sellRate": 956.1,
-      "id": "imp_0046"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0047",
       "ccy": "JPY",
       "buyDate": "2022-07-15",
       "buyRate": 951.53,
@@ -515,9 +562,10 @@
       "note": "",
       "sellDate": "2022-07-15",
       "sellRate": 954.2,
-      "id": "imp_0047"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0048",
       "ccy": "JPY",
       "buyDate": "2022-07-15",
       "buyRate": 948.25,
@@ -526,9 +574,10 @@
       "note": "",
       "sellDate": "2022-07-15",
       "sellRate": 952.4,
-      "id": "imp_0048"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0049",
       "ccy": "JPY",
       "buyDate": "2022-07-18",
       "buyRate": 951.53,
@@ -537,9 +586,10 @@
       "note": "",
       "sellDate": "2022-07-18",
       "sellRate": 954.15,
-      "id": "imp_0049"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0050",
       "ccy": "JPY",
       "buyDate": "2022-07-20",
       "buyRate": 943,
@@ -548,9 +598,10 @@
       "note": "",
       "sellDate": "2022-07-20",
       "sellRate": 947,
-      "id": "imp_0050"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0051",
       "ccy": "JPY",
       "buyDate": "2022-07-22",
       "buyRate": 947.6,
@@ -559,9 +610,10 @@
       "note": "",
       "sellDate": "2022-07-22",
       "sellRate": 955,
-      "id": "imp_0051"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0052",
       "ccy": "JPY",
       "buyDate": "2022-07-22",
       "buyRate": 945.4,
@@ -570,9 +622,10 @@
       "note": "",
       "sellDate": "2022-07-22",
       "sellRate": 950.3,
-      "id": "imp_0052"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0053",
       "ccy": "JPY",
       "buyDate": "2022-07-27",
       "buyRate": 957,
@@ -581,9 +634,10 @@
       "note": "",
       "sellDate": "2022-07-27",
       "sellRate": 959.15,
-      "id": "imp_0053"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0054",
       "ccy": "JPY",
       "buyDate": "2022-08-09",
       "buyRate": 966.01,
@@ -592,9 +646,10 @@
       "note": "",
       "sellDate": "2022-08-09",
       "sellRate": 967.5,
-      "id": "imp_0054"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0055",
       "ccy": "JPY",
       "buyDate": "2022-08-09",
       "buyRate": 964.7,
@@ -603,9 +658,10 @@
       "note": "",
       "sellDate": "2022-08-09",
       "sellRate": 969.4,
-      "id": "imp_0055"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0056",
       "ccy": "JPY",
       "buyDate": "2022-08-11",
       "buyRate": 973.07,
@@ -614,9 +670,10 @@
       "note": "",
       "sellDate": "2022-08-11",
       "sellRate": 978.72,
-      "id": "imp_0056"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0057",
       "ccy": "JPY",
       "buyDate": "2022-08-11",
       "buyRate": 976.01,
@@ -625,9 +682,10 @@
       "note": "",
       "sellDate": "2022-08-11",
       "sellRate": 978.47,
-      "id": "imp_0057"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0058",
       "ccy": "JPY",
       "buyDate": "2022-08-11",
       "buyRate": 974.02,
@@ -636,9 +694,10 @@
       "note": "",
       "sellDate": "2022-08-11",
       "sellRate": 978.47,
-      "id": "imp_0058"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0059",
       "ccy": "JPY",
       "buyDate": "2022-08-18",
       "buyRate": 973.96,
@@ -647,9 +706,10 @@
       "note": "",
       "sellDate": "2022-08-18",
       "sellRate": 977.3,
-      "id": "imp_0059"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0060",
       "ccy": "JPY",
       "buyDate": "2022-08-23",
       "buyRate": 974.51,
@@ -658,9 +718,10 @@
       "note": "",
       "sellDate": "2022-08-23",
       "sellRate": 979.68,
-      "id": "imp_0060"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0061",
       "ccy": "JPY",
       "buyDate": "2022-09-05",
       "buyRate": 975.15,
@@ -669,9 +730,10 @@
       "note": "",
       "sellDate": "2022-09-05",
       "sellRate": 977,
-      "id": "imp_0061"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0062",
       "ccy": "JPY",
       "buyDate": "2022-09-05",
       "buyRate": 967.5,
@@ -680,9 +742,10 @@
       "note": "",
       "sellDate": "2022-09-05",
       "sellRate": 971.5,
-      "id": "imp_0062"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0063",
       "ccy": "JPY",
       "buyDate": "2022-09-08",
       "buyRate": 962.8,
@@ -691,9 +754,10 @@
       "note": "",
       "sellDate": "2022-09-08",
       "sellRate": 967.28,
-      "id": "imp_0063"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0064",
       "ccy": "JPY",
       "buyDate": "2022-09-08",
       "buyRate": 966.81,
@@ -702,9 +766,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-09-08",
       "sellRate": 973.09,
-      "id": "imp_0064"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0065",
       "ccy": "JPY",
       "buyDate": "2022-09-24",
       "buyRate": 959.77,
@@ -713,9 +778,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2022-09-24",
       "sellRate": 965.14,
-      "id": "imp_0065"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0066",
       "ccy": "JPY",
       "buyDate": "2022-10-07",
       "buyRate": 968.18,
@@ -724,9 +790,10 @@
       "note": "",
       "sellDate": "2022-10-07",
       "sellRate": 974.01,
-      "id": "imp_0066"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0067",
       "ccy": "JPY",
       "buyDate": "2022-10-19",
       "buyRate": 972.67,
@@ -735,9 +802,10 @@
       "note": "",
       "sellDate": "2022-10-19",
       "sellRate": 983.15,
-      "id": "imp_0067"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0068",
       "ccy": "JPY",
       "buyDate": "2022-10-24",
       "buyRate": 958.76,
@@ -746,9 +814,10 @@
       "note": "",
       "sellDate": "2022-10-24",
       "sellRate": 966.16,
-      "id": "imp_0068"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0069",
       "ccy": "JPY",
       "buyDate": "2022-10-24",
       "buyRate": 955.89,
@@ -757,9 +826,10 @@
       "note": "",
       "sellDate": "2022-10-24",
       "sellRate": 966.16,
-      "id": "imp_0069"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0070",
       "ccy": "JPY",
       "buyDate": "2022-10-27",
       "buyRate": 969.5,
@@ -768,9 +838,10 @@
       "note": "",
       "sellDate": "2022-10-27",
       "sellRate": 975.22,
-      "id": "imp_0070"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0071",
       "ccy": "JPY",
       "buyDate": "2022-10-27",
       "buyRate": 966.33,
@@ -779,9 +850,10 @@
       "note": "",
       "sellDate": "2022-10-27",
       "sellRate": 973.62,
-      "id": "imp_0071"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0072",
       "ccy": "JPY",
       "buyDate": "2022-10-27",
       "buyRate": 966.33,
@@ -790,9 +862,10 @@
       "note": "",
       "sellDate": "2022-10-27",
       "sellRate": 971.51,
-      "id": "imp_0072"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0073",
       "ccy": "JPY",
       "buyDate": "2022-10-27",
       "buyRate": 961.34,
@@ -801,9 +874,10 @@
       "note": "",
       "sellDate": "2022-10-27",
       "sellRate": 966.16,
-      "id": "imp_0073"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0074",
       "ccy": "JPY",
       "buyDate": "2022-11-01",
       "buyRate": 956.18,
@@ -812,9 +886,10 @@
       "note": "",
       "sellDate": "2022-11-01",
       "sellRate": 959.61,
-      "id": "imp_0074"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0075",
       "ccy": "JPY",
       "buyDate": "2022-11-02",
       "buyRate": 957.62,
@@ -823,9 +898,10 @@
       "note": "",
       "sellDate": "2022-11-02",
       "sellRate": 962.52,
-      "id": "imp_0075"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0076",
       "ccy": "USD",
       "buyDate": "2022-11-03",
       "buyRate": 1419.5,
@@ -834,9 +910,10 @@
       "note": "",
       "sellDate": "2022-11-03",
       "sellRate": 1427.5,
-      "id": "imp_0076"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0077",
       "ccy": "JPY",
       "buyDate": "2022-11-07",
       "buyRate": 956.54,
@@ -845,9 +922,10 @@
       "note": "",
       "sellDate": "2022-11-07",
       "sellRate": 961.49,
-      "id": "imp_0077"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0078",
       "ccy": "JPY",
       "buyDate": "2022-11-10",
       "buyRate": 938,
@@ -856,9 +934,10 @@
       "note": "",
       "sellDate": "2022-11-10",
       "sellRate": 943.63,
-      "id": "imp_0078"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0079",
       "ccy": "JPY",
       "buyDate": "2022-11-11",
       "buyRate": 947.38,
@@ -867,9 +946,10 @@
       "note": "",
       "sellDate": "2022-11-11",
       "sellRate": 952.34,
-      "id": "imp_0079"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0080",
       "ccy": "JPY",
       "buyDate": "2022-11-11",
       "buyRate": 940.53,
@@ -878,9 +958,10 @@
       "note": "",
       "sellDate": "2022-11-11",
       "sellRate": 962.34,
-      "id": "imp_0080"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0081",
       "ccy": "JPY",
       "buyDate": "2022-11-14",
       "buyRate": 938.28,
@@ -889,9 +970,10 @@
       "note": "",
       "sellDate": "2022-11-14",
       "sellRate": 951.85,
-      "id": "imp_0081"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0082",
       "ccy": "JPY",
       "buyDate": "2022-11-14",
       "buyRate": 944.82,
@@ -900,9 +982,10 @@
       "note": "",
       "sellDate": "2022-11-14",
       "sellRate": 952.09,
-      "id": "imp_0082"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0083",
       "ccy": "JPY",
       "buyDate": "2022-11-14",
       "buyRate": 941.91,
@@ -911,9 +994,10 @@
       "note": "",
       "sellDate": "2022-11-14",
       "sellRate": 951.72,
-      "id": "imp_0083"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0084",
       "ccy": "JPY",
       "buyDate": "2022-11-16",
       "buyRate": 939.92,
@@ -922,9 +1006,10 @@
       "note": "",
       "sellDate": "2022-11-16",
       "sellRate": 946.98,
-      "id": "imp_0084"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0085",
       "ccy": "JPY",
       "buyDate": "2022-11-17",
       "buyRate": 956.39,
@@ -933,9 +1018,10 @@
       "note": "",
       "sellDate": "2022-11-17",
       "sellRate": 960.16,
-      "id": "imp_0085"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0086",
       "ccy": "JPY",
       "buyDate": "2022-11-17",
       "buyRate": 956.39,
@@ -944,9 +1030,10 @@
       "note": "",
       "sellDate": "2022-11-17",
       "sellRate": 960.25,
-      "id": "imp_0086"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0087",
       "ccy": "JPY",
       "buyDate": "2022-11-17",
       "buyRate": 953.95,
@@ -955,9 +1042,10 @@
       "note": "",
       "sellDate": "2022-11-17",
       "sellRate": 958.65,
-      "id": "imp_0087"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0088",
       "ccy": "JPY",
       "buyDate": "2022-11-17",
       "buyRate": 953.64,
@@ -966,9 +1054,10 @@
       "note": "",
       "sellDate": "2022-11-17",
       "sellRate": 958.65,
-      "id": "imp_0088"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0089",
       "ccy": "JPY",
       "buyDate": "2022-11-18",
       "buyRate": 955.85,
@@ -977,9 +1066,10 @@
       "note": "",
       "sellDate": "2022-11-18",
       "sellRate": 959.92,
-      "id": "imp_0089"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0090",
       "ccy": "JPY",
       "buyDate": "2022-11-25",
       "buyRate": 954.16,
@@ -988,9 +1078,10 @@
       "note": "",
       "sellDate": "2022-11-25",
       "sellRate": 956.84,
-      "id": "imp_0090"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0091",
       "ccy": "JPY",
       "buyDate": "2022-11-28",
       "buyRate": 956.42,
@@ -999,9 +1090,10 @@
       "note": "",
       "sellDate": "2022-11-28",
       "sellRate": 960.6,
-      "id": "imp_0091"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0092",
       "ccy": "JPY",
       "buyDate": "2022-11-28",
       "buyRate": 953.67,
@@ -1010,9 +1102,10 @@
       "note": "",
       "sellDate": "2022-11-28",
       "sellRate": 960.71,
-      "id": "imp_0092"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0093",
       "ccy": "JPY",
       "buyDate": "2022-12-01",
       "buyRate": 950.35,
@@ -1021,9 +1114,10 @@
       "note": "",
       "sellDate": "2022-12-01",
       "sellRate": 954.51,
-      "id": "imp_0093"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0094",
       "ccy": "JPY",
       "buyDate": "2022-12-01",
       "buyRate": 943.71,
@@ -1032,9 +1126,10 @@
       "note": "",
       "sellDate": "2022-12-01",
       "sellRate": 949.95,
-      "id": "imp_0094"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0095",
       "ccy": "JPY",
       "buyDate": "2022-12-02",
       "buyRate": 952.32,
@@ -1043,9 +1138,10 @@
       "note": "",
       "sellDate": "2022-12-02",
       "sellRate": 962.53,
-      "id": "imp_0095"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0096",
       "ccy": "JPY",
       "buyDate": "2022-12-02",
       "buyRate": 957.21,
@@ -1054,9 +1150,10 @@
       "note": "",
       "sellDate": "2022-12-02",
       "sellRate": 963.96,
-      "id": "imp_0096"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0097",
       "ccy": "JPY",
       "buyDate": "2022-12-02",
       "buyRate": 952.84,
@@ -1065,9 +1162,10 @@
       "note": "",
       "sellDate": "2022-12-02",
       "sellRate": 963.47,
-      "id": "imp_0097"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0098",
       "ccy": "JPY",
       "buyDate": "2022-12-05",
       "buyRate": 958.65,
@@ -1076,9 +1174,10 @@
       "note": "",
       "sellDate": "2022-12-05",
       "sellRate": 959.73,
-      "id": "imp_0098"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0099",
       "ccy": "JPY",
       "buyDate": "2022-12-06",
       "buyRate": 953.84,
@@ -1087,9 +1186,10 @@
       "note": "",
       "sellDate": "2022-12-06",
       "sellRate": 957.98,
-      "id": "imp_0099"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0100",
       "ccy": "JPY",
       "buyDate": "2022-12-07",
       "buyRate": 954.3,
@@ -1098,9 +1198,10 @@
       "note": "",
       "sellDate": "2022-12-07",
       "sellRate": 958.3,
-      "id": "imp_0100"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0101",
       "ccy": "JPY",
       "buyDate": "2022-12-13",
       "buyRate": 946.36,
@@ -1109,9 +1210,10 @@
       "note": "",
       "sellDate": "2022-12-13",
       "sellRate": 948.14,
-      "id": "imp_0101"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0102",
       "ccy": "JPY",
       "buyDate": "2022-12-15",
       "buyRate": 947.15,
@@ -1120,9 +1222,10 @@
       "note": "",
       "sellDate": "2022-12-15",
       "sellRate": 948.14,
-      "id": "imp_0102"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0103",
       "ccy": "JPY",
       "buyDate": "2022-12-19",
       "buyRate": 953.9,
@@ -1131,9 +1234,10 @@
       "note": "",
       "sellDate": "2022-12-19",
       "sellRate": 959.83,
-      "id": "imp_0103"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0104",
       "ccy": "JPY",
       "buyDate": "2022-12-19",
       "buyRate": 953.37,
@@ -1142,9 +1246,10 @@
       "note": "",
       "sellDate": "2022-12-19",
       "sellRate": 959.83,
-      "id": "imp_0104"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0105",
       "ccy": "JPY",
       "buyDate": "2022-12-20",
       "buyRate": 957.64,
@@ -1153,9 +1258,10 @@
       "note": "",
       "sellDate": "2022-12-20",
       "sellRate": 973.43,
-      "id": "imp_0105"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0106",
       "ccy": "JPY",
       "buyDate": "2022-12-26",
       "buyRate": 961.08,
@@ -1164,9 +1270,10 @@
       "note": "",
       "sellDate": "2022-12-26",
       "sellRate": 965.1,
-      "id": "imp_0106"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0107",
       "ccy": "JPY",
       "buyDate": "2022-12-27",
       "buyRate": 954.29,
@@ -1175,9 +1282,10 @@
       "note": "",
       "sellDate": "2022-12-27",
       "sellRate": 956.92,
-      "id": "imp_0107"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0108",
       "ccy": "JPY",
       "buyDate": "2022-12-27",
       "buyRate": 952.97,
@@ -1186,9 +1294,10 @@
       "note": "",
       "sellDate": "2022-12-27",
       "sellRate": 956.92,
-      "id": "imp_0108"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0109",
       "ccy": "JPY",
       "buyDate": "2023-01-02",
       "buyRate": 966.52,
@@ -1197,9 +1306,10 @@
       "note": "",
       "sellDate": "2023-01-02",
       "sellRate": 970.25,
-      "id": "imp_0109"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0110",
       "ccy": "JPY",
       "buyDate": "2023-01-02",
       "buyRate": 957.94,
@@ -1208,9 +1318,10 @@
       "note": "",
       "sellDate": "2023-01-02",
       "sellRate": 962.39,
-      "id": "imp_0110"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0111",
       "ccy": "JPY",
       "buyDate": "2023-01-02",
       "buyRate": 947.95,
@@ -1219,9 +1330,10 @@
       "note": "",
       "sellDate": "2023-01-02",
       "sellRate": 962.39,
-      "id": "imp_0111"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0112",
       "ccy": "JPY",
       "buyDate": "2023-01-03",
       "buyRate": 968.26,
@@ -1230,9 +1342,10 @@
       "note": "",
       "sellDate": "2023-01-03",
       "sellRate": 972.47,
-      "id": "imp_0112"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0113",
       "ccy": "JPY",
       "buyDate": "2023-01-13",
       "buyRate": 961.85,
@@ -1241,9 +1354,10 @@
       "note": "",
       "sellDate": "2023-01-13",
       "sellRate": 962.84,
-      "id": "imp_0113"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0114",
       "ccy": "JPY",
       "buyDate": "2023-01-13",
       "buyRate": 962.02,
@@ -1252,9 +1366,10 @@
       "note": "",
       "sellDate": "2023-01-13",
       "sellRate": 962.84,
-      "id": "imp_0114"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0115",
       "ccy": "JPY",
       "buyDate": "2023-01-13",
       "buyRate": 960.37,
@@ -1263,9 +1378,10 @@
       "note": "",
       "sellDate": "2023-01-13",
       "sellRate": 962.84,
-      "id": "imp_0115"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0116",
       "ccy": "JPY",
       "buyDate": "2023-01-13",
       "buyRate": 961.85,
@@ -1274,9 +1390,10 @@
       "note": "",
       "sellDate": "2023-01-13",
       "sellRate": 962.82,
-      "id": "imp_0116"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0117",
       "ccy": "JPY",
       "buyDate": "2023-01-13",
       "buyRate": 955.9,
@@ -1285,9 +1402,10 @@
       "note": "",
       "sellDate": "2023-01-13",
       "sellRate": 961.33,
-      "id": "imp_0117"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0118",
       "ccy": "JPY",
       "buyDate": "2023-01-13",
       "buyRate": 952.54,
@@ -1296,9 +1414,10 @@
       "note": "",
       "sellDate": "2023-01-13",
       "sellRate": 956.32,
-      "id": "imp_0118"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0119",
       "ccy": "JPY",
       "buyDate": "2023-01-13",
       "buyRate": 947.76,
@@ -1307,9 +1426,10 @@
       "note": "",
       "sellDate": "2023-01-13",
       "sellRate": 956.32,
-      "id": "imp_0119"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0120",
       "ccy": "JPY",
       "buyDate": "2023-01-13",
       "buyRate": 971.92,
@@ -1318,9 +1438,10 @@
       "note": "",
       "sellDate": "2023-01-13",
       "sellRate": 974.53,
-      "id": "imp_0120"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0121",
       "ccy": "JPY",
       "buyDate": "2023-01-16",
       "buyRate": 961.85,
@@ -1329,9 +1450,10 @@
       "note": "",
       "sellDate": "2023-01-16",
       "sellRate": 967.72,
-      "id": "imp_0121"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0122",
       "ccy": "JPY",
       "buyDate": "2023-01-16",
       "buyRate": 961.85,
@@ -1340,9 +1462,10 @@
       "note": "",
       "sellDate": "2023-01-16",
       "sellRate": 966.06,
-      "id": "imp_0122"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0123",
       "ccy": "JPY",
       "buyDate": "2023-01-19",
       "buyRate": 960.71,
@@ -1351,9 +1474,10 @@
       "note": "",
       "sellDate": "2023-01-19",
       "sellRate": 964.15,
-      "id": "imp_0123"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0124",
       "ccy": "JPY",
       "buyDate": "2023-01-19",
       "buyRate": 949.68,
@@ -1362,9 +1486,10 @@
       "note": "",
       "sellDate": "2023-01-19",
       "sellRate": 962.34,
-      "id": "imp_0124"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0125",
       "ccy": "JPY",
       "buyDate": "2023-01-20",
       "buyRate": 958.14,
@@ -1373,9 +1498,10 @@
       "note": "",
       "sellDate": "2023-01-20",
       "sellRate": 958.44,
-      "id": "imp_0125"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0126",
       "ccy": "JPY",
       "buyDate": "2023-01-20",
       "buyRate": 956.49,
@@ -1384,9 +1510,10 @@
       "note": "",
       "sellDate": "2023-01-20",
       "sellRate": 958.44,
-      "id": "imp_0126"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0127",
       "ccy": "JPY",
       "buyDate": "2023-01-26",
       "buyRate": 945.19,
@@ -1395,9 +1522,10 @@
       "note": "",
       "sellDate": "2023-01-26",
       "sellRate": 952.46,
-      "id": "imp_0127"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0128",
       "ccy": "JPY",
       "buyDate": "2023-02-02",
       "buyRate": 945.83,
@@ -1406,9 +1534,10 @@
       "note": "",
       "sellDate": "2023-02-02",
       "sellRate": 949.92,
-      "id": "imp_0128"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0129",
       "ccy": "JPY",
       "buyDate": "2023-02-02",
       "buyRate": 944.59,
@@ -1417,9 +1546,10 @@
       "note": "",
       "sellDate": "2023-02-02",
       "sellRate": 949.92,
-      "id": "imp_0129"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0130",
       "ccy": "JPY",
       "buyDate": "2023-02-03",
       "buyRate": 946.86,
@@ -1428,9 +1558,10 @@
       "note": "",
       "sellDate": "2023-02-03",
       "sellRate": 951.6,
-      "id": "imp_0130"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0131",
       "ccy": "JPY",
       "buyDate": "2023-02-03",
       "buyRate": 947.13,
@@ -1439,9 +1570,10 @@
       "note": "",
       "sellDate": "2023-02-03",
       "sellRate": 951.6,
-      "id": "imp_0131"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0132",
       "ccy": "JPY",
       "buyDate": "2023-02-06",
       "buyRate": 945.07,
@@ -1450,9 +1582,10 @@
       "note": "",
       "sellDate": "2023-02-06",
       "sellRate": 950.3,
-      "id": "imp_0132"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0133",
       "ccy": "JPY",
       "buyDate": "2023-02-06",
       "buyRate": 944.19,
@@ -1461,9 +1594,10 @@
       "note": "",
       "sellDate": "2023-02-06",
       "sellRate": 949.64,
-      "id": "imp_0133"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0134",
       "ccy": "JPY",
       "buyDate": "2023-02-06",
       "buyRate": 941.73,
@@ -1472,9 +1606,10 @@
       "note": "",
       "sellDate": "2023-02-06",
       "sellRate": 946.61,
-      "id": "imp_0134"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0135",
       "ccy": "JPY",
       "buyDate": "2023-02-08",
       "buyRate": 948.78,
@@ -1483,9 +1618,10 @@
       "note": "",
       "sellDate": "2023-02-08",
       "sellRate": 957.58,
-      "id": "imp_0135"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0136",
       "ccy": "USD",
       "buyDate": "2023-02-09",
       "buyRate": 1238.82,
@@ -1494,9 +1630,10 @@
       "note": "",
       "sellDate": "2023-02-09",
       "sellRate": 1257.1,
-      "id": "imp_0136"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0137",
       "ccy": "JPY",
       "buyDate": "2023-02-10",
       "buyRate": 960.51,
@@ -1505,9 +1642,10 @@
       "note": "",
       "sellDate": "2023-02-10",
       "sellRate": 964.78,
-      "id": "imp_0137"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0138",
       "ccy": "JPY",
       "buyDate": "2023-02-10",
       "buyRate": 958.14,
@@ -1516,9 +1654,10 @@
       "note": "",
       "sellDate": "2023-02-10",
       "sellRate": 964.78,
-      "id": "imp_0138"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0139",
       "ccy": "JPY",
       "buyDate": "2023-02-15",
       "buyRate": 959.66,
@@ -1527,9 +1666,10 @@
       "note": "",
       "sellDate": "2023-02-15",
       "sellRate": 962.76,
-      "id": "imp_0139"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0140",
       "ccy": "JPY",
       "buyDate": "2023-02-17",
       "buyRate": 958.21,
@@ -1538,9 +1678,10 @@
       "note": "",
       "sellDate": "2023-02-17",
       "sellRate": 963.18,
-      "id": "imp_0140"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0141",
       "ccy": "JPY",
       "buyDate": "2023-02-22",
       "buyRate": 963.72,
@@ -1549,9 +1690,10 @@
       "note": "",
       "sellDate": "2023-02-22",
       "sellRate": 967.42,
-      "id": "imp_0141"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0142",
       "ccy": "JPY",
       "buyDate": "2023-02-24",
       "buyRate": 961.8,
@@ -1560,9 +1702,10 @@
       "note": "",
       "sellDate": "2023-02-24",
       "sellRate": 966.17,
-      "id": "imp_0142"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0143",
       "ccy": "JPY",
       "buyDate": "2023-03-06",
       "buyRate": 952.8,
@@ -1571,9 +1714,10 @@
       "note": "",
       "sellDate": "2023-03-06",
       "sellRate": 956.2,
-      "id": "imp_0143"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0144",
       "ccy": "JPY",
       "buyDate": "2023-03-06",
       "buyRate": 952.93,
@@ -1582,9 +1726,10 @@
       "note": "",
       "sellDate": "2023-03-06",
       "sellRate": 956.2,
-      "id": "imp_0144"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0145",
       "ccy": "JPY",
       "buyDate": "2023-03-07",
       "buyRate": 953.56,
@@ -1593,9 +1738,10 @@
       "note": "",
       "sellDate": "2023-03-07",
       "sellRate": 956.57,
-      "id": "imp_0145"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0146",
       "ccy": "JPY",
       "buyDate": "2023-03-08",
       "buyRate": 944.21,
@@ -1604,9 +1750,10 @@
       "note": "",
       "sellDate": "2023-03-08",
       "sellRate": 960.5,
-      "id": "imp_0146"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0147",
       "ccy": "JPY",
       "buyDate": "2023-03-08",
       "buyRate": 955.89,
@@ -1615,9 +1762,10 @@
       "note": "",
       "sellDate": "2023-03-08",
       "sellRate": 960.52,
-      "id": "imp_0147"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0148",
       "ccy": "JPY",
       "buyDate": "2023-03-08",
       "buyRate": 955.17,
@@ -1626,9 +1774,10 @@
       "note": "",
       "sellDate": "2023-03-08",
       "sellRate": 960.5,
-      "id": "imp_0148"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0149",
       "ccy": "JPY",
       "buyDate": "2023-03-08",
       "buyRate": 953.08,
@@ -1637,9 +1786,10 @@
       "note": "",
       "sellDate": "2023-03-08",
       "sellRate": 958.1,
-      "id": "imp_0149"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0150",
       "ccy": "JPY",
       "buyDate": "2023-03-08",
       "buyRate": 953.24,
@@ -1648,9 +1798,10 @@
       "note": "",
       "sellDate": "2023-03-08",
       "sellRate": 958.11,
-      "id": "imp_0150"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0151",
       "ccy": "JPY",
       "buyDate": "2023-03-08",
       "buyRate": 954.12,
@@ -1659,9 +1810,10 @@
       "note": "",
       "sellDate": "2023-03-08",
       "sellRate": 957.94,
-      "id": "imp_0151"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0152",
       "ccy": "USD",
       "buyDate": "2023-03-09",
       "buyRate": 1307.8,
@@ -1670,9 +1822,10 @@
       "note": "",
       "sellDate": "2023-03-09",
       "sellRate": 1319.5,
-      "id": "imp_0152"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0153",
       "ccy": "JPY",
       "buyDate": "2023-03-09",
       "buyRate": 960.02,
@@ -1681,9 +1834,10 @@
       "note": "",
       "sellDate": "2023-03-09",
       "sellRate": 963.78,
-      "id": "imp_0153"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0154",
       "ccy": "JPY",
       "buyDate": "2023-03-09",
       "buyRate": 958.82,
@@ -1692,9 +1846,10 @@
       "note": "",
       "sellDate": "2023-03-09",
       "sellRate": 963.26,
-      "id": "imp_0154"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0155",
       "ccy": "USD",
       "buyDate": "2023-03-13",
       "buyRate": 1301.22,
@@ -1703,9 +1858,10 @@
       "note": "",
       "sellDate": "2023-03-13",
       "sellRate": 1302.67,
-      "id": "imp_0155"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0156",
       "ccy": "USD",
       "buyDate": "2023-03-24",
       "buyRate": 1277.91,
@@ -1714,9 +1870,10 @@
       "note": "",
       "sellDate": "2023-03-24",
       "sellRate": 1285.38,
-      "id": "imp_0156"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0157",
       "ccy": "JPY",
       "buyDate": "2023-03-24",
       "buyRate": 974.39,
@@ -1725,9 +1882,10 @@
       "note": "",
       "sellDate": "2023-03-24",
       "sellRate": 988.26,
-      "id": "imp_0157"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0158",
       "ccy": "JPY",
       "buyDate": "2023-03-29",
       "buyRate": 987.51,
@@ -1736,9 +1894,10 @@
       "note": "",
       "sellDate": "2023-03-29",
       "sellRate": 988.44,
-      "id": "imp_0158"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0159",
       "ccy": "JPY",
       "buyDate": "2023-03-29",
       "buyRate": 986.79,
@@ -1747,9 +1906,10 @@
       "note": "",
       "sellDate": "2023-03-29",
       "sellRate": 988.44,
-      "id": "imp_0159"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0160",
       "ccy": "JPY",
       "buyDate": "2023-03-29",
       "buyRate": 986.84,
@@ -1758,9 +1918,10 @@
       "note": "",
       "sellDate": "2023-03-29",
       "sellRate": 988.45,
-      "id": "imp_0160"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0161",
       "ccy": "JPY",
       "buyDate": "2023-03-31",
       "buyRate": 974.16,
@@ -1769,9 +1930,10 @@
       "note": "",
       "sellDate": "2023-03-31",
       "sellRate": 978.43,
-      "id": "imp_0161"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0162",
       "ccy": "JPY",
       "buyDate": "2023-03-31",
       "buyRate": 974.16,
@@ -1780,9 +1942,10 @@
       "note": "",
       "sellDate": "2023-03-31",
       "sellRate": 978.12,
-      "id": "imp_0162"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0163",
       "ccy": "JPY",
       "buyDate": "2023-03-31",
       "buyRate": 973.1,
@@ -1791,9 +1954,10 @@
       "note": "",
       "sellDate": "2023-03-31",
       "sellRate": 978.12,
-      "id": "imp_0163"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0164",
       "ccy": "JPY",
       "buyDate": "2023-04-03",
       "buyRate": 983.51,
@@ -1802,9 +1966,10 @@
       "note": "",
       "sellDate": "2023-04-03",
       "sellRate": 990.26,
-      "id": "imp_0164"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0165",
       "ccy": "JPY",
       "buyDate": "2023-04-03",
       "buyRate": 982.94,
@@ -1813,9 +1978,10 @@
       "note": "",
       "sellDate": "2023-04-03",
       "sellRate": 987.48,
-      "id": "imp_0165"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0166",
       "ccy": "JPY",
       "buyDate": "2023-04-03",
       "buyRate": 980.59,
@@ -1824,9 +1990,10 @@
       "note": "",
       "sellDate": "2023-04-03",
       "sellRate": 985.28,
-      "id": "imp_0166"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0167",
       "ccy": "JPY",
       "buyDate": "2023-04-13",
       "buyRate": 989.75,
@@ -1835,9 +2002,10 @@
       "note": "",
       "sellDate": "2023-04-13",
       "sellRate": 994.85,
-      "id": "imp_0167"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0168",
       "ccy": "JPY",
       "buyDate": "2023-04-17",
       "buyRate": 995.33,
@@ -1846,9 +2014,10 @@
       "note": "",
       "sellDate": "2023-04-17",
       "sellRate": 994.85,
-      "id": "imp_0168"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0169",
       "ccy": "JPY",
       "buyDate": "2023-04-20",
       "buyRate": 980.74,
@@ -1857,9 +2026,10 @@
       "note": "",
       "sellDate": "2023-04-20",
       "sellRate": 985.81,
-      "id": "imp_0169"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0170",
       "ccy": "JPY",
       "buyDate": "2023-04-20",
       "buyRate": 980.43,
@@ -1868,9 +2038,10 @@
       "note": "",
       "sellDate": "2023-04-20",
       "sellRate": 986.6,
-      "id": "imp_0170"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0171",
       "ccy": "JPY",
       "buyDate": "2023-04-20",
       "buyRate": 980.4,
@@ -1879,9 +2050,10 @@
       "note": "",
       "sellDate": "2023-04-20",
       "sellRate": 985.52,
-      "id": "imp_0171"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0172",
       "ccy": "JPY",
       "buyDate": "2023-04-21",
       "buyRate": 986.8,
@@ -1890,9 +2062,10 @@
       "note": "",
       "sellDate": "2023-04-21",
       "sellRate": 990.65,
-      "id": "imp_0172"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0173",
       "ccy": "JPY",
       "buyDate": "2023-04-21",
       "buyRate": 984.14,
@@ -1901,9 +2074,10 @@
       "note": "",
       "sellDate": "2023-04-21",
       "sellRate": 988.67,
-      "id": "imp_0173"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0174",
       "ccy": "JPY",
       "buyDate": "2023-04-21",
       "buyRate": 985.83,
@@ -1912,9 +2086,10 @@
       "note": "",
       "sellDate": "2023-04-21",
       "sellRate": 988.7,
-      "id": "imp_0174"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0175",
       "ccy": "JPY",
       "buyDate": "2023-04-21",
       "buyRate": 985.49,
@@ -1923,9 +2098,10 @@
       "note": "",
       "sellDate": "2023-04-21",
       "sellRate": 989.07,
-      "id": "imp_0175"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0176",
       "ccy": "JPY",
       "buyDate": "2023-05-03",
       "buyRate": 976.46,
@@ -1934,9 +2110,10 @@
       "note": "",
       "sellDate": "2023-05-03",
       "sellRate": 984.34,
-      "id": "imp_0176"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0177",
       "ccy": "JPY",
       "buyDate": "2023-05-03",
       "buyRate": 976.67,
@@ -1945,9 +2122,10 @@
       "note": "",
       "sellDate": "2023-05-03",
       "sellRate": 984.76,
-      "id": "imp_0177"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0178",
       "ccy": "JPY",
       "buyDate": "2023-05-03",
       "buyRate": 976.24,
@@ -1956,9 +2134,10 @@
       "note": "",
       "sellDate": "2023-05-03",
       "sellRate": 984.39,
-      "id": "imp_0178"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0179",
       "ccy": "JPY",
       "buyDate": "2023-05-03",
       "buyRate": 990.08,
@@ -1967,9 +2146,10 @@
       "note": "",
       "sellDate": "2023-05-03",
       "sellRate": 992.81,
-      "id": "imp_0179"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0180",
       "ccy": "JPY",
       "buyDate": "2023-05-08",
       "buyRate": 975.38,
@@ -1978,9 +2158,10 @@
       "note": "",
       "sellDate": "2023-05-08",
       "sellRate": 980.48,
-      "id": "imp_0180"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0181",
       "ccy": "JPY",
       "buyDate": "2023-05-11",
       "buyRate": 979.08,
@@ -1989,9 +2170,10 @@
       "note": "",
       "sellDate": "2023-05-11",
       "sellRate": 983.23,
-      "id": "imp_0181"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0182",
       "ccy": "JPY",
       "buyDate": "2023-05-12",
       "buyRate": 988.88,
@@ -2000,9 +2182,10 @@
       "note": "",
       "sellDate": "2023-05-12",
       "sellRate": 990.7,
-      "id": "imp_0182"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0183",
       "ccy": "JPY",
       "buyDate": "2023-05-12",
       "buyRate": 986.67,
@@ -2011,9 +2194,10 @@
       "note": "",
       "sellDate": "2023-05-12",
       "sellRate": 990.7,
-      "id": "imp_0183"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0184",
       "ccy": "JPY",
       "buyDate": "2023-05-31",
       "buyRate": 942.19,
@@ -2022,9 +2206,10 @@
       "note": "",
       "sellDate": "2023-05-31",
       "sellRate": 948.92,
-      "id": "imp_0184"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0185",
       "ccy": "JPY",
       "buyDate": "2023-06-08",
       "buyRate": 910.49,
@@ -2033,9 +2218,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2023-06-08",
       "sellRate": 916.86,
-      "id": "imp_0185"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0186",
       "ccy": "JPY",
       "buyDate": "2023-06-08",
       "buyRate": 902.43,
@@ -2044,9 +2230,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2023-06-08",
       "sellRate": 909.23,
-      "id": "imp_0186"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0187",
       "ccy": "JPY",
       "buyDate": "2023-06-18",
       "buyRate": 901.24,
@@ -2055,9 +2242,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2023-06-18",
       "sellRate": 904.69,
-      "id": "imp_0187"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0188",
       "ccy": "JPY",
       "buyDate": "2023-06-22",
       "buyRate": 900.08,
@@ -2066,9 +2254,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2023-06-22",
       "sellRate": 902.58,
-      "id": "imp_0188"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0189",
       "ccy": "JPY",
       "buyDate": "2023-06-23",
       "buyRate": 909.08,
@@ -2077,9 +2266,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2023-06-23",
       "sellRate": 914.96,
-      "id": "imp_0189"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0190",
       "ccy": "JPY",
       "buyDate": "2023-06-26",
       "buyRate": 906.14,
@@ -2088,9 +2278,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2023-06-26",
       "sellRate": 910.82,
-      "id": "imp_0190"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0191",
       "ccy": "JPY",
       "buyDate": "2023-07-06",
       "buyRate": 898.11,
@@ -2099,9 +2290,10 @@
       "note": "",
       "sellDate": "2023-07-06",
       "sellRate": 903.65,
-      "id": "imp_0191"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0192",
       "ccy": "JPY",
       "buyDate": "2023-07-07",
       "buyRate": 904.56,
@@ -2110,9 +2302,10 @@
       "note": "",
       "sellDate": "2023-07-07",
       "sellRate": 909.47,
-      "id": "imp_0192"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0193",
       "ccy": "JPY",
       "buyDate": "2023-07-10",
       "buyRate": 906.01,
@@ -2121,9 +2314,10 @@
       "note": "",
       "sellDate": "2023-07-10",
       "sellRate": 913.5,
-      "id": "imp_0193"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0194",
       "ccy": "JPY",
       "buyDate": "2023-07-12",
       "buyRate": 915.42,
@@ -2132,9 +2326,10 @@
       "note": "",
       "sellDate": "2023-07-12",
       "sellRate": 922.76,
-      "id": "imp_0194"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0195",
       "ccy": "JPY",
       "buyDate": "2023-07-18",
       "buyRate": 907.48,
@@ -2143,9 +2338,10 @@
       "note": "",
       "sellDate": "2023-07-18",
       "sellRate": 911.25,
-      "id": "imp_0195"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0196",
       "ccy": "JPY",
       "buyDate": "2023-07-21",
       "buyRate": 908.95,
@@ -2154,9 +2350,10 @@
       "note": "",
       "sellDate": "2023-07-21",
       "sellRate": 914.16,
-      "id": "imp_0196"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0197",
       "ccy": "JPY",
       "buyDate": "2023-07-21",
       "buyRate": 907.28,
@@ -2165,9 +2362,10 @@
       "note": "",
       "sellDate": "2023-07-21",
       "sellRate": 914.16,
-      "id": "imp_0197"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0198",
       "ccy": "JPY",
       "buyDate": "2023-07-26",
       "buyRate": 903.78,
@@ -2176,9 +2374,10 @@
       "note": "",
       "sellDate": "2023-07-26",
       "sellRate": 907.71,
-      "id": "imp_0198"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0199",
       "ccy": "JPY",
       "buyDate": "2023-07-27",
       "buyRate": 907.81,
@@ -2187,9 +2386,10 @@
       "note": "",
       "sellDate": "2023-07-27",
       "sellRate": 912.51,
-      "id": "imp_0199"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0200",
       "ccy": "JPY",
       "buyDate": "2023-07-27",
       "buyRate": 1000,
@@ -2198,9 +2398,10 @@
       "note": "",
       "sellDate": "2023-07-27",
       "sellRate": 600,
-      "id": "imp_0200"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0201",
       "ccy": "JPY",
       "buyDate": "2023-07-27",
       "buyRate": 906.75,
@@ -2209,9 +2410,10 @@
       "note": "",
       "sellDate": "2023-07-27",
       "sellRate": 910.95,
-      "id": "imp_0201"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0202",
       "ccy": "JPY",
       "buyDate": "2023-07-27",
       "buyRate": 904.79,
@@ -2220,9 +2422,10 @@
       "note": "",
       "sellDate": "2023-07-27",
       "sellRate": 909.54,
-      "id": "imp_0202"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0203",
       "ccy": "JPY",
       "buyDate": "2023-07-28",
       "buyRate": 916.03,
@@ -2231,9 +2434,10 @@
       "note": "",
       "sellDate": "2023-07-28",
       "sellRate": 923.87,
-      "id": "imp_0203"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0204",
       "ccy": "JPY",
       "buyDate": "2023-07-28",
       "buyRate": 914.09,
@@ -2242,9 +2446,10 @@
       "note": "",
       "sellDate": "2023-07-28",
       "sellRate": 920.2,
-      "id": "imp_0204"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0205",
       "ccy": "JPY",
       "buyDate": "2023-07-28",
       "buyRate": 913.07,
@@ -2253,9 +2458,10 @@
       "note": "",
       "sellDate": "2023-07-28",
       "sellRate": 924.08,
-      "id": "imp_0205"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0206",
       "ccy": "JPY",
       "buyDate": "2023-08-02",
       "buyRate": 901.19,
@@ -2264,9 +2470,10 @@
       "note": "",
       "sellDate": "2023-08-02",
       "sellRate": 906.85,
-      "id": "imp_0206"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0207",
       "ccy": "JPY",
       "buyDate": "2023-08-02",
       "buyRate": 899.17,
@@ -2275,9 +2482,10 @@
       "note": "",
       "sellDate": "2023-08-02",
       "sellRate": 904.76,
-      "id": "imp_0207"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0208",
       "ccy": "JPY",
       "buyDate": "2023-08-03",
       "buyRate": 905.24,
@@ -2286,9 +2494,10 @@
       "note": "",
       "sellDate": "2023-08-03",
       "sellRate": 908.88,
-      "id": "imp_0208"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0209",
       "ccy": "JPY",
       "buyDate": "2023-08-04",
       "buyRate": 905.03,
@@ -2297,9 +2506,10 @@
       "note": "",
       "sellDate": "2023-08-04",
       "sellRate": 915.48,
-      "id": "imp_0209"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0210",
       "ccy": "JPY",
       "buyDate": "2023-08-04",
       "buyRate": 905.03,
@@ -2308,9 +2518,10 @@
       "note": "",
       "sellDate": "2023-08-04",
       "sellRate": 910.64,
-      "id": "imp_0210"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0211",
       "ccy": "JPY",
       "buyDate": "2023-08-07",
       "buyRate": 917.61,
@@ -2319,9 +2530,10 @@
       "note": "",
       "sellDate": "2023-08-07",
       "sellRate": 922.29,
-      "id": "imp_0211"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0212",
       "ccy": "JPY",
       "buyDate": "2023-08-08",
       "buyRate": 915.61,
@@ -2330,9 +2542,10 @@
       "note": "",
       "sellDate": "2023-08-08",
       "sellRate": 919.6,
-      "id": "imp_0212"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0213",
       "ccy": "JPY",
       "buyDate": "2023-08-11",
       "buyRate": 910.68,
@@ -2341,9 +2554,10 @@
       "note": "",
       "sellDate": "2023-08-11",
       "sellRate": 914.98,
-      "id": "imp_0213"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0214",
       "ccy": "JPY",
       "buyDate": "2023-08-14",
       "buyRate": 916.38,
@@ -2352,9 +2566,10 @@
       "note": "",
       "sellDate": "2023-08-14",
       "sellRate": 920.19,
-      "id": "imp_0214"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0215",
       "ccy": "JPY",
       "buyDate": "2023-08-14",
       "buyRate": 915.26,
@@ -2363,9 +2578,10 @@
       "note": "",
       "sellDate": "2023-08-14",
       "sellRate": 920.19,
-      "id": "imp_0215"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0216",
       "ccy": "JPY",
       "buyDate": "2023-08-18",
       "buyRate": 915.7,
@@ -2374,9 +2590,10 @@
       "note": "",
       "sellDate": "2023-08-18",
       "sellRate": 920.01,
-      "id": "imp_0216"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0217",
       "ccy": "JPY",
       "buyDate": "2023-08-21",
       "buyRate": 919.78,
@@ -2385,9 +2602,10 @@
       "note": "",
       "sellDate": "2023-08-21",
       "sellRate": 923.73,
-      "id": "imp_0217"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0218",
       "ccy": "JPY",
       "buyDate": "2023-08-23",
       "buyRate": 915.98,
@@ -2396,9 +2614,10 @@
       "note": "",
       "sellDate": "2023-08-23",
       "sellRate": 919.83,
-      "id": "imp_0218"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0219",
       "ccy": "JPY",
       "buyDate": "2023-08-28",
       "buyRate": 902.02,
@@ -2407,9 +2626,10 @@
       "note": "",
       "sellDate": "2023-08-28",
       "sellRate": 905.17,
-      "id": "imp_0219"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0220",
       "ccy": "JPY",
       "buyDate": "2023-08-31",
       "buyRate": 902.69,
@@ -2418,9 +2638,10 @@
       "note": "",
       "sellDate": "2023-08-31",
       "sellRate": 906.8,
-      "id": "imp_0220"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0221",
       "ccy": "JPY",
       "buyDate": "2023-09-01",
       "buyRate": 904.15,
@@ -2429,9 +2650,10 @@
       "note": "",
       "sellDate": "2023-09-01",
       "sellRate": 910.61,
-      "id": "imp_0221"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0222",
       "ccy": "JPY",
       "buyDate": "2023-09-08",
       "buyRate": 902.89,
@@ -2440,9 +2662,10 @@
       "note": "",
       "sellDate": "2023-09-08",
       "sellRate": 907.06,
-      "id": "imp_0222"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0223",
       "ccy": "JPY",
       "buyDate": "2023-09-08",
       "buyRate": 901.79,
@@ -2451,9 +2674,10 @@
       "note": "",
       "sellDate": "2023-09-08",
       "sellRate": 907.06,
-      "id": "imp_0223"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0224",
       "ccy": "JPY",
       "buyDate": "2023-09-11",
       "buyRate": 906.24,
@@ -2462,9 +2686,10 @@
       "note": "",
       "sellDate": "2023-09-11",
       "sellRate": 910.18,
-      "id": "imp_0224"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0225",
       "ccy": "JPY",
       "buyDate": "2023-09-21",
       "buyRate": 900.54,
@@ -2473,9 +2698,10 @@
       "note": "",
       "sellDate": "2023-09-21",
       "sellRate": 904.07,
-      "id": "imp_0225"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0226",
       "ccy": "JPY",
       "buyDate": "2023-09-21",
       "buyRate": 899.95,
@@ -2484,9 +2710,10 @@
       "note": "",
       "sellDate": "2023-09-21",
       "sellRate": 904.05,
-      "id": "imp_0226"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0227",
       "ccy": "JPY",
       "buyDate": "2023-09-21",
       "buyRate": 897.55,
@@ -2495,9 +2722,10 @@
       "note": "",
       "sellDate": "2023-09-21",
       "sellRate": 901.32,
-      "id": "imp_0227"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0228",
       "ccy": "JPY",
       "buyDate": "2023-09-22",
       "buyRate": 900.65,
@@ -2506,9 +2734,10 @@
       "note": "",
       "sellDate": "2023-09-22",
       "sellRate": 908.68,
-      "id": "imp_0228"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0229",
       "ccy": "JPY",
       "buyDate": "2023-09-26",
       "buyRate": 902.18,
@@ -2517,9 +2746,10 @@
       "note": "",
       "sellDate": "2023-09-26",
       "sellRate": 905.68,
-      "id": "imp_0229"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0230",
       "ccy": "JPY",
       "buyDate": "2023-09-26",
       "buyRate": 902.06,
@@ -2528,9 +2758,10 @@
       "note": "",
       "sellDate": "2023-09-26",
       "sellRate": 905.93,
-      "id": "imp_0230"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0231",
       "ccy": "JPY",
       "buyDate": "2023-09-26",
       "buyRate": 898.44,
@@ -2539,9 +2770,10 @@
       "note": "",
       "sellDate": "2023-09-26",
       "sellRate": 902.39,
-      "id": "imp_0231"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0232",
       "ccy": "JPY",
       "buyDate": "2023-10-04",
       "buyRate": 908.72,
@@ -2550,9 +2782,10 @@
       "note": "",
       "sellDate": "2023-10-04",
       "sellRate": 912.24,
-      "id": "imp_0232"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0233",
       "ccy": "JPY",
       "buyDate": "2023-10-04",
       "buyRate": 904.52,
@@ -2561,9 +2794,10 @@
       "note": "",
       "sellDate": "2023-10-04",
       "sellRate": 912.24,
-      "id": "imp_0233"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0234",
       "ccy": "JPY",
       "buyDate": "2023-10-04",
       "buyRate": 904.33,
@@ -2572,9 +2806,10 @@
       "note": "",
       "sellDate": "2023-10-04",
       "sellRate": 912.24,
-      "id": "imp_0234"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0235",
       "ccy": "JPY",
       "buyDate": "2023-10-16",
       "buyRate": 900.44,
@@ -2583,9 +2818,10 @@
       "note": "",
       "sellDate": "2023-10-16",
       "sellRate": 905.08,
-      "id": "imp_0235"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0236",
       "ccy": "JPY",
       "buyDate": "2023-10-16",
       "buyRate": 900.4,
@@ -2594,9 +2830,10 @@
       "note": "",
       "sellDate": "2023-10-16",
       "sellRate": 905.1,
-      "id": "imp_0236"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0237",
       "ccy": "JPY",
       "buyDate": "2023-10-19",
       "buyRate": 902.23,
@@ -2605,9 +2842,10 @@
       "note": "",
       "sellDate": "2023-10-19",
       "sellRate": 906.23,
-      "id": "imp_0237"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0238",
       "ccy": "JPY",
       "buyDate": "2023-10-19",
       "buyRate": 901.87,
@@ -2616,9 +2854,10 @@
       "note": "",
       "sellDate": "2023-10-19",
       "sellRate": 905.82,
-      "id": "imp_0238"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0239",
       "ccy": "JPY",
       "buyDate": "2023-10-26",
       "buyRate": 897.81,
@@ -2627,9 +2866,10 @@
       "note": "",
       "sellDate": "2023-10-26",
       "sellRate": 902.33,
-      "id": "imp_0239"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0240",
       "ccy": "JPY",
       "buyDate": "2023-11-01",
       "buyRate": 893.77,
@@ -2638,9 +2878,10 @@
       "note": "",
       "sellDate": "2023-11-01",
       "sellRate": 897.48,
-      "id": "imp_0240"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0241",
       "ccy": "JPY",
       "buyDate": "2023-11-01",
       "buyRate": 911.44,
@@ -2649,9 +2890,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2023-11-01",
       "sellRate": 914.46,
-      "id": "imp_0241"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0242",
       "ccy": "JPY",
       "buyDate": "2023-11-24",
       "buyRate": 910.77,
@@ -2660,9 +2902,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2023-11-24",
       "sellRate": 912.96,
-      "id": "imp_0242"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0243",
       "ccy": "JPY",
       "buyDate": "2023-12-04",
       "buyRate": 879.49,
@@ -2671,9 +2914,10 @@
       "note": "",
       "sellDate": "2023-12-04",
       "sellRate": 887.14,
-      "id": "imp_0243"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0244",
       "ccy": "JPY",
       "buyDate": "2023-12-05",
       "buyRate": 884.82,
@@ -2682,9 +2926,10 @@
       "note": "",
       "sellDate": "2023-12-05",
       "sellRate": 891.86,
-      "id": "imp_0244"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0245",
       "ccy": "JPY",
       "buyDate": "2023-12-07",
       "buyRate": 901.65,
@@ -2693,9 +2938,10 @@
       "note": "",
       "sellDate": "2023-12-07",
       "sellRate": 905.82,
-      "id": "imp_0245"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0246",
       "ccy": "JPY",
       "buyDate": "2023-12-07",
       "buyRate": 901.27,
@@ -2704,9 +2950,10 @@
       "note": "",
       "sellDate": "2023-12-07",
       "sellRate": 905.7,
-      "id": "imp_0246"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0247",
       "ccy": "JPY",
       "buyDate": "2023-12-07",
       "buyRate": 901.81,
@@ -2715,9 +2962,10 @@
       "note": "",
       "sellDate": "2023-12-07",
       "sellRate": 905.7,
-      "id": "imp_0247"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0248",
       "ccy": "JPY",
       "buyDate": "2023-12-07",
       "buyRate": 895.06,
@@ -2726,9 +2974,10 @@
       "note": "",
       "sellDate": "2023-12-07",
       "sellRate": 899.98,
-      "id": "imp_0248"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0249",
       "ccy": "JPY",
       "buyDate": "2023-12-14",
       "buyRate": 907.76,
@@ -2737,9 +2986,10 @@
       "note": "",
       "sellDate": "2023-12-14",
       "sellRate": 915.61,
-      "id": "imp_0249"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0250",
       "ccy": "JPY",
       "buyDate": "2023-12-15",
       "buyRate": 906.61,
@@ -2748,9 +2998,10 @@
       "note": "",
       "sellDate": "2023-12-15",
       "sellRate": 910.73,
-      "id": "imp_0250"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0251",
       "ccy": "JPY",
       "buyDate": "2023-12-15",
       "buyRate": 906.61,
@@ -2759,9 +3010,10 @@
       "note": "",
       "sellDate": "2023-12-15",
       "sellRate": 910.83,
-      "id": "imp_0251"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0252",
       "ccy": "JPY",
       "buyDate": "2023-12-28",
       "buyRate": 909.3,
@@ -2770,9 +3022,10 @@
       "note": "",
       "sellDate": "2023-12-28",
       "sellRate": 913.67,
-      "id": "imp_0252"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0253",
       "ccy": "JPY",
       "buyDate": "2023-12-28",
       "buyRate": 906.24,
@@ -2781,9 +3034,10 @@
       "note": "",
       "sellDate": "2023-12-28",
       "sellRate": 913.67,
-      "id": "imp_0253"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0254",
       "ccy": "JPY",
       "buyDate": "2023-12-29",
       "buyRate": 909.43,
@@ -2792,9 +3046,10 @@
       "note": "",
       "sellDate": "2023-12-29",
       "sellRate": 912.56,
-      "id": "imp_0254"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0255",
       "ccy": "JPY",
       "buyDate": "2023-12-30",
       "buyRate": 909.43,
@@ -2803,9 +3058,10 @@
       "note": "",
       "sellDate": "2023-12-30",
       "sellRate": 912.56,
-      "id": "imp_0255"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0256",
       "ccy": "JPY",
       "buyDate": "2024-01-02",
       "buyRate": 912.89,
@@ -2814,9 +3070,10 @@
       "note": "",
       "sellDate": "2024-01-02",
       "sellRate": 918.03,
-      "id": "imp_0256"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0257",
       "ccy": "JPY",
       "buyDate": "2024-01-08",
       "buyRate": 900.75,
@@ -2825,9 +3082,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-01-08",
       "sellRate": 903.24,
-      "id": "imp_0257"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0258",
       "ccy": "JPY",
       "buyDate": "2024-01-13",
       "buyRate": 898.67,
@@ -2836,9 +3094,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-01-13",
       "sellRate": 901.68,
-      "id": "imp_0258"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0259",
       "ccy": "JPY",
       "buyDate": "2024-01-15",
       "buyRate": 906.08,
@@ -2847,9 +3106,10 @@
       "note": "",
       "sellDate": "2024-01-15",
       "sellRate": 909.5,
-      "id": "imp_0259"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0260",
       "ccy": "JPY",
       "buyDate": "2024-02-07",
       "buyRate": 891.76,
@@ -2858,9 +3118,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-02-07",
       "sellRate": 895.37,
-      "id": "imp_0260"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0261",
       "ccy": "JPY",
       "buyDate": "2024-02-07",
       "buyRate": 893.44,
@@ -2869,9 +3130,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-02-07",
       "sellRate": 898.82,
-      "id": "imp_0261"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0262",
       "ccy": "JPY",
       "buyDate": "2024-02-10",
       "buyRate": 899.06,
@@ -2880,9 +3142,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-02-10",
       "sellRate": 905.64,
-      "id": "imp_0262"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0263",
       "ccy": "JPY",
       "buyDate": "2024-02-13",
       "buyRate": 893.58,
@@ -2891,9 +3154,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-02-13",
       "sellRate": 900.89,
-      "id": "imp_0263"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0264",
       "ccy": "JPY",
       "buyDate": "2024-02-18",
       "buyRate": 887.01,
@@ -2902,9 +3166,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-02-18",
       "sellRate": 892.61,
-      "id": "imp_0264"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0265",
       "ccy": "JPY",
       "buyDate": "2024-02-19",
       "buyRate": 891.46,
@@ -2913,9 +3178,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-02-19",
       "sellRate": 898.58,
-      "id": "imp_0265"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0266",
       "ccy": "JPY",
       "buyDate": "2024-02-28",
       "buyRate": 889.69,
@@ -2924,9 +3190,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-02-28",
       "sellRate": 895.17,
-      "id": "imp_0266"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0267",
       "ccy": "JPY",
       "buyDate": "2024-03-07",
       "buyRate": 889.74,
@@ -2935,9 +3202,10 @@
       "note": "",
       "sellDate": "2024-03-07",
       "sellRate": 897.32,
-      "id": "imp_0267"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0268",
       "ccy": "JPY",
       "buyDate": "2024-03-22",
       "buyRate": 876.88,
@@ -2946,9 +3214,10 @@
       "note": "",
       "sellDate": "2024-03-22",
       "sellRate": 882.5,
-      "id": "imp_0268"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0269",
       "ccy": "JPY",
       "buyDate": "2024-03-28",
       "buyRate": 885.77,
@@ -2957,9 +3226,10 @@
       "note": "",
       "sellDate": "2024-03-28",
       "sellRate": 893,
-      "id": "imp_0269"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0270",
       "ccy": "JPY",
       "buyDate": "2024-04-05",
       "buyRate": 888.5,
@@ -2968,9 +3238,10 @@
       "note": "",
       "sellDate": "2024-04-05",
       "sellRate": 893,
-      "id": "imp_0270"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0271",
       "ccy": "JPY",
       "buyDate": "2024-04-19",
       "buyRate": 890.53,
@@ -2979,9 +3250,10 @@
       "note": "",
       "sellDate": "2024-04-19",
       "sellRate": 894.59,
-      "id": "imp_0271"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0272",
       "ccy": "JPY",
       "buyDate": "2024-04-29",
       "buyRate": 869.22,
@@ -2990,9 +3262,10 @@
       "note": "",
       "sellDate": "2024-04-29",
       "sellRate": 883,
-      "id": "imp_0272"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0273",
       "ccy": "JPY",
       "buyDate": "2024-05-08",
       "buyRate": 889.41,
@@ -3001,9 +3274,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-05-08",
       "sellRate": 892.75,
-      "id": "imp_0273"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0274",
       "ccy": "JPY",
       "buyDate": "2024-05-09",
       "buyRate": 885.92,
@@ -3012,9 +3286,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-05-09",
       "sellRate": 889.13,
-      "id": "imp_0274"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0275",
       "ccy": "JPY",
       "buyDate": "2024-05-10",
       "buyRate": 891.49,
@@ -3023,9 +3298,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-05-10",
       "sellRate": 894.42,
-      "id": "imp_0275"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0276",
       "ccy": "JPY",
       "buyDate": "2024-05-15",
       "buyRate": 884.24,
@@ -3034,9 +3310,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-05-15",
       "sellRate": 890.47,
-      "id": "imp_0276"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0277",
       "ccy": "JPY",
       "buyDate": "2024-05-17",
       "buyRate": 891.55,
@@ -3045,9 +3322,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-05-17",
       "sellRate": 897.53,
-      "id": "imp_0277"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0278",
       "ccy": "JPY",
       "buyDate": "2024-05-25",
       "buyRate": 894.16,
@@ -3056,9 +3334,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-05-25",
       "sellRate": 900.31,
-      "id": "imp_0278"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0279",
       "ccy": "JPY",
       "buyDate": "2024-06-02",
       "buyRate": 882.5,
@@ -3067,9 +3346,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-06-02",
       "sellRate": 885.99,
-      "id": "imp_0279"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0280",
       "ccy": "JPY",
       "buyDate": "2024-06-04",
       "buyRate": 874.71,
@@ -3078,9 +3358,10 @@
       "note": "",
       "sellDate": "2024-06-04",
       "sellRate": 878.5,
-      "id": "imp_0280"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0281",
       "ccy": "JPY",
       "buyDate": "2024-06-09",
       "buyRate": 886.04,
@@ -3089,9 +3370,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-06-09",
       "sellRate": 890.02,
-      "id": "imp_0281"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0282",
       "ccy": "JPY",
       "buyDate": "2024-06-25",
       "buyRate": 884.78,
@@ -3100,9 +3382,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-06-25",
       "sellRate": 887.25,
-      "id": "imp_0282"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0283",
       "ccy": "JPY",
       "buyDate": "2024-07-15",
       "buyRate": 866.97,
@@ -3111,9 +3394,10 @@
       "note": "",
       "sellDate": "2024-07-15",
       "sellRate": 871,
-      "id": "imp_0283"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0284",
       "ccy": "JPY",
       "buyDate": "2024-07-15",
       "buyRate": 860.62,
@@ -3122,9 +3406,10 @@
       "note": "",
       "sellDate": "2024-07-15",
       "sellRate": 865.6,
-      "id": "imp_0284"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0285",
       "ccy": "JPY",
       "buyDate": "2024-07-18",
       "buyRate": 876.87,
@@ -3133,9 +3418,10 @@
       "note": "",
       "sellDate": "2024-07-18",
       "sellRate": 881,
-      "id": "imp_0285"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0286",
       "ccy": "JPY",
       "buyDate": "2024-07-24",
       "buyRate": 885,
@@ -3144,9 +3430,10 @@
       "note": "",
       "sellDate": "2024-07-24",
       "sellRate": 889.57,
-      "id": "imp_0286"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0287",
       "ccy": "JPY",
       "buyDate": "2024-07-25",
       "buyRate": 886.17,
@@ -3155,9 +3442,10 @@
       "note": "",
       "sellDate": "2024-07-25",
       "sellRate": 890,
-      "id": "imp_0287"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0288",
       "ccy": "JPY",
       "buyDate": "2024-07-31",
       "buyRate": 895.9,
@@ -3166,9 +3454,10 @@
       "note": "",
       "sellDate": "2024-07-31",
       "sellRate": 906.8,
-      "id": "imp_0288"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0289",
       "ccy": "JPY",
       "buyDate": "2024-08-01",
       "buyRate": 896.73,
@@ -3177,9 +3466,10 @@
       "note": "",
       "sellDate": "2024-08-01",
       "sellRate": 914.57,
-      "id": "imp_0289"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0290",
       "ccy": "JPY",
       "buyDate": "2024-08-02",
       "buyRate": 911.05,
@@ -3188,9 +3478,10 @@
       "note": "",
       "sellDate": "2024-08-02",
       "sellRate": 921.46,
-      "id": "imp_0290"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0291",
       "ccy": "JPY",
       "buyDate": "2024-08-05",
       "buyRate": 921.8,
@@ -3199,9 +3490,10 @@
       "note": "",
       "sellDate": "2024-08-05",
       "sellRate": 957.34,
-      "id": "imp_0291"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0292",
       "ccy": "JPY",
       "buyDate": "2024-08-05",
       "buyRate": 917.27,
@@ -3210,9 +3502,10 @@
       "note": "",
       "sellDate": "2024-08-05",
       "sellRate": 951.19,
-      "id": "imp_0292"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0293",
       "ccy": "JPY",
       "buyDate": "2024-08-05",
       "buyRate": 916.53,
@@ -3221,9 +3514,10 @@
       "note": "",
       "sellDate": "2024-08-05",
       "sellRate": 940.94,
-      "id": "imp_0293"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0294",
       "ccy": "JPY",
       "buyDate": "2024-08-05",
       "buyRate": 911.96,
@@ -3232,9 +3526,10 @@
       "note": "",
       "sellDate": "2024-08-05",
       "sellRate": 933.32,
-      "id": "imp_0294"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0295",
       "ccy": "JPY",
       "buyDate": "2024-08-08",
       "buyRate": 900.98,
@@ -3243,9 +3538,10 @@
       "note": "",
       "sellDate": "2024-08-08",
       "sellRate": 945,
-      "id": "imp_0295"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0296",
       "ccy": "JPY",
       "buyDate": "2024-08-08",
       "buyRate": 936.2,
@@ -3254,9 +3550,10 @@
       "note": "",
       "sellDate": "2024-08-08",
       "sellRate": 941.64,
-      "id": "imp_0296"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0297",
       "ccy": "JPY",
       "buyDate": "2024-08-12",
       "buyRate": 926.44,
@@ -3265,9 +3562,10 @@
       "note": "",
       "sellDate": "2024-08-12",
       "sellRate": 945,
-      "id": "imp_0297"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0298",
       "ccy": "JPY",
       "buyDate": "2024-08-19",
       "buyRate": 910.36,
@@ -3276,9 +3574,10 @@
       "note": "",
       "sellDate": "2024-08-19",
       "sellRate": 915.72,
-      "id": "imp_0298"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0299",
       "ccy": "JPY",
       "buyDate": "2024-08-19",
       "buyRate": 906.92,
@@ -3287,9 +3586,10 @@
       "note": "",
       "sellDate": "2024-08-19",
       "sellRate": 912.17,
-      "id": "imp_0299"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0300",
       "ccy": "JPY",
       "buyDate": "2024-08-21",
       "buyRate": 906.73,
@@ -3298,9 +3598,10 @@
       "note": "",
       "sellDate": "2024-08-21",
       "sellRate": 913.67,
-      "id": "imp_0300"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0301",
       "ccy": "JPY",
       "buyDate": "2024-08-22",
       "buyRate": 913.35,
@@ -3309,9 +3610,10 @@
       "note": "",
       "sellDate": "2024-08-22",
       "sellRate": 920.14,
-      "id": "imp_0301"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0302",
       "ccy": "JPY",
       "buyDate": "2024-08-28",
       "buyRate": 920,
@@ -3320,9 +3622,10 @@
       "note": "",
       "sellDate": "2024-08-28",
       "sellRate": 924.8,
-      "id": "imp_0302"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0303",
       "ccy": "JPY",
       "buyDate": "2024-09-03",
       "buyRate": 913.3,
@@ -3331,9 +3634,10 @@
       "note": "",
       "sellDate": "2024-09-03",
       "sellRate": 917.03,
-      "id": "imp_0303"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0304",
       "ccy": "JPY",
       "buyDate": "2024-09-04",
       "buyRate": 913.3,
@@ -3342,9 +3646,10 @@
       "note": "",
       "sellDate": "2024-09-04",
       "sellRate": 920,
-      "id": "imp_0304"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0305",
       "ccy": "JPY",
       "buyDate": "2024-09-05",
       "buyRate": 925.84,
@@ -3353,9 +3658,10 @@
       "note": "",
       "sellDate": "2024-09-05",
       "sellRate": 931.82,
-      "id": "imp_0305"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0306",
       "ccy": "JPY",
       "buyDate": "2024-09-06",
       "buyRate": 927.43,
@@ -3364,9 +3670,10 @@
       "note": "",
       "sellDate": "2024-09-06",
       "sellRate": 932.42,
-      "id": "imp_0306"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0307",
       "ccy": "JPY",
       "buyDate": "2024-09-09",
       "buyRate": 932.81,
@@ -3375,9 +3682,10 @@
       "note": "",
       "sellDate": "2024-09-09",
       "sellRate": 940.04,
-      "id": "imp_0307"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0308",
       "ccy": "JPY",
       "buyDate": "2024-09-11",
       "buyRate": 941.61,
@@ -3386,9 +3694,10 @@
       "note": "",
       "sellDate": "2024-09-11",
       "sellRate": 945.54,
-      "id": "imp_0308"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0309",
       "ccy": "JPY",
       "buyDate": "2024-09-13",
       "buyRate": 939.94,
@@ -3397,9 +3706,10 @@
       "note": "",
       "sellDate": "2024-09-13",
       "sellRate": 944.78,
-      "id": "imp_0309"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0310",
       "ccy": "JPY",
       "buyDate": "2024-09-13",
       "buyRate": 937.98,
@@ -3408,9 +3718,10 @@
       "note": "",
       "sellDate": "2024-09-13",
       "sellRate": 944.74,
-      "id": "imp_0310"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0311",
       "ccy": "JPY",
       "buyDate": "2024-09-19",
       "buyRate": 928.16,
@@ -3419,9 +3730,10 @@
       "note": "",
       "sellDate": "2024-09-19",
       "sellRate": 932.32,
-      "id": "imp_0311"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0312",
       "ccy": "JPY",
       "buyDate": "2024-09-21",
       "buyRate": 929.5,
@@ -3430,9 +3742,10 @@
       "note": "",
       "sellDate": "2024-09-21",
       "sellRate": 936.21,
-      "id": "imp_0312"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0313",
       "ccy": "JPY",
       "buyDate": "2024-09-23",
       "buyRate": 925.36,
@@ -3441,9 +3754,10 @@
       "note": "",
       "sellDate": "2024-09-23",
       "sellRate": 929.28,
-      "id": "imp_0313"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0314",
       "ccy": "JPY",
       "buyDate": "2024-09-25",
       "buyRate": 923.46,
@@ -3452,9 +3766,10 @@
       "note": "",
       "sellDate": "2024-09-25",
       "sellRate": 927.55,
-      "id": "imp_0314"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0315",
       "ccy": "JPY",
       "buyDate": "2024-09-27",
       "buyRate": 904.3,
@@ -3463,9 +3778,10 @@
       "note": "",
       "sellDate": "2024-09-27",
       "sellRate": 916.63,
-      "id": "imp_0315"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0316",
       "ccy": "JPY",
       "buyDate": "2024-09-30",
       "buyRate": 917.38,
@@ -3474,9 +3790,10 @@
       "note": "",
       "sellDate": "2024-09-30",
       "sellRate": 922.31,
-      "id": "imp_0316"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0317",
       "ccy": "JPY",
       "buyDate": "2024-10-11",
       "buyRate": 887.09,
@@ -3485,9 +3802,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-10-11",
       "sellRate": 893.86,
-      "id": "imp_0317"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0318",
       "ccy": "JPY",
       "buyDate": "2024-10-16",
       "buyRate": 908.25,
@@ -3496,9 +3814,10 @@
       "note": "",
       "sellDate": "2024-10-16",
       "sellRate": 915.45,
-      "id": "imp_0318"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0319",
       "ccy": "JPY",
       "buyDate": "2024-10-24",
       "buyRate": 878.78,
@@ -3507,9 +3826,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2024-10-24",
       "sellRate": 883.31,
-      "id": "imp_0319"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0320",
       "ccy": "JPY",
       "buyDate": "2024-10-25",
       "buyRate": 905.41,
@@ -3518,9 +3838,10 @@
       "note": "",
       "sellDate": "2024-10-25",
       "sellRate": 912.03,
-      "id": "imp_0320"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0321",
       "ccy": "JPY",
       "buyDate": "2024-11-07",
       "buyRate": 900.97,
@@ -3529,9 +3850,10 @@
       "note": "",
       "sellDate": "2024-11-07",
       "sellRate": 907.61,
-      "id": "imp_0321"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0322",
       "ccy": "JPY",
       "buyDate": "2024-11-21",
       "buyRate": 896.76,
@@ -3540,9 +3862,10 @@
       "note": "",
       "sellDate": "2024-11-21",
       "sellRate": 901.97,
-      "id": "imp_0322"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0323",
       "ccy": "JPY",
       "buyDate": "2024-11-21",
       "buyRate": 898.99,
@@ -3551,9 +3874,10 @@
       "note": "",
       "sellDate": "2024-11-21",
       "sellRate": 902.79,
-      "id": "imp_0323"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0324",
       "ccy": "JPY",
       "buyDate": "2024-11-21",
       "buyRate": 900.97,
@@ -3562,9 +3886,10 @@
       "note": "",
       "sellDate": "2024-11-21",
       "sellRate": 907.61,
-      "id": "imp_0324"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0325",
       "ccy": "JPY",
       "buyDate": "2024-11-22",
       "buyRate": 902.6,
@@ -3573,9 +3898,10 @@
       "note": "",
       "sellDate": "2024-11-22",
       "sellRate": 908.06,
-      "id": "imp_0325"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0326",
       "ccy": "JPY",
       "buyDate": "2024-11-26",
       "buyRate": 904.39,
@@ -3584,9 +3910,10 @@
       "note": "",
       "sellDate": "2024-11-26",
       "sellRate": 908.02,
-      "id": "imp_0326"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0327",
       "ccy": "JPY",
       "buyDate": "2024-11-27",
       "buyRate": 909.02,
@@ -3595,9 +3922,10 @@
       "note": "",
       "sellDate": "2024-11-27",
       "sellRate": 914.92,
-      "id": "imp_0327"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0328",
       "ccy": "JPY",
       "buyDate": "2024-11-29",
       "buyRate": 923.3,
@@ -3606,9 +3934,10 @@
       "note": "",
       "sellDate": "2024-11-29",
       "sellRate": 928.86,
-      "id": "imp_0328"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0329",
       "ccy": "JPY",
       "buyDate": "2024-11-29",
       "buyRate": 917.43,
@@ -3617,9 +3946,10 @@
       "note": "",
       "sellDate": "2024-11-29",
       "sellRate": 923.81,
-      "id": "imp_0329"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0330",
       "ccy": "JPY",
       "buyDate": "2024-12-02",
       "buyRate": 926.73,
@@ -3628,9 +3958,10 @@
       "note": "",
       "sellDate": "2024-12-02",
       "sellRate": 933.44,
-      "id": "imp_0330"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0331",
       "ccy": "JPY",
       "buyDate": "2024-12-06",
       "buyRate": 927.17,
@@ -3639,9 +3970,10 @@
       "note": "",
       "sellDate": "2024-12-06",
       "sellRate": 946.14,
-      "id": "imp_0331"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0332",
       "ccy": "JPY",
       "buyDate": "2024-12-18",
       "buyRate": 932.35,
@@ -3650,9 +3982,10 @@
       "note": "",
       "sellDate": "2024-12-18",
       "sellRate": 936.88,
-      "id": "imp_0332"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0333",
       "ccy": "JPY",
       "buyDate": "2024-12-27",
       "buyRate": 931.99,
@@ -3661,9 +3994,10 @@
       "note": "",
       "sellDate": "2024-12-27",
       "sellRate": 935.27,
-      "id": "imp_0333"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0334",
       "ccy": "JPY",
       "buyDate": "2024-12-27",
       "buyRate": 933.77,
@@ -3672,9 +4006,10 @@
       "note": "",
       "sellDate": "2024-12-27",
       "sellRate": 938.09,
-      "id": "imp_0334"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0335",
       "ccy": "JPY",
       "buyDate": "2024-12-27",
       "buyRate": 929.29,
@@ -3683,9 +4018,10 @@
       "note": "",
       "sellDate": "2024-12-27",
       "sellRate": 934.04,
-      "id": "imp_0335"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0336",
       "ccy": "JPY",
       "buyDate": "2024-12-31",
       "buyRate": 929.83,
@@ -3694,9 +4030,10 @@
       "note": "",
       "sellDate": "2024-12-31",
       "sellRate": 939.04,
-      "id": "imp_0336"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0337",
       "ccy": "JPY",
       "buyDate": "2025-01-02",
       "buyRate": 933.28,
@@ -3705,9 +4042,10 @@
       "note": "",
       "sellDate": "2025-01-02",
       "sellRate": 936.73,
-      "id": "imp_0337"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0338",
       "ccy": "JPY",
       "buyDate": "2025-01-10",
       "buyRate": 927.93,
@@ -3716,9 +4054,10 @@
       "note": "",
       "sellDate": "2025-01-10",
       "sellRate": 928.19,
-      "id": "imp_0338"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0339",
       "ccy": "JPY",
       "buyDate": "2025-01-10",
       "buyRate": 925.83,
@@ -3727,9 +4066,10 @@
       "note": "",
       "sellDate": "2025-01-10",
       "sellRate": 928.61,
-      "id": "imp_0339"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0340",
       "ccy": "JPY",
       "buyDate": "2025-01-17",
       "buyRate": 924.6,
@@ -3738,9 +4078,10 @@
       "note": "",
       "sellDate": "2025-01-17",
       "sellRate": 928.59,
-      "id": "imp_0340"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0341",
       "ccy": "JPY",
       "buyDate": "2025-01-31",
       "buyRate": 933.04,
@@ -3749,9 +4090,10 @@
       "note": "",
       "sellDate": "2025-01-31",
       "sellRate": 936.55,
-      "id": "imp_0341"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0342",
       "ccy": "JPY",
       "buyDate": "2025-01-31",
       "buyRate": 928.84,
@@ -3760,9 +4102,10 @@
       "note": "",
       "sellDate": "2025-01-31",
       "sellRate": 936.55,
-      "id": "imp_0342"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0343",
       "ccy": "JPY",
       "buyDate": "2025-01-31",
       "buyRate": 924.88,
@@ -3771,9 +4114,10 @@
       "note": "",
       "sellDate": "2025-01-31",
       "sellRate": 936.55,
-      "id": "imp_0343"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0344",
       "ccy": "JPY",
       "buyDate": "2025-02-03",
       "buyRate": 924.67,
@@ -3782,9 +4126,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2025-02-03",
       "sellRate": 929.19,
-      "id": "imp_0344"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0345",
       "ccy": "JPY",
       "buyDate": "2025-02-04",
       "buyRate": 920.39,
@@ -3793,9 +4138,10 @@
       "note": "",
       "sellDate": "2025-02-04",
       "sellRate": 930,
-      "id": "imp_0345"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0346",
       "ccy": "JPY",
       "buyDate": "2025-02-25",
       "buyRate": 925.38,
@@ -3804,9 +4150,10 @@
       "note": "[추정-총액보정]",
       "sellDate": "2025-02-25",
       "sellRate": 932.91,
-      "id": "imp_0346"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0347",
       "ccy": "JPY",
       "buyDate": "2025-03-04",
       "buyRate": 937.11,
@@ -3815,9 +4162,10 @@
       "note": "",
       "sellDate": "2025-03-04",
       "sellRate": 979.11,
-      "id": "imp_0347"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0348",
       "ccy": "JPY",
       "buyDate": "2025-03-18",
       "buyRate": 969.5,
@@ -3826,9 +4174,10 @@
       "note": "",
       "sellDate": "2025-03-18",
       "sellRate": 978.58,
-      "id": "imp_0348"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0349",
       "ccy": "JPY",
       "buyDate": "2025-03-20",
       "buyRate": 981.08,
@@ -3837,9 +4186,10 @@
       "note": "",
       "sellDate": "2025-03-20",
       "sellRate": 986.84,
-      "id": "imp_0349"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0350",
       "ccy": "JPY",
       "buyDate": "2025-03-22",
       "buyRate": 979.2,
@@ -3848,9 +4198,10 @@
       "note": "",
       "sellDate": "2025-03-22",
       "sellRate": 983.8,
-      "id": "imp_0350"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0351",
       "ccy": "JPY",
       "buyDate": "2025-03-31",
       "buyRate": 974.42,
@@ -3859,9 +4210,10 @@
       "note": "",
       "sellDate": "2025-03-31",
       "sellRate": 983.72,
-      "id": "imp_0351"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0352",
       "ccy": "JPY",
       "buyDate": "2025-04-01",
       "buyRate": 980.4,
@@ -3870,9 +4222,10 @@
       "note": "",
       "sellDate": "2025-04-01",
       "sellRate": 986.43,
-      "id": "imp_0352"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0353",
       "ccy": "JPY",
       "buyDate": "2025-04-03",
       "buyRate": 979.21,
@@ -3881,9 +4234,10 @@
       "note": "",
       "sellDate": "2025-04-03",
       "sellRate": 992.49,
-      "id": "imp_0353"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0354",
       "ccy": "JPY",
       "buyDate": "2025-04-07",
       "buyRate": 958.14,
@@ -3892,9 +4246,10 @@
       "note": "",
       "sellDate": "2025-04-07",
       "sellRate": 1004.91,
-      "id": "imp_0354"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0355",
       "ccy": "JPY",
       "buyDate": "2025-04-07",
       "buyRate": 948.22,
@@ -3903,9 +4258,10 @@
       "note": "",
       "sellDate": "2025-04-07",
       "sellRate": 1004.91,
-      "id": "imp_0355"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0356",
       "ccy": "JPY",
       "buyDate": "2025-04-07",
       "buyRate": 979.39,
@@ -3914,9 +4270,10 @@
       "note": "",
       "sellDate": "2025-04-07",
       "sellRate": 992.49,
-      "id": "imp_0356"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0357",
       "ccy": "JPY",
       "buyDate": "2025-04-09",
       "buyRate": 994.21,
@@ -3925,9 +4282,10 @@
       "note": "",
       "sellDate": "2025-04-09",
       "sellRate": 1019.51,
-      "id": "imp_0357"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0358",
       "ccy": "JPY",
       "buyDate": "2025-04-15",
       "buyRate": 993.43,
@@ -3936,9 +4294,10 @@
       "note": "",
       "sellDate": "2025-04-15",
       "sellRate": 997.63,
-      "id": "imp_0358"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0359",
       "ccy": "JPY",
       "buyDate": "2025-04-18",
       "buyRate": 994.42,
@@ -3947,9 +4306,10 @@
       "note": "",
       "sellDate": "2025-04-18",
       "sellRate": 998.52,
-      "id": "imp_0359"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0360",
       "ccy": "JPY",
       "buyDate": "2025-04-24",
       "buyRate": 996.9,
@@ -3958,9 +4318,10 @@
       "note": "",
       "sellDate": "2025-04-24",
       "sellRate": 1001.2,
-      "id": "imp_0360"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0361",
       "ccy": "JPY",
       "buyDate": "2025-05-07",
       "buyRate": 953.46,
@@ -3969,9 +4330,10 @@
       "note": "",
       "sellDate": "2025-05-07",
       "sellRate": 962.06,
-      "id": "imp_0361"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0362",
       "ccy": "JPY",
       "buyDate": "2025-05-09",
       "buyRate": 962.92,
@@ -3980,9 +4342,10 @@
       "note": "",
       "sellDate": "2025-05-09",
       "sellRate": 969.63,
-      "id": "imp_0362"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0363",
       "ccy": "JPY",
       "buyDate": "2025-05-12",
       "buyRate": 957.06,
@@ -3991,9 +4354,10 @@
       "note": "",
       "sellDate": "2025-05-12",
       "sellRate": 963,
-      "id": "imp_0363"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0364",
       "ccy": "JPY",
       "buyDate": "2025-05-14",
       "buyRate": 960,
@@ -4002,9 +4366,10 @@
       "note": "",
       "sellDate": "2025-05-14",
       "sellRate": 963,
-      "id": "imp_0364"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0365",
       "ccy": "JPY",
       "buyDate": "2025-05-14",
       "buyRate": 952.74,
@@ -4013,9 +4378,10 @@
       "note": "",
       "sellDate": "2025-05-14",
       "sellRate": 958,
-      "id": "imp_0365"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0366",
       "ccy": "JPY",
       "buyDate": "2025-05-16",
       "buyRate": 956.69,
@@ -4024,9 +4390,10 @@
       "note": "",
       "sellDate": "2025-05-16",
       "sellRate": 958,
-      "id": "imp_0366"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0367",
       "ccy": "JPY",
       "buyDate": "2025-05-16",
       "buyRate": 956.73,
@@ -4035,9 +4402,10 @@
       "note": "",
       "sellDate": "2025-05-16",
       "sellRate": 959.45,
-      "id": "imp_0367"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0368",
       "ccy": "JPY",
       "buyDate": "2025-05-20",
       "buyRate": 958.44,
@@ -4046,9 +4414,10 @@
       "note": "",
       "sellDate": "2025-05-20",
       "sellRate": 963.01,
-      "id": "imp_0368"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0369",
       "ccy": "JPY",
       "buyDate": "2025-05-22",
       "buyRate": 957.09,
@@ -4057,9 +4426,10 @@
       "note": "",
       "sellDate": "2025-05-22",
       "sellRate": 962.84,
-      "id": "imp_0369"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0370",
       "ccy": "JPY",
       "buyDate": "2025-05-23",
       "buyRate": 958.61,
@@ -4068,9 +4438,10 @@
       "note": "",
       "sellDate": "2025-05-23",
       "sellRate": 963.37,
-      "id": "imp_0370"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0371",
       "ccy": "JPY",
       "buyDate": "2025-05-27",
       "buyRate": 957.41,
@@ -4079,9 +4450,10 @@
       "note": "",
       "sellDate": "2025-05-27",
       "sellRate": 960.86,
-      "id": "imp_0371"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0372",
       "ccy": "JPY",
       "buyDate": "2025-05-30",
       "buyRate": 952.55,
@@ -4090,9 +4462,10 @@
       "note": "",
       "sellDate": "2025-05-30",
       "sellRate": 956,
-      "id": "imp_0372"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0373",
       "ccy": "JPY",
       "buyDate": "2025-05-30",
       "buyRate": 946.41,
@@ -4101,9 +4474,10 @@
       "note": "",
       "sellDate": "2025-05-30",
       "sellRate": 952,
-      "id": "imp_0373"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0374",
       "ccy": "JPY",
       "buyDate": "2025-06-02",
       "buyRate": 958,
@@ -4112,9 +4486,10 @@
       "note": "",
       "sellDate": "2025-06-02",
       "sellRate": 962,
-      "id": "imp_0374"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0375",
       "ccy": "JPY",
       "buyDate": "2025-06-10",
       "buyRate": 940.07,
@@ -4123,9 +4498,10 @@
       "note": "",
       "sellDate": "2025-06-10",
       "sellRate": 944.17,
-      "id": "imp_0375"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0376",
       "ccy": "JPY",
       "buyDate": "2025-06-13",
       "buyRate": 943.28,
@@ -4134,9 +4510,10 @@
       "note": "",
       "sellDate": "2025-06-13",
       "sellRate": 950,
-      "id": "imp_0376"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0377",
       "ccy": "JPY",
       "buyDate": "2025-06-18",
       "buyRate": 950.16,
@@ -4145,9 +4522,10 @@
       "note": "",
       "sellDate": "2025-06-18",
       "sellRate": 956.27,
-      "id": "imp_0377"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0378",
       "ccy": "JPY",
       "buyDate": "2025-06-19",
       "buyRate": 945.76,
@@ -4156,9 +4534,10 @@
       "note": "",
       "sellDate": "2025-06-19",
       "sellRate": 951.91,
-      "id": "imp_0378"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0379",
       "ccy": "JPY",
       "buyDate": "2025-06-25",
       "buyRate": 936.95,
@@ -4167,9 +4546,10 @@
       "note": "",
       "sellDate": "2025-06-25",
       "sellRate": 940.91,
-      "id": "imp_0379"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0380",
       "ccy": "JPY",
       "buyDate": "2025-06-26",
       "buyRate": 936.06,
@@ -4178,9 +4558,10 @@
       "note": "",
       "sellDate": "2025-06-26",
       "sellRate": 939.5,
-      "id": "imp_0380"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0381",
       "ccy": "JPY",
       "buyDate": "2025-07-01",
       "buyRate": 940.17,
@@ -4189,9 +4570,10 @@
       "note": "",
       "sellDate": "2025-07-01",
       "sellRate": 944.7,
-      "id": "imp_0381"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0382",
       "ccy": "JPY",
       "buyDate": "2025-07-02",
       "buyRate": 941.72,
@@ -4200,9 +4582,10 @@
       "note": "",
       "sellDate": "2025-07-02",
       "sellRate": 945.55,
-      "id": "imp_0382"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0383",
       "ccy": "JPY",
       "buyDate": "2025-07-09",
       "buyRate": 934.59,
@@ -4211,9 +4594,10 @@
       "note": "",
       "sellDate": "2025-07-09",
       "sellRate": 938.54,
-      "id": "imp_0383"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0384",
       "ccy": "JPY",
       "buyDate": "2025-07-22",
       "buyRate": 936.09,
@@ -4222,9 +4606,10 @@
       "note": "",
       "sellDate": "2025-07-22",
       "sellRate": 941,
-      "id": "imp_0384"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0385",
       "ccy": "JPY",
       "buyDate": "2025-07-31",
       "buyRate": 931.26,
@@ -4233,9 +4618,10 @@
       "note": "",
       "sellDate": "2025-07-31",
       "sellRate": 935.9,
-      "id": "imp_0385"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0386",
       "ccy": "JPY",
       "buyDate": "2025-08-01",
       "buyRate": 931.41,
@@ -4244,9 +4630,10 @@
       "note": "",
       "sellDate": "2025-08-01",
       "sellRate": 935.87,
-      "id": "imp_0386"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0387",
       "ccy": "JPY",
       "buyDate": "2025-08-01",
       "buyRate": 924.54,
@@ -4255,9 +4642,10 @@
       "note": "",
       "sellDate": "2025-08-01",
       "sellRate": 928.67,
-      "id": "imp_0387"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0388",
       "ccy": "JPY",
       "buyDate": "2025-08-02",
       "buyRate": 934.18,
@@ -4266,9 +4654,10 @@
       "note": "",
       "sellDate": "2025-08-02",
       "sellRate": 940,
-      "id": "imp_0388"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0389",
       "ccy": "JPY",
       "buyDate": "2025-08-05",
       "buyRate": 935.9,
@@ -4277,9 +4666,10 @@
       "note": "",
       "sellDate": "2025-08-05",
       "sellRate": 943,
-      "id": "imp_0389"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0390",
       "ccy": "JPY",
       "buyDate": "2025-08-14",
       "buyRate": 938.74,
@@ -4288,9 +4678,10 @@
       "note": "",
       "sellDate": "2025-08-14",
       "sellRate": 943.41,
-      "id": "imp_0390"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0391",
       "ccy": "JPY",
       "buyDate": "2025-08-20",
       "buyRate": 938.58,
@@ -4299,9 +4690,10 @@
       "note": "",
       "sellDate": "2025-08-20",
       "sellRate": 942.87,
-      "id": "imp_0391"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0392",
       "ccy": "JPY",
       "buyDate": "2025-08-25",
       "buyRate": 937.75,
@@ -4310,9 +4702,10 @@
       "note": "",
       "sellDate": "2025-08-25",
       "sellRate": 942,
-      "id": "imp_0392"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0393",
       "ccy": "JPY",
       "buyDate": "2025-09-07",
       "buyRate": 943.4,
@@ -4321,9 +4714,10 @@
       "note": "",
       "sellDate": "2025-09-07",
       "sellRate": 948,
-      "id": "imp_0393"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0394",
       "ccy": "JPY",
       "buyDate": "2025-09-09",
       "buyRate": 939.47,
@@ -4332,9 +4726,10 @@
       "note": "",
       "sellDate": "2025-09-09",
       "sellRate": 943.1,
-      "id": "imp_0394"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0395",
       "ccy": "JPY",
       "buyDate": "2025-09-23",
       "buyRate": 938.17,
@@ -4343,9 +4738,10 @@
       "note": "",
       "sellDate": "2025-09-23",
       "sellRate": 943.14,
-      "id": "imp_0395"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0396",
       "ccy": "JPY",
       "buyDate": "2025-09-30",
       "buyRate": 941.95,
@@ -4354,9 +4750,10 @@
       "note": "",
       "sellDate": "2025-09-30",
       "sellRate": 945.98,
-      "id": "imp_0396"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0397",
       "ccy": "JPY",
       "buyDate": "2025-10-01",
       "buyRate": 948.3,
@@ -4365,9 +4762,10 @@
       "note": "",
       "sellDate": "2025-10-01",
       "sellRate": 952.6,
-      "id": "imp_0397"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0398",
       "ccy": "JPY",
       "buyDate": "2025-10-15",
       "buyRate": 929.71,
@@ -4376,9 +4774,10 @@
       "note": "",
       "sellDate": "2025-10-15",
       "sellRate": 942,
-      "id": "imp_0398"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0399",
       "ccy": "JPY",
       "buyDate": "2025-10-17",
       "buyRate": 942,
@@ -4387,9 +4786,10 @@
       "note": "",
       "sellDate": "2025-10-17",
       "sellRate": 953.56,
-      "id": "imp_0399"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0400",
       "ccy": "JPY",
       "buyDate": "2025-10-17",
       "buyRate": 938.74,
@@ -4398,9 +4798,10 @@
       "note": "",
       "sellDate": "2025-10-17",
       "sellRate": 943.13,
-      "id": "imp_0400"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0401",
       "ccy": "JPY",
       "buyDate": "2025-10-23",
       "buyRate": 940.67,
@@ -4409,9 +4810,10 @@
       "note": "",
       "sellDate": "2025-10-23",
       "sellRate": 944.59,
-      "id": "imp_0401"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0402",
       "ccy": "JPY",
       "buyDate": "2025-10-28",
       "buyRate": 939.07,
@@ -4420,9 +4822,10 @@
       "note": "",
       "sellDate": "2025-10-28",
       "sellRate": 943.75,
-      "id": "imp_0402"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0403",
       "ccy": "JPY",
       "buyDate": "2025-11-02",
       "buyRate": 925.85,
@@ -4431,9 +4834,10 @@
       "note": "",
       "sellDate": "2025-11-02",
       "sellRate": 929.3,
-      "id": "imp_0403"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0404",
       "ccy": "JPY",
       "buyDate": "2025-11-04",
       "buyRate": 926.32,
@@ -4442,9 +4846,10 @@
       "note": "",
       "sellDate": "2025-11-04",
       "sellRate": 930.93,
-      "id": "imp_0404"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0405",
       "ccy": "JPY",
       "buyDate": "2025-11-04",
       "buyRate": 926.72,
@@ -4453,9 +4858,10 @@
       "note": "",
       "sellDate": "2025-11-04",
       "sellRate": 930.6,
-      "id": "imp_0405"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0406",
       "ccy": "JPY",
       "buyDate": "2025-11-07",
       "buyRate": 942.02,
@@ -4464,9 +4870,10 @@
       "note": "",
       "sellDate": "2025-11-07",
       "sellRate": 946.2,
-      "id": "imp_0406"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0407",
       "ccy": "JPY",
       "buyDate": "2025-11-07",
       "buyRate": 937.78,
@@ -4475,9 +4882,10 @@
       "note": "",
       "sellDate": "2025-11-07",
       "sellRate": 943,
-      "id": "imp_0407"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0408",
       "ccy": "JPY",
       "buyDate": "2025-11-07",
       "buyRate": 933.33,
@@ -4486,9 +4894,10 @@
       "note": "",
       "sellDate": "2025-11-07",
       "sellRate": 936.74,
-      "id": "imp_0408"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0409",
       "ccy": "JPY",
       "buyDate": "2025-11-11",
       "buyRate": 943.9,
@@ -4497,9 +4906,10 @@
       "note": "",
       "sellDate": "2025-11-11",
       "sellRate": 948.89,
-      "id": "imp_0409"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0410",
       "ccy": "JPY",
       "buyDate": "2025-11-21",
       "buyRate": 934.85,
@@ -4508,9 +4918,10 @@
       "note": "",
       "sellDate": "2025-11-21",
       "sellRate": 940.5,
-      "id": "imp_0410"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0411",
       "ccy": "JPY",
       "buyDate": "2025-11-25",
       "buyRate": 938.62,
@@ -4519,9 +4930,10 @@
       "note": "",
       "sellDate": "2025-11-25",
       "sellRate": 942.66,
-      "id": "imp_0411"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0412",
       "ccy": "JPY",
       "buyDate": "2025-11-26",
       "buyRate": 934.23,
@@ -4530,9 +4942,10 @@
       "note": "",
       "sellDate": "2025-11-26",
       "sellRate": 939.73,
-      "id": "imp_0412"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0413",
       "ccy": "JPY",
       "buyDate": "2025-11-28",
       "buyRate": 937.87,
@@ -4541,9 +4954,10 @@
       "note": "",
       "sellDate": "2025-11-28",
       "sellRate": 941.16,
-      "id": "imp_0413"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0414",
       "ccy": "JPY",
       "buyDate": "2025-12-01",
       "buyRate": 940.91,
@@ -4552,9 +4966,10 @@
       "note": "",
       "sellDate": "2025-12-01",
       "sellRate": 943.37,
-      "id": "imp_0414"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0415",
       "ccy": "JPY",
       "buyDate": "2025-12-04",
       "buyRate": 945.62,
@@ -4563,9 +4978,10 @@
       "note": "",
       "sellDate": "2025-12-04",
       "sellRate": 950.5,
-      "id": "imp_0415"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0416",
       "ccy": "JPY",
       "buyDate": "2025-12-04",
       "buyRate": 942.91,
@@ -4574,9 +4990,10 @@
       "note": "",
       "sellDate": "2025-12-04",
       "sellRate": 947.1,
-      "id": "imp_0416"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0417",
       "ccy": "JPY",
       "buyDate": "2025-12-11",
       "buyRate": 940.24,
@@ -4585,9 +5002,10 @@
       "note": "",
       "sellDate": "2025-12-11",
       "sellRate": 944.65,
-      "id": "imp_0417"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0418",
       "ccy": "JPY",
       "buyDate": "2025-12-11",
       "buyRate": 937.87,
@@ -4596,9 +5014,10 @@
       "note": "",
       "sellDate": "2025-12-11",
       "sellRate": 943.22,
-      "id": "imp_0418"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0419",
       "ccy": "JPY",
       "buyDate": "2025-12-12",
       "buyRate": 942.93,
@@ -4607,9 +5026,10 @@
       "note": "",
       "sellDate": "2025-12-12",
       "sellRate": 946.84,
-      "id": "imp_0419"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0420",
       "ccy": "JPY",
       "buyDate": "2025-12-16",
       "buyRate": 944.79,
@@ -4618,9 +5038,10 @@
       "note": "",
       "sellDate": "2025-12-16",
       "sellRate": 949.84,
-      "id": "imp_0420"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0421",
       "ccy": "JPY",
       "buyDate": "2025-12-17",
       "buyRate": 949.56,
@@ -4629,9 +5050,10 @@
       "note": "",
       "sellDate": "2025-12-17",
       "sellRate": 955.76,
-      "id": "imp_0421"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0422",
       "ccy": "JPY",
       "buyDate": "2025-12-23",
       "buyRate": 941.73,
@@ -4640,9 +5062,10 @@
       "note": "",
       "sellDate": "2025-12-23",
       "sellRate": 946.72,
-      "id": "imp_0422"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0423",
       "ccy": "JPY",
       "buyDate": "2025-12-23",
       "buyRate": 940.81,
@@ -4651,9 +5074,10 @@
       "note": "",
       "sellDate": "2025-12-23",
       "sellRate": 944.96,
-      "id": "imp_0423"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0424",
       "ccy": "JPY",
       "buyDate": "2025-12-23",
       "buyRate": 941.9,
@@ -4662,9 +5086,10 @@
       "note": "",
       "sellDate": "2025-12-23",
       "sellRate": 946.72,
-      "id": "imp_0424"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0425",
       "ccy": "JPY",
       "buyDate": "2025-12-24",
       "buyRate": 935.11,
@@ -4673,9 +5098,10 @@
       "note": "",
       "sellDate": "2025-12-24",
       "sellRate": 939.36,
-      "id": "imp_0425"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0426",
       "ccy": "JPY",
       "buyDate": "2025-12-26",
       "buyRate": 921.73,
@@ -4684,9 +5110,10 @@
       "note": "",
       "sellDate": "2025-12-26",
       "sellRate": 925.64,
-      "id": "imp_0426"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0427",
       "ccy": "JPY",
       "buyDate": "2025-12-26",
       "buyRate": 935.11,
@@ -4695,9 +5122,10 @@
       "note": "",
       "sellDate": "2025-12-26",
       "sellRate": 939.36,
-      "id": "imp_0427"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0428",
       "ccy": "JPY",
       "buyDate": "2025-12-26",
       "buyRate": 916.75,
@@ -4706,9 +5134,10 @@
       "note": "",
       "sellDate": "2025-12-26",
       "sellRate": 921.59,
-      "id": "imp_0428"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0429",
       "ccy": "JPY",
       "buyDate": "2025-12-30",
       "buyRate": 920.91,
@@ -4717,9 +5146,10 @@
       "note": "",
       "sellDate": "2025-12-30",
       "sellRate": 925.99,
-      "id": "imp_0429"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0430",
       "ccy": "JPY",
       "buyDate": "2025-12-30",
       "buyRate": 917.39,
@@ -4728,9 +5158,10 @@
       "note": "",
       "sellDate": "2025-12-30",
       "sellRate": 924.95,
-      "id": "imp_0430"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0431",
       "ccy": "JPY",
       "buyDate": "2025-12-30",
       "buyRate": 922.8,
@@ -4739,9 +5170,10 @@
       "note": "",
       "sellDate": "2025-12-30",
       "sellRate": 926.65,
-      "id": "imp_0431"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0432",
       "ccy": "JPY",
       "buyDate": "2025-12-30",
       "buyRate": 922.56,
@@ -4750,9 +5182,10 @@
       "note": "",
       "sellDate": "2025-12-30",
       "sellRate": 926.75,
-      "id": "imp_0432"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0433",
       "ccy": "JPY",
       "buyDate": "2026-01-06",
       "buyRate": 920.56,
@@ -4761,9 +5194,10 @@
       "note": "",
       "sellDate": "2026-01-06",
       "sellRate": 924.38,
-      "id": "imp_0433"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0434",
       "ccy": "JPY",
       "buyDate": "2026-01-12",
       "buyRate": 925.16,
@@ -4772,9 +5206,10 @@
       "note": "",
       "sellDate": "2026-01-12",
       "sellRate": 929.51,
-      "id": "imp_0434"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0435",
       "ccy": "JPY",
       "buyDate": "2026-01-13",
       "buyRate": 926.58,
@@ -4783,9 +5218,10 @@
       "note": "",
       "sellDate": "2026-01-13",
       "sellRate": 930.53,
-      "id": "imp_0435"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0436",
       "ccy": "JPY",
       "buyDate": "2026-01-20",
       "buyRate": 933.38,
@@ -4794,9 +5230,10 @@
       "note": "",
       "sellDate": "2026-01-20",
       "sellRate": 936.94,
-      "id": "imp_0436"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0437",
       "ccy": "JPY",
       "buyDate": "2026-01-20",
       "buyRate": 927.27,
@@ -4805,9 +5242,10 @@
       "note": "",
       "sellDate": "2026-01-20",
       "sellRate": 931.33,
-      "id": "imp_0437"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0438",
       "ccy": "JPY",
       "buyDate": "2026-01-24",
       "buyRate": 931.23,
@@ -4816,9 +5254,10 @@
       "note": "",
       "sellDate": "2026-01-24",
       "sellRate": 930.63,
-      "id": "imp_0438"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0439",
       "ccy": "JPY",
       "buyDate": "2026-01-24",
       "buyRate": 927.1,
@@ -4827,9 +5266,10 @@
       "note": "",
       "sellDate": "2026-01-24",
       "sellRate": 930.63,
-      "id": "imp_0439"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0440",
       "ccy": "JPY",
       "buyDate": "2026-01-26",
       "buyRate": 925.31,
@@ -4838,9 +5278,10 @@
       "note": "",
       "sellDate": "2026-01-26",
       "sellRate": 933.42,
-      "id": "imp_0440"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0441",
       "ccy": "JPY",
       "buyDate": "2026-01-27",
       "buyRate": 931.02,
@@ -4849,9 +5290,10 @@
       "note": "",
       "sellDate": "2026-01-27",
       "sellRate": 939.7,
-      "id": "imp_0441"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0442",
       "ccy": "JPY",
       "buyDate": "2026-01-28",
       "buyRate": 937.46,
@@ -4860,9 +5302,10 @@
       "note": "",
       "sellDate": "2026-01-28",
       "sellRate": 942.2,
-      "id": "imp_0442"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0443",
       "ccy": "JPY",
       "buyDate": "2026-01-30",
       "buyRate": 934.63,
@@ -4871,9 +5314,10 @@
       "note": "",
       "sellDate": "2026-01-30",
       "sellRate": 936.81,
-      "id": "imp_0443"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0444",
       "ccy": "JPY",
       "buyDate": "2026-01-30",
       "buyRate": 937.25,
@@ -4882,9 +5326,10 @@
       "note": "",
       "sellDate": "2026-01-30",
       "sellRate": 938.25,
-      "id": "imp_0444"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0445",
       "ccy": "JPY",
       "buyDate": "2026-01-30",
       "buyRate": 931.1,
@@ -4893,9 +5338,10 @@
       "note": "",
       "sellDate": "2026-01-30",
       "sellRate": 938.25,
-      "id": "imp_0445"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0446",
       "ccy": "JPY",
       "buyDate": "2026-01-30",
       "buyRate": 934.26,
@@ -4904,9 +5350,10 @@
       "note": "",
       "sellDate": "2026-01-30",
       "sellRate": 938.69,
-      "id": "imp_0446"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0447",
       "ccy": "JPY",
       "buyDate": "2026-01-30",
       "buyRate": 933.67,
@@ -4915,9 +5362,10 @@
       "note": "",
       "sellDate": "2026-01-30",
       "sellRate": 938.69,
-      "id": "imp_0447"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0448",
       "ccy": "JPY",
       "buyDate": "2026-01-30",
       "buyRate": 931.33,
@@ -4926,9 +5374,10 @@
       "note": "",
       "sellDate": "2026-01-30",
       "sellRate": 938.69,
-      "id": "imp_0448"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0449",
       "ccy": "JPY",
       "buyDate": "2026-02-02",
       "buyRate": 937.48,
@@ -4937,9 +5386,10 @@
       "note": "",
       "sellDate": "2026-02-02",
       "sellRate": 942.1,
-      "id": "imp_0449"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0450",
       "ccy": "JPY",
       "buyDate": "2026-02-05",
       "buyRate": 929.49,
@@ -4948,9 +5398,10 @@
       "note": "",
       "sellDate": "2026-02-05",
       "sellRate": 934.21,
-      "id": "imp_0450"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0451",
       "ccy": "JPY",
       "buyDate": "2026-02-06",
       "buyRate": 938.57,
@@ -4959,9 +5410,10 @@
       "note": "",
       "sellDate": "2026-02-06",
       "sellRate": 937.18,
-      "id": "imp_0451"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0452",
       "ccy": "JPY",
       "buyDate": "2026-02-06",
       "buyRate": 932.06,
@@ -4970,9 +5422,10 @@
       "note": "",
       "sellDate": "2026-02-06",
       "sellRate": 937.18,
-      "id": "imp_0452"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0453",
       "ccy": "JPY",
       "buyDate": "2026-02-06",
       "buyRate": 930.51,
@@ -4981,9 +5434,10 @@
       "note": "",
       "sellDate": "2026-02-06",
       "sellRate": 937.18,
-      "id": "imp_0453"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0454",
       "ccy": "JPY",
       "buyDate": "2026-02-09",
       "buyRate": 935.29,
@@ -4992,9 +5446,10 @@
       "note": "",
       "sellDate": "2026-02-09",
       "sellRate": 937,
-      "id": "imp_0454"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0455",
       "ccy": "JPY",
       "buyDate": "2026-02-09",
       "buyRate": 931.47,
@@ -5003,9 +5458,10 @@
       "note": "",
       "sellDate": "2026-02-09",
       "sellRate": 935.62,
-      "id": "imp_0455"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0456",
       "ccy": "JPY",
       "buyDate": "2026-02-10",
       "buyRate": 934.6,
@@ -5014,9 +5470,10 @@
       "note": "",
       "sellDate": "2026-02-10",
       "sellRate": 938.34,
-      "id": "imp_0456"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0457",
       "ccy": "JPY",
       "buyDate": "2026-02-11",
       "buyRate": 943.15,
@@ -5025,9 +5482,10 @@
       "note": "",
       "sellDate": "2026-02-11",
       "sellRate": 947.18,
-      "id": "imp_0457"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0458",
       "ccy": "JPY",
       "buyDate": "2026-02-13",
       "buyRate": 938.33,
@@ -5036,9 +5494,10 @@
       "note": "",
       "sellDate": "2026-02-13",
       "sellRate": 944.03,
-      "id": "imp_0458"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0459",
       "ccy": "JPY",
       "buyDate": "2026-02-23",
       "buyRate": 931.33,
@@ -5047,9 +5506,10 @@
       "note": "",
       "sellDate": "2026-02-23",
       "sellRate": 935.75,
-      "id": "imp_0459"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0460",
       "ccy": "JPY",
       "buyDate": "2026-02-27",
       "buyRate": 919.55,
@@ -5058,9 +5518,10 @@
       "note": "",
       "sellDate": "2026-02-27",
       "sellRate": 924,
-      "id": "imp_0460"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0461",
       "ccy": "JPY",
       "buyDate": "2026-03-03",
       "buyRate": 933.54,
@@ -5069,9 +5530,10 @@
       "note": "",
       "sellDate": "2026-03-03",
       "sellRate": 937.99,
-      "id": "imp_0461"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0462",
       "ccy": "JPY",
       "buyDate": "2026-03-03",
       "buyRate": 929.41,
@@ -5080,9 +5542,10 @@
       "note": "",
       "sellDate": "2026-03-03",
       "sellRate": 934,
-      "id": "imp_0462"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0463",
       "ccy": "JPY",
       "buyDate": "2026-03-03",
       "buyRate": 928.45,
@@ -5091,9 +5554,10 @@
       "note": "",
       "sellDate": "2026-03-03",
       "sellRate": 934,
-      "id": "imp_0463"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0464",
       "ccy": "JPY",
       "buyDate": "2026-03-03",
       "buyRate": 925.03,
@@ -5102,9 +5566,10 @@
       "note": "",
       "sellDate": "2026-03-03",
       "sellRate": 932,
-      "id": "imp_0464"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0465",
       "ccy": "JPY",
       "buyDate": "2026-03-04",
       "buyRate": 935.44,
@@ -5113,9 +5578,10 @@
       "note": "",
       "sellDate": "2026-03-04",
       "sellRate": 939.53,
-      "id": "imp_0465"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0466",
       "ccy": "JPY",
       "buyDate": "2026-03-05",
       "buyRate": 931.49,
@@ -5124,9 +5590,10 @@
       "note": "",
       "sellDate": "2026-03-05",
       "sellRate": 935.54,
-      "id": "imp_0466"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0467",
       "ccy": "JPY",
       "buyDate": "2026-03-06",
       "buyRate": 931.54,
@@ -5135,9 +5602,10 @@
       "note": "",
       "sellDate": "2026-03-06",
       "sellRate": 940.33,
-      "id": "imp_0467"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0468",
       "ccy": "JPY",
       "buyDate": "2026-03-06",
       "buyRate": 935.38,
@@ -5146,9 +5614,10 @@
       "note": "",
       "sellDate": "2026-03-06",
       "sellRate": 939.62,
-      "id": "imp_0468"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0469",
       "ccy": "JPY",
       "buyDate": "2026-03-06",
       "buyRate": 935.02,
@@ -5157,9 +5626,10 @@
       "note": "",
       "sellDate": "2026-03-06",
       "sellRate": 939.16,
-      "id": "imp_0469"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0470",
       "ccy": "JPY",
       "buyDate": "2026-03-07",
       "buyRate": 938.22,
@@ -5168,9 +5638,10 @@
       "note": "",
       "sellDate": "2026-03-07",
       "sellRate": 942.57,
-      "id": "imp_0470"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0471",
       "ccy": "JPY",
       "buyDate": "2026-03-07",
       "buyRate": 939.39,
@@ -5179,9 +5650,10 @@
       "note": "",
       "sellDate": "2026-03-07",
       "sellRate": 944.69,
-      "id": "imp_0471"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0472",
       "ccy": "JPY",
       "buyDate": "2026-03-09",
       "buyRate": 938.22,
@@ -5190,9 +5662,10 @@
       "note": "",
       "sellDate": "2026-03-09",
       "sellRate": 942.57,
-      "id": "imp_0472"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0473",
       "ccy": "JPY",
       "buyDate": "2026-03-10",
       "buyRate": 929.97,
@@ -5201,9 +5674,10 @@
       "note": "",
       "sellDate": "2026-03-10",
       "sellRate": 935.41,
-      "id": "imp_0473"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0474",
       "ccy": "JPY",
       "buyDate": "2026-03-12",
       "buyRate": 927.89,
@@ -5212,9 +5686,10 @@
       "note": "",
       "sellDate": "2026-03-12",
       "sellRate": 935.67,
-      "id": "imp_0474"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0475",
       "ccy": "JPY",
       "buyDate": "2026-03-12",
       "buyRate": 927.06,
@@ -5223,9 +5698,10 @@
       "note": "",
       "sellDate": "2026-03-12",
       "sellRate": 935.67,
-      "id": "imp_0475"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0476",
       "ccy": "JPY",
       "buyDate": "2026-03-16",
       "buyRate": 934.86,
@@ -5234,9 +5710,10 @@
       "note": "",
       "sellDate": "2026-03-16",
       "sellRate": 939,
-      "id": "imp_0476"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0477",
       "ccy": "JPY",
       "buyDate": "2026-03-16",
       "buyRate": 935.79,
@@ -5245,9 +5722,10 @@
       "note": "",
       "sellDate": "2026-03-16",
       "sellRate": 938,
-      "id": "imp_0477"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0478",
       "ccy": "JPY",
       "buyDate": "2026-03-18",
       "buyRate": 936.18,
@@ -5256,9 +5734,10 @@
       "note": "",
       "sellDate": "2026-03-18",
       "sellRate": 941.69,
-      "id": "imp_0478"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0479",
       "ccy": "JPY",
       "buyDate": "2026-03-19",
       "buyRate": 936.88,
@@ -5267,9 +5746,10 @@
       "note": "",
       "sellDate": "2026-03-19",
       "sellRate": 942.74,
-      "id": "imp_0479"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0480",
       "ccy": "JPY",
       "buyDate": "2026-03-23",
       "buyRate": 938.19,
@@ -5278,9 +5758,10 @@
       "note": "",
       "sellDate": "2026-03-23",
       "sellRate": 943.5,
-      "id": "imp_0480"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0481",
       "ccy": "JPY",
       "buyDate": "2026-03-30",
       "buyRate": 996.89,
@@ -5289,9 +5770,10 @@
       "note": "",
       "sellDate": "2026-03-30",
       "sellRate": 950.29,
-      "id": "imp_0481"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0482",
       "ccy": "JPY",
       "buyDate": "2026-03-31",
       "buyRate": 992.9,
@@ -5300,9 +5782,10 @@
       "note": "",
       "sellDate": "2026-03-31",
       "sellRate": 954.43,
-      "id": "imp_0482"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0483",
       "ccy": "JPY",
       "buyDate": "2026-04-02",
       "buyRate": 989.03,
@@ -5311,9 +5794,10 @@
       "note": "",
       "sellDate": "2026-04-02",
       "sellRate": 953.3,
-      "id": "imp_0483"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0484",
       "ccy": "JPY",
       "buyDate": "2026-04-02",
       "buyRate": 989.28,
@@ -5322,9 +5806,10 @@
       "note": "",
       "sellDate": "2026-04-02",
       "sellRate": 953.3,
-      "id": "imp_0484"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0485",
       "ccy": "JPY",
       "buyDate": "2026-04-02",
       "buyRate": 947.57,
@@ -5333,9 +5818,10 @@
       "note": "",
       "sellDate": "2026-04-02",
       "sellRate": 952.51,
-      "id": "imp_0485"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0486",
       "ccy": "JPY",
       "buyDate": "2026-04-10",
       "buyRate": 988.88,
@@ -5344,9 +5830,10 @@
       "note": "",
       "sellDate": "2026-04-10",
       "sellRate": 929.98,
-      "id": "imp_0486"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0487",
       "ccy": "JPY",
       "buyDate": "2026-04-22",
       "buyRate": 923.98,
@@ -5355,9 +5842,10 @@
       "note": "",
       "sellDate": "2026-04-22",
       "sellRate": 928.01,
-      "id": "imp_0487"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0488",
       "ccy": "JPY",
       "buyDate": "2026-04-30",
       "buyRate": 933.88,
@@ -5366,9 +5854,10 @@
       "note": "",
       "sellDate": "2026-04-30",
       "sellRate": 936.96,
-      "id": "imp_0488"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0489",
       "ccy": "JPY",
       "buyDate": "2026-04-30",
       "buyRate": 923.92,
@@ -5377,9 +5866,10 @@
       "note": "",
       "sellDate": "2026-04-30",
       "sellRate": 927.83,
-      "id": "imp_0489"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0490",
       "ccy": "JPY",
       "buyDate": "2026-05-08",
       "buyRate": 931.69,
@@ -5388,9 +5878,10 @@
       "note": "",
       "sellDate": "2026-05-08",
       "sellRate": 935.79,
-      "id": "imp_0490"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0491",
       "ccy": "JPY",
       "buyDate": "2026-05-12",
       "buyRate": 976.47,
@@ -5399,9 +5890,10 @@
       "note": "",
       "sellDate": "2026-05-12",
       "sellRate": 941.66,
-      "id": "imp_0491"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0492",
       "ccy": "JPY",
       "buyDate": "2026-05-12",
       "buyRate": 962.47,
@@ -5410,9 +5902,10 @@
       "note": "",
       "sellDate": "2026-05-12",
       "sellRate": 941.66,
-      "id": "imp_0492"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0493",
       "ccy": "JPY",
       "buyDate": "2026-05-12",
       "buyRate": 968.79,
@@ -5421,9 +5914,10 @@
       "note": "",
       "sellDate": "2026-05-12",
       "sellRate": 941.66,
-      "id": "imp_0493"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0494",
       "ccy": "JPY",
       "buyDate": "2026-05-12",
       "buyRate": 970,
@@ -5432,9 +5926,10 @@
       "note": "",
       "sellDate": "2026-05-12",
       "sellRate": 942.68,
-      "id": "imp_0494"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0495",
       "ccy": "JPY",
       "buyDate": "2026-05-12",
       "buyRate": 988.88,
@@ -5443,9 +5938,10 @@
       "note": "",
       "sellDate": "2026-05-12",
       "sellRate": 942.68,
-      "id": "imp_0495"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0496",
       "ccy": "JPY",
       "buyDate": "2026-05-12",
       "buyRate": 989.03,
@@ -5454,9 +5950,10 @@
       "note": "",
       "sellDate": "2026-05-12",
       "sellRate": 942.68,
-      "id": "imp_0496"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0497",
       "ccy": "JPY",
       "buyDate": "2026-05-12",
       "buyRate": 937.72,
@@ -5465,9 +5962,10 @@
       "note": "",
       "sellDate": "2026-05-12",
       "sellRate": 941.78,
-      "id": "imp_0497"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0498",
       "ccy": "JPY",
       "buyDate": "2026-05-15",
       "buyRate": 953.01,
@@ -5476,9 +5974,10 @@
       "note": "",
       "sellDate": "2026-05-15",
       "sellRate": 945,
-      "id": "imp_0498"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0499",
       "ccy": "JPY",
       "buyDate": "2026-05-15",
       "buyRate": 949.12,
@@ -5487,9 +5986,10 @@
       "note": "",
       "sellDate": "2026-05-15",
       "sellRate": 945,
-      "id": "imp_0499"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     },
     {
+      "id": "imp_0500",
       "ccy": "USD",
       "buyDate": "2026-06-09",
       "buyRate": 1522.13,
@@ -5498,18 +5998,952 @@
       "note": "",
       "sellDate": "2026-06-09",
       "sellRate": 1526.73,
-      "id": "imp_0500"
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "1781653170329",
+      "ccy": "USD",
+      "buyDate": "2026-06-17",
+      "buyRate": 1510.32,
+      "buyFx": 213279,
+      "buyKrw": 322119539,
+      "note": "S&P500 2억, QQQM 1.2억 매입",
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_001",
+      "ccy": "JPY",
+      "buyDate": "2022-12-27",
+      "buyRate": 954.29,
+      "buyFx": 20957.99,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-12-27",
+      "sellRate": 956.92,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_002",
+      "ccy": "JPY",
+      "buyDate": "2022-12-27",
+      "buyRate": 952.97,
+      "buyFx": 20987.02,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-12-27",
+      "sellRate": 956.92,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_003",
+      "ccy": "JPY",
+      "buyDate": "2022-12-26",
+      "buyRate": 961.08,
+      "buyFx": 20809.92,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-12-26",
+      "sellRate": 965.1,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_004",
+      "ccy": "JPY",
+      "buyDate": "2022-12-20",
+      "buyRate": 957.64,
+      "buyFx": 20884.67,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-12-20",
+      "sellRate": 973.43,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_005",
+      "ccy": "JPY",
+      "buyDate": "2022-12-19",
+      "buyRate": 953.9,
+      "buyFx": 20821.88,
+      "buyKrw": 198620,
+      "note": "",
+      "sellDate": "2022-12-19",
+      "sellRate": 959.83,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_006",
+      "ccy": "JPY",
+      "buyDate": "2022-12-19",
+      "buyRate": 953.37,
+      "buyFx": 20978.22,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-12-19",
+      "sellRate": 959.83,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_007",
+      "ccy": "JPY",
+      "buyDate": "2022-12-15",
+      "buyRate": 947.15,
+      "buyFx": 42239.41,
+      "buyKrw": 400071,
+      "note": "",
+      "sellDate": "2022-12-15",
+      "sellRate": 948.14,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_008",
+      "ccy": "JPY",
+      "buyDate": "2022-12-13",
+      "buyRate": 946.36,
+      "buyFx": 16906.35,
+      "buyKrw": 159995,
+      "note": "",
+      "sellDate": "2022-12-13",
+      "sellRate": 948.14,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_009",
+      "ccy": "JPY",
+      "buyDate": "2022-12-07",
+      "buyRate": 954.3,
+      "buyFx": 20457.43,
+      "buyKrw": 195225,
+      "note": "",
+      "sellDate": "2022-12-07",
+      "sellRate": 958.3,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_010",
+      "ccy": "JPY",
+      "buyDate": "2022-12-06",
+      "buyRate": 953.84,
+      "buyFx": 8387.15,
+      "buyKrw": 80000,
+      "note": "",
+      "sellDate": "2022-12-06",
+      "sellRate": 957.98,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_011",
+      "ccy": "JPY",
+      "buyDate": "2022-12-05",
+      "buyRate": 958.65,
+      "buyFx": 20862.67,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-12-05",
+      "sellRate": 959.73,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_012",
+      "ccy": "JPY",
+      "buyDate": "2022-12-02",
+      "buyRate": 952.32,
+      "buyFx": 21309.13,
+      "buyKrw": 202931,
+      "note": "",
+      "sellDate": "2022-12-02",
+      "sellRate": 962.53,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_013",
+      "ccy": "JPY",
+      "buyDate": "2022-12-02",
+      "buyRate": 957.21,
+      "buyFx": 8398.89,
+      "buyKrw": 80395,
+      "note": "",
+      "sellDate": "2022-12-02",
+      "sellRate": 963.96,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_014",
+      "ccy": "JPY",
+      "buyDate": "2022-12-02",
+      "buyRate": 952.84,
+      "buyFx": 6287.63,
+      "buyKrw": 59911,
+      "note": "",
+      "sellDate": "2022-12-02",
+      "sellRate": 963.47,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_015",
+      "ccy": "JPY",
+      "buyDate": "2022-12-01",
+      "buyRate": 950.35,
+      "buyFx": 14754.42,
+      "buyKrw": 140219,
+      "note": "",
+      "sellDate": "2022-12-01",
+      "sellRate": 954.51,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_016",
+      "ccy": "JPY",
+      "buyDate": "2022-12-01",
+      "buyRate": 943.71,
+      "buyFx": 21195.95,
+      "buyKrw": 200028,
+      "note": "",
+      "sellDate": "2022-12-01",
+      "sellRate": 949.95,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_017",
+      "ccy": "JPY",
+      "buyDate": "2022-11-28",
+      "buyRate": 956.42,
+      "buyFx": 21022.71,
+      "buyKrw": 201065,
+      "note": "",
+      "sellDate": "2022-11-28",
+      "sellRate": 960.6,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_018",
+      "ccy": "JPY",
+      "buyDate": "2022-11-28",
+      "buyRate": 953.67,
+      "buyFx": 5242.9,
+      "buyKrw": 50000,
+      "note": "",
+      "sellDate": "2022-11-28",
+      "sellRate": 960.71,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_019",
+      "ccy": "JPY",
+      "buyDate": "2022-11-25",
+      "buyRate": 954.16,
+      "buyFx": 20931.31,
+      "buyKrw": 199718,
+      "note": "",
+      "sellDate": "2022-11-25",
+      "sellRate": 956.84,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_020",
+      "ccy": "JPY",
+      "buyDate": "2022-11-18",
+      "buyRate": 955.85,
+      "buyFx": 20923.78,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-11-18",
+      "sellRate": 959.92,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_021",
+      "ccy": "JPY",
+      "buyDate": "2022-11-17",
+      "buyRate": 956.39,
+      "buyFx": 10455.98,
+      "buyKrw": 100000,
+      "note": "",
+      "sellDate": "2022-11-17",
+      "sellRate": 960.16,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_022",
+      "ccy": "JPY",
+      "buyDate": "2022-11-17",
+      "buyRate": 956.39,
+      "buyFx": 8412.92,
+      "buyKrw": 80460,
+      "note": "",
+      "sellDate": "2022-11-17",
+      "sellRate": 960.25,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_023",
+      "ccy": "JPY",
+      "buyDate": "2022-11-17",
+      "buyRate": 953.95,
+      "buyFx": 18868.91,
+      "buyKrw": 180000,
+      "note": "",
+      "sellDate": "2022-11-17",
+      "sellRate": 958.65,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_024",
+      "ccy": "JPY",
+      "buyDate": "2022-11-17",
+      "buyRate": 953.64,
+      "buyFx": 13366.69,
+      "buyKrw": 127470,
+      "note": "",
+      "sellDate": "2022-11-17",
+      "sellRate": 958.65,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_025",
+      "ccy": "JPY",
+      "buyDate": "2022-11-17",
+      "buyRate": 949.94,
+      "buyFx": 22815.44,
+      "buyKrw": 216733,
+      "note": "",
+      "sellDate": "2022-11-17",
+      "sellRate": 958.65,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_026",
+      "ccy": "JPY",
+      "buyDate": "2022-11-16",
+      "buyRate": 943.33,
+      "buyFx": 21201.48,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-11-16",
+      "sellRate": 949.23,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_027",
+      "ccy": "JPY",
+      "buyDate": "2022-11-16",
+      "buyRate": 939.92,
+      "buyFx": 13159.04,
+      "buyKrw": 123684,
+      "note": "",
+      "sellDate": "2022-11-16",
+      "sellRate": 946.98,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_028",
+      "ccy": "JPY",
+      "buyDate": "2022-11-14",
+      "buyRate": 938.28,
+      "buyFx": 5000,
+      "buyKrw": 46914,
+      "note": "",
+      "sellDate": "2022-11-14",
+      "sellRate": 951.85,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_029",
+      "ccy": "JPY",
+      "buyDate": "2022-11-14",
+      "buyRate": 944.82,
+      "buyFx": 7300,
+      "buyKrw": 68972,
+      "note": "",
+      "sellDate": "2022-11-14",
+      "sellRate": 952.09,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_030",
+      "ccy": "JPY",
+      "buyDate": "2022-11-14",
+      "buyRate": 941.91,
+      "buyFx": 15925.08,
+      "buyKrw": 150000,
+      "note": "",
+      "sellDate": "2022-11-14",
+      "sellRate": 951.72,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_031",
+      "ccy": "JPY",
+      "buyDate": "2022-11-11",
+      "buyRate": 947.38,
+      "buyFx": 21110.85,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-11-11",
+      "sellRate": 952.34,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_032",
+      "ccy": "JPY",
+      "buyDate": "2022-11-11",
+      "buyRate": 940.53,
+      "buyFx": 9883.39,
+      "buyKrw": 92956,
+      "note": "",
+      "sellDate": "2022-11-11",
+      "sellRate": 962.34,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_033",
+      "ccy": "JPY",
+      "buyDate": "2022-11-10",
+      "buyRate": 938,
+      "buyFx": 21322.63,
+      "buyKrw": 200006,
+      "note": "",
+      "sellDate": "2022-11-10",
+      "sellRate": 943.63,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_034",
+      "ccy": "JPY",
+      "buyDate": "2022-11-07",
+      "buyRate": 956.54,
+      "buyFx": 10454.34,
+      "buyKrw": 100000,
+      "note": "",
+      "sellDate": "2022-11-07",
+      "sellRate": 961.49,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_035",
+      "ccy": "USD",
+      "buyDate": "2022-11-03",
+      "buyRate": 1419.5,
+      "buyFx": 5000,
+      "buyKrw": 7097500,
+      "note": "",
+      "sellDate": "2022-11-03",
+      "sellRate": 1427.5,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_036",
+      "ccy": "JPY",
+      "buyDate": "2022-11-02",
+      "buyRate": 957.62,
+      "buyFx": 20885.11,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-11-02",
+      "sellRate": 962.52,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_037",
+      "ccy": "JPY",
+      "buyDate": "2022-11-01",
+      "buyRate": 956.18,
+      "buyFx": 10458.29,
+      "buyKrw": 100000,
+      "note": "",
+      "sellDate": "2022-11-01",
+      "sellRate": 959.61,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_038",
+      "ccy": "JPY",
+      "buyDate": "2022-10-27",
+      "buyRate": 969.5,
+      "buyFx": 10314.59,
+      "buyKrw": 100000,
+      "note": "",
+      "sellDate": "2022-10-27",
+      "sellRate": 975.22,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_039",
+      "ccy": "JPY",
+      "buyDate": "2022-10-27",
+      "buyRate": 966.33,
+      "buyFx": 19422.74,
+      "buyKrw": 187688,
+      "note": "",
+      "sellDate": "2022-10-27",
+      "sellRate": 973.62,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_040",
+      "ccy": "JPY",
+      "buyDate": "2022-10-27",
+      "buyRate": 966.33,
+      "buyFx": 12098.05,
+      "buyKrw": 116907,
+      "note": "",
+      "sellDate": "2022-10-27",
+      "sellRate": 971.51,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_041",
+      "ccy": "JPY",
+      "buyDate": "2022-10-27",
+      "buyRate": 961.34,
+      "buyFx": 20804.29,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-10-27",
+      "sellRate": 966.16,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_042",
+      "ccy": "JPY",
+      "buyDate": "2022-10-24",
+      "buyRate": 958.76,
+      "buyFx": 11065.02,
+      "buyKrw": 106087,
+      "note": "",
+      "sellDate": "2022-10-24",
+      "sellRate": 966.16,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_043",
+      "ccy": "JPY",
+      "buyDate": "2022-10-24",
+      "buyRate": 955.89,
+      "buyFx": 25747.99,
+      "buyKrw": 246122,
+      "note": "",
+      "sellDate": "2022-10-24",
+      "sellRate": 966.16,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_044",
+      "ccy": "JPY",
+      "buyDate": "2022-10-19",
+      "buyRate": 972.67,
+      "buyFx": 20562,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-10-19",
+      "sellRate": 983.15,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_045",
+      "ccy": "JPY",
+      "buyDate": "2022-10-07",
+      "buyRate": 968.18,
+      "buyFx": 20657.32,
+      "buyKrw": 200000,
+      "note": "",
+      "sellDate": "2022-10-07",
+      "sellRate": 974.01,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_046",
+      "ccy": "JPY",
+      "buyDate": "2022-09-08",
+      "buyRate": 962.8,
+      "buyFx": 25967.12,
+      "buyKrw": 250011,
+      "note": "",
+      "sellDate": "2022-09-08",
+      "sellRate": 967.28,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_047",
+      "ccy": "JPY",
+      "buyDate": "2022-09-05",
+      "buyRate": 975.15,
+      "buyFx": 25260,
+      "buyKrw": 246323,
+      "note": "",
+      "sellDate": "2022-09-05",
+      "sellRate": 977,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_048",
+      "ccy": "JPY",
+      "buyDate": "2022-09-05",
+      "buyRate": 967.5,
+      "buyFx": 26898,
+      "buyKrw": 260238,
+      "note": "",
+      "sellDate": "2022-09-05",
+      "sellRate": 971.5,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_049",
+      "ccy": "JPY",
+      "buyDate": "2022-08-23",
+      "buyRate": 974.51,
+      "buyFx": 28000,
+      "buyKrw": 272863,
+      "note": "",
+      "sellDate": "2022-08-23",
+      "sellRate": 979.68,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_050",
+      "ccy": "JPY",
+      "buyDate": "2022-08-18",
+      "buyRate": 973.96,
+      "buyFx": 10000,
+      "buyKrw": 97396,
+      "note": "",
+      "sellDate": "2022-08-18",
+      "sellRate": 977.3,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_051",
+      "ccy": "JPY",
+      "buyDate": "2022-08-11",
+      "buyRate": 973.07,
+      "buyFx": 3800,
+      "buyKrw": 36977,
+      "note": "",
+      "sellDate": "2022-08-11",
+      "sellRate": 978.72,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_052",
+      "ccy": "JPY",
+      "buyDate": "2022-08-11",
+      "buyRate": 976.01,
+      "buyFx": 6000,
+      "buyKrw": 58561,
+      "note": "",
+      "sellDate": "2022-08-11",
+      "sellRate": 978.47,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_053",
+      "ccy": "JPY",
+      "buyDate": "2022-08-11",
+      "buyRate": 974.02,
+      "buyFx": 9000,
+      "buyKrw": 87662,
+      "note": "",
+      "sellDate": "2022-08-11",
+      "sellRate": 978.47,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_054",
+      "ccy": "JPY",
+      "buyDate": "2022-08-09",
+      "buyRate": 966.01,
+      "buyFx": 10000,
+      "buyKrw": 96601,
+      "note": "",
+      "sellDate": "2022-08-09",
+      "sellRate": 967.5,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_055",
+      "ccy": "JPY",
+      "buyDate": "2022-08-09",
+      "buyRate": 964.7,
+      "buyFx": 10000,
+      "buyKrw": 96470,
+      "note": "",
+      "sellDate": "2022-08-09",
+      "sellRate": 969.4,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_056",
+      "ccy": "JPY",
+      "buyDate": "2022-07-27",
+      "buyRate": 957,
+      "buyFx": 10000,
+      "buyKrw": 95700,
+      "note": "",
+      "sellDate": "2022-07-27",
+      "sellRate": 959.15,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_057",
+      "ccy": "JPY",
+      "buyDate": "2022-07-22",
+      "buyRate": 947.6,
+      "buyFx": 10000,
+      "buyKrw": 94760,
+      "note": "",
+      "sellDate": "2022-07-22",
+      "sellRate": 955,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_058",
+      "ccy": "JPY",
+      "buyDate": "2022-07-22",
+      "buyRate": 945.4,
+      "buyFx": 10000,
+      "buyKrw": 94540,
+      "note": "",
+      "sellDate": "2022-07-22",
+      "sellRate": 950.3,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_059",
+      "ccy": "JPY",
+      "buyDate": "2022-07-20",
+      "buyRate": 943,
+      "buyFx": 25000,
+      "buyKrw": 235750,
+      "note": "",
+      "sellDate": "2022-07-20",
+      "sellRate": 947,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_060",
+      "ccy": "JPY",
+      "buyDate": "2022-07-18",
+      "buyRate": 951.53,
+      "buyFx": 20000,
+      "buyKrw": 190306,
+      "note": "",
+      "sellDate": "2022-07-18",
+      "sellRate": 954.15,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_061",
+      "ccy": "JPY",
+      "buyDate": "2022-07-15",
+      "buyRate": 951.53,
+      "buyFx": 20000,
+      "buyKrw": 190306,
+      "note": "",
+      "sellDate": "2022-07-15",
+      "sellRate": 954.2,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_062",
+      "ccy": "JPY",
+      "buyDate": "2022-07-15",
+      "buyRate": 948.25,
+      "buyFx": 20000,
+      "buyKrw": 189650,
+      "note": "",
+      "sellDate": "2022-07-15",
+      "sellRate": 952.4,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_063",
+      "ccy": "JPY",
+      "buyDate": "2022-07-12",
+      "buyRate": 952.2,
+      "buyFx": 20000,
+      "buyKrw": 190440,
+      "note": "",
+      "sellDate": "2022-07-12",
+      "sellRate": 956.1,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_064",
+      "ccy": "JPY",
+      "buyDate": "2022-07-11",
+      "buyRate": 955.2,
+      "buyFx": 11000,
+      "buyKrw": 105072,
+      "note": "",
+      "sellDate": "2022-07-11",
+      "sellRate": 958.2,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_065",
+      "ccy": "JPY",
+      "buyDate": "2022-07-08",
+      "buyRate": 954.1,
+      "buyFx": 9000,
+      "buyKrw": 85869,
+      "note": "",
+      "sellDate": "2022-07-08",
+      "sellRate": 960.8,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_066",
+      "ccy": "USD",
+      "buyDate": "2022-07-06",
+      "buyRate": 1290.7,
+      "buyFx": 4563,
+      "buyKrw": 5889464,
+      "note": "",
+      "sellDate": "2022-07-06",
+      "sellRate": 1309.2,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_067",
+      "ccy": "JPY",
+      "buyDate": "2022-07-05",
+      "buyRate": 950.9,
+      "buyFx": 11000,
+      "buyKrw": 104599,
+      "note": "",
+      "sellDate": "2022-07-05",
+      "sellRate": 956.04,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_068",
+      "ccy": "JPY",
+      "buyDate": "2022-07-01",
+      "buyRate": 955.7,
+      "buyFx": 10000,
+      "buyKrw": 95570,
+      "note": "",
+      "sellDate": "2022-07-01",
+      "sellRate": 948,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_069",
+      "ccy": "JPY",
+      "buyDate": "2022-07-01",
+      "buyRate": 953.4,
+      "buyFx": 1000,
+      "buyKrw": 9534,
+      "note": "",
+      "sellDate": "2022-07-01",
+      "sellRate": 948,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_070",
+      "ccy": "JPY",
+      "buyDate": "2022-06-29",
+      "buyRate": 953.4,
+      "buyFx": 3000,
+      "buyKrw": 28602,
+      "note": "",
+      "sellDate": "2022-06-29",
+      "sellRate": 955.4,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_071",
+      "ccy": "JPY",
+      "buyDate": "2022-06-29",
+      "buyRate": 952.1,
+      "buyFx": 5000,
+      "buyKrw": 47605,
+      "note": "",
+      "sellDate": "2022-06-29",
+      "sellRate": 955.5,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_072",
+      "ccy": "JPY",
+      "buyDate": "2022-06-29",
+      "buyRate": 952.1,
+      "buyFx": 5000,
+      "buyKrw": 47605,
+      "note": "",
+      "sellDate": "2022-06-29",
+      "sellRate": 955.5,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_073",
+      "ccy": "JPY",
+      "buyDate": "2022-06-29",
+      "buyRate": 952.1,
+      "buyFx": 1000,
+      "buyKrw": 9521,
+      "note": "",
+      "sellDate": "2022-06-29",
+      "sellRate": 954.6,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_074",
+      "ccy": "JPY",
+      "buyDate": "2022-06-29",
+      "buyRate": 947.25,
+      "buyFx": 10000,
+      "buyKrw": 94725,
+      "note": "",
+      "sellDate": "2022-06-29",
+      "sellRate": 955,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "imp2022_075",
+      "ccy": "USD",
+      "buyDate": "2022-06-14",
+      "buyRate": 1169.06,
+      "buyFx": 2566.16,
+      "buyKrw": 2999995,
+      "note": "",
+      "sellDate": "2022-06-14",
+      "sellRate": 1174.64,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "1781495135167",
+      "ccy": "USD",
+      "buyDate": "2022-06-14",
+      "buyRate": 1169.06,
+      "buyFx": 2566.16,
+      "buyKrw": 2999995,
+      "note": "",
+      "sellDate": "2022-06-14",
+      "sellRate": 1174.64,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
+    },
+    {
+      "id": "1781505406701",
+      "ccy": "USD",
+      "buyDate": "2026-06-15",
+      "buyRate": 1505.92,
+      "buyFx": 132809.18,
+      "buyKrw": 200000000,
+      "note": "",
+      "sellDate": "2026-06-15",
+      "sellRate": 1513.47,
+      "updatedAt": "2026-06-17T07:33:09.144Z"
     }
   ],
   "autoRates": {
     "USD": 1512.8,
     "JPY": 944,
-    "EUR": 1755.76
+    "EUR": 1755.91
   },
   "manualRates": {
     "USD": "",
     "JPY": "",
     "EUR": ""
   },
-  "exportedAt": "2026-06-17T07:39:47.905Z"
+  "exportedAt": "2026-06-17T07:40:45.924Z"
 }
