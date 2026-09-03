@@ -6961,18 +6961,20 @@
       "buyFx": 71404.87,
       "buyKrw": 98999996,
       "note": "",
-      "updatedAt": "2026-08-20T00:58:27.858Z"
+      "updatedAt": "2026-09-03T01:18:40.641Z",
+      "sellDate": "2026-09-03",
+      "sellRate": 1356.94
     }
   ],
   "autoRates": {
-    "USD": 1372.3,
-    "JPY": 860,
-    "EUR": 1597.77
+    "USD": 1357.5,
+    "JPY": 856,
+    "EUR": 1573.27
   },
   "manualRates": {
     "USD": "",
     "JPY": "",
     "EUR": ""
   },
-  "exportedAt": "2026-09-01T11:35:34.709Z"
+  "exportedAt": "2026-09-03T01:18:40.646Z"
 }
